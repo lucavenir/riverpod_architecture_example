@@ -1,0 +1,1 @@
+# riverpod_architecture_example
