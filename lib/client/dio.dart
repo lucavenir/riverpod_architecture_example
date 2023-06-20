@@ -22,7 +22,8 @@ Dio httpClient(
   final logger = ref.watch(loggerProvider(loggerLabel, color: LoggerColor.cyan, level: Level.FINE));
 
   final options = BaseOptions(
-    baseUrl: 'TODO',
+    baseUrl: 'https://api.weatherapi.com/v1',
+    queryParameters: {'key': '<your-api-key>'}, // DO NOT commit this key
     receiveTimeout: 12.seconds,
   );
 
