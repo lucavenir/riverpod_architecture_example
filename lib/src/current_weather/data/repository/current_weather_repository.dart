@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../dto/current_weather_dto.dart';
+import '../models/current_weather_dto.dart';
 import '../sources/current_weather_api.dart';
 
 part 'current_weather_repository.g.dart';

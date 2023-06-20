@@ -1,4 +1,4 @@
-import '../../data/dto/forecast_day_dto.dart';
+import '../../data/models/forecast_day_dto.dart';
 import '../entities/forecast_day.dart';
 
 extension ForecastDayFromDto on ForecastDayDto {

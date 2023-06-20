@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../dto/search_location_dto.dart';
+import '../models/search_location_dto.dart';
 import '../sources/locations_api.dart';
 
 part 'locations_repository.g.dart';

@@ -1,4 +1,4 @@
-import '../../data/dto/current_weather_dto.dart';
+import '../../data/models/current_weather_dto.dart';
 import '../entities/current_weather.dart';
 
 extension CurrentWeatherFromDto on CurrentWeatherDto {

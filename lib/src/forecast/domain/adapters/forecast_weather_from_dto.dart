@@ -1,4 +1,4 @@
-import '../../data/dto/forecast_weather_dto.dart';
+import '../../data/models/forecast_weather_dto.dart';
 import '../entities/forecast_day.dart';
 import '../entities/forecast_weather.dart';
 

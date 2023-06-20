@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_architecture_example/base/json.dart';
 
-import '../../../current_weather/data/dto/condition_dto.dart';
+import '../../../current_weather/data/models/condition_dto.dart';
 
 part 'hour_dto.freezed.dart';
 part 'hour_dto.g.dart';
