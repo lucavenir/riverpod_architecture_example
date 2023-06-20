@@ -48,7 +48,7 @@ Logger _initRiverpodLogger() {
 }
 
 Logger _initRiverpodCrashlytics() {
-  final logger = Logger('Riverpod');
+  final logger = Logger('Riverpod Error');
   const color = LoggerColor.yellow;
   logger.level = Level.SEVERE;
 

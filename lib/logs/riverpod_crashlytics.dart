@@ -22,9 +22,9 @@ class RiverpodCrashlytics extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    if (newValue case AsyncError()) {
-      return _handleError(provider, newValue.error, newValue.stackTrace);
-    }
+    if (newValue is! AsyncError) return;
+
+    return _handleError(provider, newValue.error, newValue.stackTrace);
   }
 
   void _handleError(

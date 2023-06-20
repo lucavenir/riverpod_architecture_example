@@ -23,7 +23,7 @@ class RiverpodLogger extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    if (newValue case AsyncError()) return;
+    if (newValue is AsyncError) return;
 
     _logger
       ..finest('$provider updated')
