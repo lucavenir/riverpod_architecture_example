@@ -8,9 +8,9 @@ environment:
   sdk: ">3.0.0 <4.0.0"
 
 dependencies:
+  auto_size_text: ^3.0.0
   collection: ^1.17.0
   dio: ^5.2.1+1
-  font_awesome_flutter: ^10.4.0
   flex_color_scheme: ^7.1.2
   flutter:
     sdk: flutter
@@ -18,10 +18,13 @@ dependencies:
   flutter_hooks: ^0.18.6
   flutter_localizations:
     sdk: flutter
+  font_awesome_flutter: ^10.4.0
   freezed_annotation: ^2.2.0
+  geolocator: ^9.0.2
   go_router: ^8.0.5
   google_fonts: ^5.1.0
   hooks_riverpod: ^2.3.6
+  intl: ^0.18.0
   json_annotation: ^4.8.1
   logging: ^1.1.1
   package_info_plus: ^4.0.2
