@@ -10,7 +10,7 @@ part 'forecast_weather_state.g.dart';
 FutureOr<ForecastWeather> forecastWeather(ForecastWeatherRef ref) async {
   final service = ref.watch(forecastWeatherServiceProvider);
   final location = await ref.watch(currentLocationControllerProvider.future);
-  final forecastWeather = await service.getForecastWeather(location, 7);
+  final forecastWeather = await service.getForecastWeather(location, 14);
 
   return forecastWeather;
 }

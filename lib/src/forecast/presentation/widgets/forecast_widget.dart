@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../shared/presentation/widgets/standard_when.dart';
 import '../state/forecast_weather_state.dart';
 import '../view/forecast_weather_views.dart';
 import 'forecast_box.dart';
@@ -10,9 +11,7 @@ class ForecastWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final forecastWeather = ref.watch(
-      forecastWeatherProvider.select((value) => value.requireValue),
-    );
+    final forecastWeather = ref.watch(forecastWeatherProvider);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 16),
@@ -20,23 +19,27 @@ class ForecastWidget extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'I prossimi giorni',
+            'The next days...',
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 20),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                for (final element in forecastWeather.previsions)
-                  ForecastBox(
-                    title: element.formattedTemperature,
-                    image: element.image,
-                    date: element.date,
-                  )
-              ],
+          Container(
+            alignment: Alignment.center,
+            height: MediaQuery.sizeOf(context).height * 0.15,
+            child: forecastWeather.standardWhen(
+              data: (data) => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  for (final element in data.previsions)
+                    ForecastBox(
+                      title: element.formattedTemperature,
+                      image: element.image,
+                      date: element.date,
+                    )
+                ],
+              ),
             ),
-          ),
+          )
         ],
       ),
     );

@@ -30,7 +30,7 @@ class StandardErrorWidget extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(icon ?? Icons.sentiment_very_dissatisfied),
-          Text(message ?? 'Qualcosa è andato storto'),
+          Text(message ?? 'Something went wrong..'),
         ],
       ),
     );

@@ -15,6 +15,8 @@ class LocationSearchBar extends HookConsumerWidget {
     final isSearchEmpty = useListenableSelector(controller, () => controller.text.isEmpty);
 
     Future<void> dialogBuilder() async {
+      if (isSearchEmpty) return;
+
       final result = await showDialog<CurrentLocation?>(
         context: context,
         builder: (_) => LocationResultsWidget(controller.text),
@@ -25,15 +27,17 @@ class LocationSearchBar extends HookConsumerWidget {
 
       ref.read(currentLocationControllerProvider.notifier).updateLocation(result);
       controller.clear();
+      FocusScope.of(context).unfocus();
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       child: TextField(
         onSubmitted: (_) => dialogBuilder(),
         controller: controller,
         decoration: InputDecoration(
-          hintText: 'Cerca la tua città...',
+          contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+          hintText: 'Your city...',
           prefixIcon: isSearchEmpty
               ? null
               : IconButton(

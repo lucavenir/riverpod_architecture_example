@@ -7,8 +7,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../current_location/presentation/state/current_weather_location.dart';
 import '../../../forecast/presentation/widgets/forecast_widget.dart';
 import '../../../search/presentation/widgets/search_bar.dart';
+import '../../../shared/presentation/widgets/standard_when.dart';
 import '../state/current_weather_state.dart';
-import '../state/home_loading_state.dart';
 import '../view/current_date_view.dart';
 import '../view/current_weather_views.dart';
 
@@ -17,136 +17,99 @@ class CurrentWeatherPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final homeLoadingResult = ref.watch(homeLoadingProvider);
+    final currentyCity = ref.watch(
+      currentLocationControllerProvider.select((value) => value.valueOrNull?.cityName ?? ''),
+    );
+    final currentWeather = ref.watch(currentWeatherProvider);
 
-    return homeLoadingResult.when(
-      data: (_) {
-        final currentLocation = ref.watch(
-          currentLocationControllerProvider.select((value) => value.requireValue),
-        );
-        final currentWeather = ref.watch(
-          currentWeatherProvider.select((value) => value.requireValue),
-        );
-
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            title: Center(child: Text(currentLocation.cityName)),
-          ),
-          body: SafeArea(
-            child: Column(
-              children: [
-                const LocationSearchBar(),
-                Flexible(
-                  child: ListView(
-                    children: [
-                      ...[
-                        const SizedBox(height: 10),
-                        DecoratedBox(
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius: BorderRadius.circular(4),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        title: Center(child: Text(currentyCity)),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const LocationSearchBar(),
+            Flexible(
+              child: currentWeather.standardWhen(
+                data: (data) => ListView(
+                  children: [
+                    const SizedBox(height: 10),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        child: Center(
+                          child: Text(
+                            DateTime.now().formattedCurrentDate,
+                            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                            child: Center(
-                              child: Text(
-                                DateTime.now().formattedCurrentDate,
-                                style: const TextStyle(color: Colors.white),
-                              ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 96),
+                    Center(
+                      child: Text(
+                        "Today's weather!",
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
+                    Center(child: Text(data.weather)),
+                    Center(
+                      child: Text(
+                        '${data.temp}°C',
+                        style: const TextStyle(fontSize: 76),
+                      ),
+                    ),
+                    Image.network(
+                      data.image,
+                      height: 80,
+                      fit: BoxFit.fitHeight,
+                    ),
+                    const SizedBox(height: 96),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      margin: const EdgeInsets.symmetric(horizontal: 12),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: _WeatherIcon(
+                              icon: Icons.air,
+                              title: data.formattedWind,
+                              subtitle: 'Wind',
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 20),
-                        Center(
-                          child: Text(
-                            'Il meteo di oggi!',
-                            style: Theme.of(context).textTheme.titleLarge,
+                          Expanded(
+                            child: _WeatherIcon(
+                              icon: Icons.water_drop_outlined,
+                              title: data.formattedHumidity,
+                              subtitle: 'Humidity',
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 20),
-                        Center(child: Text(currentWeather.weather)),
-                        const SizedBox(height: 20),
-                        Center(
-                          child: Text(
-                            '${currentWeather.temp}°C',
-                            style: const TextStyle(fontSize: 75),
+                          Expanded(
+                            child: _WeatherIcon(
+                              icon: Icons.thermostat,
+                              title: data.formattedTemp,
+                              subtitle: 'Perceived Temperature',
+                            ),
                           ),
-                        ),
-                        Image.network(
-                          currentWeather.image,
-                          height: 80,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        const SizedBox(height: 20),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                          margin: const EdgeInsets.symmetric(horizontal: 12),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: _WeatherIcon(
-                                  icon: Icons.air,
-                                  title: currentWeather.formattedWind,
-                                  subtitle: 'Vento',
-                                ),
-                              ),
-                              Expanded(
-                                child: _WeatherIcon(
-                                  icon: Icons.water_drop_outlined,
-                                  title: currentWeather.formattedHumidity,
-                                  subtitle: 'Umidità',
-                                ),
-                              ),
-                              Expanded(
-                                child: _WeatherIcon(
-                                  icon: Icons.thermostat,
-                                  title: currentWeather.formattedTemp,
-                                  subtitle: 'Temp. percepita',
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const ForecastWidget(),
-                      ]
-                    ],
-                  ),
+                        ],
+                      ),
+                    ),
+                    const ForecastWidget(),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-        );
-      },
-      error: (error, stackTrace) => const Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.sentiment_very_dissatisfied),
-                Text('Qualcosa è andato storto'),
-              ],
-            ),
-          ),
-        ),
-      ),
-      loading: () => const Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircularProgressIndicator(),
-                SizedBox(height: 20),
-                Text('Loading...'),
-              ],
-            ),
-          ),
+          ],
         ),
       ),
     );
@@ -178,6 +141,7 @@ class _WeatherIcon extends StatelessWidget {
             Icon(
               icon,
               size: 48 / sizeFactor,
+              color: Theme.of(context).colorScheme.onPrimary,
             ),
             const SizedBox(height: 4),
             AutoSizeText(
@@ -185,6 +149,7 @@ class _WeatherIcon extends StatelessWidget {
               maxLines: 1,
               style: textTheme.labelLarge?.copyWith(
                 fontSize: textTheme.labelLarge?.fontSize ?? 0 / sizeFactor,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
             AutoSizeText(
@@ -193,6 +158,7 @@ class _WeatherIcon extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: textTheme.labelSmall?.copyWith(
                 fontSize: 10 / sizeFactor,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
           ],
