@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod_architecture_example/src/current_weather/presentation/pages/current_weather_page.dart';
 
 part 'routes.g.dart';
 
@@ -9,7 +10,7 @@ class HomeRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return throw UnimplementedError();
+    return const CurrentWeatherPage();
   }
 }
 
