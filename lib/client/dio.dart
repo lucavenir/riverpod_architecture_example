@@ -13,12 +13,13 @@ part 'dio.g.dart';
 @riverpod
 Dio httpClient(
   HttpClientRef ref, {
+  required String loggerLabel,
   bool logRequestHeader = false,
   bool logRequestBody = false,
   bool logResponseHeader = false,
   bool logResponseBody = true,
 }) {
-  final logger = ref.watch(loggerProvider('Dio', color: LoggerColor.cyan, level: Level.FINE));
+  final logger = ref.watch(loggerProvider(loggerLabel, color: LoggerColor.cyan, level: Level.FINE));
 
   final options = BaseOptions(
     baseUrl: 'TODO',
