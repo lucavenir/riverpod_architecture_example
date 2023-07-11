@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_architecture_example/base/json.dart';
 
-part 'forecast_location_dto.freezed.dart';
-part 'forecast_location_dto.g.dart';
+part 'location_dto.freezed.dart';
+part 'location_dto.g.dart';
 
 @freezed
-class ForecastLocationDto with _$ForecastLocationDto {
-  const factory ForecastLocationDto(
+class LocationDto with _$LocationDto {
+  const factory LocationDto(
     String? name,
     String? region,
     String? country,
@@ -15,7 +15,7 @@ class ForecastLocationDto with _$ForecastLocationDto {
     String? tzId,
     int? localtimeEpoch,
     String? localtime,
-  ) = _ForecastLocationDto;
+  ) = _LocationDto;
 
-  factory ForecastLocationDto.fromJson(Json json) => _$ForecastLocationDtoFromJson(json);
+  factory LocationDto.fromJson(Json json) => _$LocationDtoFromJson(json);
 }
