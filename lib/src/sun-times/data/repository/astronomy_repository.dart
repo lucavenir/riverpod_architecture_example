@@ -1,21 +1,26 @@
-// import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-// part 'astronomy_repository.g.dart';
+import '../models/astronomy_response_dto.dart';
+import '../sources/astronomy_api.dart';
 
-// @riverpod
-// AstronomyRepository astronomyRepository(AstronomyRepositoryRef ref) {
-//   final api = ref.watch(astronomyApiProvider);
+part 'astronomy_repository.g.dart';
 
-//   return AstronomyRepository(api);
-// }
+@riverpod
+AstronomyRepository astronomyRepository(AstronomyRepositoryRef ref) {
+  final api = ref.watch(astronomyApiProvider);
 
-// class AstronomyRepository {
-//   const AstronomyRepository(this.api);
-//   final AstronomyApi api;
+  return AstronomyRepository(api);
+}
 
-//   Future<AstronomyResponse> getAstronomy(String city) async {
-//     final result = await api.astronomy(city);
+class AstronomyRepository {
+  const AstronomyRepository(this.api);
+  final AstronomyApi api;
 
-//     return AstronomyResponse.fromJson(result);
-//   }
-// }
+  Future<AstronomyResponseDto> getAstronomy(String city) async {
+    final now = DateTime.now();
+    final date = DateTime(now.year, now.month, now.day);
+    final result = await api.astronomy(city, date.toIso8601String());
+
+    return AstronomyResponseDto.fromJson(result);
+  }
+}

@@ -11,7 +11,7 @@ part 'astronomy_response_dto.g.dart';
 class AstronomyResponseDto with _$AstronomyResponseDto {
   const factory AstronomyResponseDto({
     required AstronomyDto astronomy,
-    LocationDto? location,
+    required LocationDto location,
   }) = _AstronomyResponseDto;
   factory AstronomyResponseDto.fromJson(Json json) => _$AstronomyResponseDtoFromJson(json);
 }

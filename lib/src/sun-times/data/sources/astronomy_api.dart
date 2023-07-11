@@ -20,7 +20,7 @@ class AstronomyApi {
   Future<Json> astronomy(String q, String dt) async {
     final result = await dio.get<Json>(
       '/astronomy.json',
-      // queryParameters: TODO
+      queryParameters: {'q': q, 'dt': dt},
     );
 
     final data = result.data!;
