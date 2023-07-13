@@ -19,18 +19,20 @@ class LocationResultsWidget extends HookConsumerWidget {
       content: locations.standardWhen(
         data: (data) => SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.30,
-          child: ListView(
-            children: [
-              for (final location in data.places)
-                ListTile(
-                  minVerticalPadding: 0,
-                  contentPadding: EdgeInsets.zero,
-                  dense: true,
-                  title: Text(location.cityName),
-                  subtitle: Text(location.country),
-                  onTap: () => context.pop(location),
-                ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                for (final location in data.places)
+                  ListTile(
+                    minVerticalPadding: 0,
+                    contentPadding: EdgeInsets.zero,
+                    dense: true,
+                    title: Text(location.cityName),
+                    subtitle: Text(location.country),
+                    onTap: () => context.pop(location),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
