@@ -25,18 +25,19 @@ class ForecastWidget extends ConsumerWidget {
           const SizedBox(height: 20),
           Container(
             alignment: Alignment.center,
-            height: MediaQuery.sizeOf(context).height * 0.15,
             child: forecastWeather.standardWhen(
-              data: (data) => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  for (final element in data.previsions)
-                    ForecastBox(
-                      title: element.formattedTemperature,
-                      image: element.image,
-                      date: element.date,
-                    )
-                ],
+              data: (data) => SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for (final element in data.previsions)
+                      ForecastBox(
+                        title: element.formattedTemperature,
+                        image: element.image,
+                        date: element.date,
+                      )
+                  ],
+                ),
               ),
             ),
           )
