@@ -23,7 +23,7 @@ Dio httpClient(
 
   final options = BaseOptions(
     baseUrl: 'https://api.weatherapi.com/v1',
-    queryParameters: {'key': '065505914dc344ad95c121519231307'}, // DO NOT commit this key
+    queryParameters: {'key': '<your-api-key>'}, // DO NOT commit this key
     receiveTimeout: 12.seconds,
   );
 
