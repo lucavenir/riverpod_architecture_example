@@ -1,5 +1,9 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpod_architecture_example/src/current_weather/domain/adapters/current_weather_from_dto.dart';
+import 'package:riverpod_architecture_example/src/current_weather/domain/repository/current_weather_repository_interface.dart';
 
+import '../../../current_location/domain/entities/current_location.dart';
+import '../../domain/entities/current_weather.dart';
 import '../models/current_weather_dto.dart';
 import '../sources/current_weather_api.dart';
 
@@ -12,13 +16,17 @@ CurrentWeatherRepository currentWeatherRepository(CurrentWeatherRepositoryRef re
   return CurrentWeatherRepository(api);
 }
 
-class CurrentWeatherRepository {
-  const CurrentWeatherRepository(this.api);
+class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
+  CurrentWeatherRepository(this.api);
+  @override
   final CurrentWeatherApi api;
 
-  Future<CurrentWeatherDto> getCurrentWeather(String city) async {
-    final result = await api.current(city);
+  @override
+  Future<CurrentWeather> getCurrentWeather(CurrentLocation location) async {
+    final result = await api.current(location.cityName);
 
-    return CurrentWeatherDto.fromJson(result);
+    final dto = CurrentWeatherDto.fromJson(result);
+
+    return dto.toDomain();
   }
 }
