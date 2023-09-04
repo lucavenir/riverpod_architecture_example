@@ -2,6 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../domain/adapters/locations_from_dto.dart';
 import '../../domain/entities/locations.dart';
+import '../../domain/repository/locations_repository_interface.dart';
 import '../models/search_location_dto.dart';
 import '../sources/locations_api.dart';
 
@@ -13,10 +14,11 @@ LocationsRepository locationsRepository(LocationsRepositoryRef ref) {
   return LocationsRepository(api);
 }
 
-class LocationsRepository {
+class LocationsRepository implements LocationsRepositoryInterface {
   const LocationsRepository(this.api);
   final LocationsApi api;
 
+  @override
   Future<Locations> getLocations(String search) async {
     final result = await api.locations(q: search);
     final dto = result.map(SearchLocationDto.fromJson);

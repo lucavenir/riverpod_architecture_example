@@ -15,7 +15,6 @@ CurrentWeatherService currentWeatherService(CurrentWeatherServiceRef ref) {
 
 class CurrentWeatherService {
   const CurrentWeatherService(this.repository);
-
   final CurrentWeatherRepository repository;
 
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location) async {

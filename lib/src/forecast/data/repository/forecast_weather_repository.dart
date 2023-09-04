@@ -1,9 +1,9 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpod_architecture_example/src/current_location/domain/entities/current_location.dart';
-import 'package:riverpod_architecture_example/src/forecast/domain/adapters/forecast_weather_from_dto.dart';
-import 'package:riverpod_architecture_example/src/forecast/domain/entities/forecast_weather.dart';
-import 'package:riverpod_architecture_example/src/forecast/domain/repository/forecast_weather_repository_interface.dart';
 
+import '../../../current_location/domain/entities/current_location.dart';
+import '../../domain/adapters/forecast_weather_from_dto.dart';
+import '../../domain/entities/forecast_weather.dart';
+import '../../domain/repository/forecast_weather_repository_interface.dart';
 import '../models/forecast_weather_dto.dart';
 import '../sources/forecast_weather_api.dart';
 
@@ -17,7 +17,6 @@ ForecastWeatherRepository forecastWeatherRepository(ForecastWeatherRepositoryRef
 
 class ForecastWeatherRepository implements ForecastWeatherRepositoryInterface {
   const ForecastWeatherRepository(this.api);
-  @override
   final ForecastWeatherApi api;
 
   @override
