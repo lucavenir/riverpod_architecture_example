@@ -34,9 +34,13 @@ Thus, just go to [dio.dart] and substitute `<your-api-key>` with your actual key
 We strongly encourage to reach us out via Github's issues. PRs are welcome, just open an issue first so that we know what problem you want to address.
 
 ### Contributors
-  - Luca Venir
   - Arturo Romanelli
+  - Luca Venir
   - Elia Tolin
+
+### Special Thanks
+Special thanks to @ArturoRomanelli for its major contributions.
+Arturo basically crafted the whole example from scratch, so big kudos to him.
 
 
 [Riverpod]: https://github.com/rrousselGit/river_pod
