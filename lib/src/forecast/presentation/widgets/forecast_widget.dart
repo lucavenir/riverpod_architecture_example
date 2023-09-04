@@ -35,12 +35,12 @@ class ForecastWidget extends ConsumerWidget {
                         title: element.formattedTemperature,
                         image: element.image,
                         date: element.date,
-                      )
+                      ),
                   ],
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
