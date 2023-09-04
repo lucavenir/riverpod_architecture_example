@@ -1,4 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpod_architecture_example/src/current_location/domain/entities/current_location.dart';
+import 'package:riverpod_architecture_example/src/forecast/domain/adapters/forecast_weather_from_dto.dart';
+import 'package:riverpod_architecture_example/src/forecast/domain/entities/forecast_weather.dart';
+import 'package:riverpod_architecture_example/src/forecast/domain/repository/forecast_weather_repository_interface.dart';
 
 import '../models/forecast_weather_dto.dart';
 import '../sources/forecast_weather_api.dart';
@@ -11,16 +15,19 @@ ForecastWeatherRepository forecastWeatherRepository(ForecastWeatherRepositoryRef
   return ForecastWeatherRepository(api);
 }
 
-class ForecastWeatherRepository {
+class ForecastWeatherRepository implements ForecastWeatherRepositoryInterface {
   const ForecastWeatherRepository(this.api);
+  @override
   final ForecastWeatherApi api;
 
-  Future<ForecastWeatherDto> getForecastWeather(String city, int days) async {
+  @override
+  Future<ForecastWeather> getForecastWeather(CurrentLocation location, int days) async {
     final result = await api.forecast(
-      q: city,
+      q: location.cityName,
       days: days,
     );
 
-    return ForecastWeatherDto.fromJson(result);
+    final dto = ForecastWeatherDto.fromJson(result);
+    return dto.toDomain();
   }
 }
