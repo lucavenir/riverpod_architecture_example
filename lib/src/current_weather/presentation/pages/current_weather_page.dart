@@ -4,9 +4,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../current_location/presentation/state/current_weather_location.dart';
 import '../../../forecast/presentation/widgets/forecast_widget.dart';
-import '../../../search/presentation/widgets/search_bar.dart';
+import '../../../locations/presentation/state/current_weather_location.dart';
+import '../../../locations/presentation/widgets/search_bar.dart';
 import '../../../shared/presentation/widgets/standard_when.dart';
 import '../state/current_weather_state.dart';
 import '../view/current_date_view.dart';

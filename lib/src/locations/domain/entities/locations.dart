@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../current_location/domain/entities/current_location.dart';
+import 'current_location.dart';
 
 part 'locations.freezed.dart';
 

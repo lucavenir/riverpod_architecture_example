@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../shared/presentation/widgets/standard_when.dart';
 
+import '../../../shared/presentation/widgets/standard_when.dart';
 import '../state/locations_search.dart';
 
 class LocationResultsWidget extends HookConsumerWidget {

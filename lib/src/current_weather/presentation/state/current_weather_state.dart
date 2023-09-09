@@ -1,7 +1,7 @@
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../current_location/presentation/state/current_weather_location.dart';
+import '../../../locations/presentation/state/current_weather_location.dart';
 import '../../../shared/presentation/cache_for.dart';
 import '../../domain/entities/current_weather.dart';
 import '../../domain/services/current_weather_service.dart';

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../../../../base/json.dart';
 import '../../../../client/dio.dart';
 
@@ -21,9 +22,7 @@ class LocationsApi {
       '/search.json',
       queryParameters: {'q': q},
     );
-
     final data = result.data!;
-
     return data.map((e) => e as Json);
   }
 }

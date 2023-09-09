@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../base/json.dart';
 
 part 'search_location_dto.freezed.dart';
