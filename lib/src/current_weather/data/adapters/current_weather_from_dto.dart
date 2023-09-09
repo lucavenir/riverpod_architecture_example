@@ -1,8 +1,8 @@
-import '../../data/models/current_weather_dto.dart';
-import '../entities/current_weather.dart';
+import '../../domain/entities/current_weather.dart';
+import '../models/current_weather_dto.dart';
 
 extension CurrentWeatherFromDto on CurrentWeatherDto {
-  CurrentWeather toDomain() {
+  CurrentWeather toEntity() {
     final truncatedUrl = current.condition.icon.substring(2);
     final imageUrl = 'https://$truncatedUrl';
 
