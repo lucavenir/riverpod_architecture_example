@@ -1,6 +1,6 @@
-import '../../data/models/forecast_weather_dto.dart';
-import '../entities/forecast_day.dart';
-import '../entities/forecast_weather.dart';
+import '../../domain/entities/forecast_day.dart';
+import '../../domain/entities/forecast_weather.dart';
+import '../models/forecast_weather_dto.dart';
 
 extension ForecastWeatherFromDto on ForecastWeatherDto {
   ForecastWeather toDomain() {

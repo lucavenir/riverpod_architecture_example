@@ -1,5 +1,5 @@
-import '../../data/models/forecast_day_dto.dart';
-import '../entities/forecast_day.dart';
+import '../../domain/entities/forecast_day.dart';
+import '../models/forecast_day_dto.dart';
 
 extension ForecastDayFromDto on ForecastDayDto {
   ForecastDay toDomain() {

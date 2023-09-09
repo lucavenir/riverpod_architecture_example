@@ -1,8 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/domain/entities/current_location.dart';
-import '../../data/repository/forecast_weather_repository.dart';
 import '../entities/forecast_weather.dart';
+import '../repository/forecast_weather_repository_interface.dart';
 
 part 'forecast_weather_service.g.dart';
 
@@ -14,7 +14,7 @@ ForecastWeatherService forecastWeatherService(ForecastWeatherServiceRef ref) {
 
 class ForecastWeatherService {
   const ForecastWeatherService(this.repository);
-  final ForecastWeatherRepository repository;
+  final ForecastWeatherRepositoryInterface repository;
 
   Future<ForecastWeather> getForecastWeather(CurrentLocation location, int days) async {
     return repository.getForecastWeather(location, days);
