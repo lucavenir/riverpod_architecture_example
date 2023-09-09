@@ -4,25 +4,27 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../base/json.dart';
 import '../../../../client/dio.dart';
 
-part 'locations_api.g.dart';
+part 'search_api.g.dart';
 
 @riverpod
-LocationsApi locationsApi(LocationsApiRef ref) {
+SearchApi locationsApi(LocationsApiRef ref) {
   final client = ref.watch(httpClientProvider(loggerLabel: 'LocationsApi'));
 
-  return LocationsApi(client);
+  return SearchApi(client);
 }
 
-class LocationsApi {
-  const LocationsApi(this.dio);
+class SearchApi {
+  const SearchApi(this.dio);
   final Dio dio;
 
   Future<Iterable<Json>> locations({required String q}) async {
     final result = await dio.get<List<dynamic>>(
-      '/search.json',
+      searchUri,
       queryParameters: {'q': q},
     );
     final data = result.data!;
     return data.map((e) => e as Json);
   }
+
+  static const searchUri = '/search.json';
 }

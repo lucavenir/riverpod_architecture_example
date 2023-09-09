@@ -9,11 +9,11 @@ import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
 import '../interfaces/geolocator_interface.dart';
 import '../models/location_dto.dart';
-import '../sources/locations_api.dart';
+import '../sources/search_api.dart';
 
 class LocationsRepository implements LocationsRepositoryInterface {
   const LocationsRepository(this.api, this.geo);
-  final LocationsApi api;
+  final SearchApi api;
   final GeolocatorInterface geo;
 
   @override

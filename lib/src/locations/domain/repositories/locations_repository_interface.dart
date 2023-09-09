@@ -2,7 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/interfaces/geolocator_interface.dart';
 import '../../data/repositories/locations_repository.dart';
-import '../../data/sources/locations_api.dart';
+import '../../data/sources/search_api.dart';
 import '../entities/current_location.dart';
 import '../entities/locations.dart';
 
