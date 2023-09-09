@@ -7,7 +7,7 @@ import '../adapters/locations_from_dto.dart';
 import '../adapters/position_to_query_adapter.dart';
 import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
-import '../models/search_location_dto.dart';
+import '../models/location_dto.dart';
 import '../sources/locations_api.dart';
 
 class LocationsRepository implements LocationsRepositoryInterface {
@@ -40,7 +40,7 @@ class LocationsRepository implements LocationsRepositoryInterface {
   @override
   Future<Locations> findLocations(String query) async {
     final result = await api.locations(q: query);
-    final dto = result.map(SearchLocationDto.fromJson);
+    final dto = result.map(LocationDto.fromJson);
     final places = dto.map((e) => e.toEntity());
     final locations = Locations(places: [...places]);
 

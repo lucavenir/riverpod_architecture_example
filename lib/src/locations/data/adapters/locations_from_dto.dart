@@ -1,7 +1,7 @@
 import '../../domain/entities/current_location.dart';
-import '../models/search_location_dto.dart';
+import '../models/location_dto.dart';
 
-extension LocationsFromDto on SearchLocationDto {
+extension LocationsFromDto on LocationDto {
   CurrentLocation toEntity() {
     return CurrentLocation(
       cityName: name,
