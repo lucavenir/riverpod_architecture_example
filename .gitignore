@@ -48,4 +48,4 @@ app.*.map.json
 *.g.dart
 
 # Environment config
-.env
+*.env
