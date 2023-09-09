@@ -21,17 +21,13 @@ Nonetheless, we still follow the main guidelines: there are the infamous three l
 Our objective was to outline Riverpod's capability in a non-trivial context, while still keeping the requirements as simple as possible
 
 ## How to use.
-This project uses this free (registration needed) Weather API. It is required to attach an API key at the requests.
-I haven't set up (yet) a `.env` importer for this project.
-Thus, just go to [dio.dart] and substitute `<your-api-key>` with your actual key (PLEASE, REMEMBER, **DO NOT** COMMIT THAT FILE).
-
-## Roadmap / TODOs
-1. Add a [.env importer] or use another secret-hiding shanenigan
-2. Add i18n with [slang]
-3. Add more routes or get more creative when we've got some time (suggestions welcome)
+This project uses this free (registration needed) Weather API.  
+It is required to attach an API key at the requests.
+Please read `.env.template` to try out this application.
 
 ## Contributing
-We strongly encourage to reach us out via Github's issues. PRs are welcome, just open an issue first so that we know what problem you want to address.
+We strongly encourage to reach us out via Github's issues.  
+PRs are welcome, just open an issue first so that we know what problem you want to address.
 
 ### Contributors
   - Arturo Romanelli
@@ -40,7 +36,7 @@ We strongly encourage to reach us out via Github's issues. PRs are welcome, just
 
 ### Special Thanks
 Special thanks to @ArturoRomanelli for its major contributions.
-Arturo basically crafted the whole example from scratch, so big kudos to him.
+Arturo basically crafted the starter example so big kudos to him.
 
 
 [Riverpod]: https://github.com/rrousselGit/river_pod
