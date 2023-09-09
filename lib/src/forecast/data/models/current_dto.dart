@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverpod_architecture_example/base/json.dart';
+import '../../../../base/json.dart';
 
 import 'condition_dto.dart';
 
@@ -10,8 +10,7 @@ part 'current_dto.g.dart';
 class CurrentDto with _$CurrentDto {
   const factory CurrentDto({
     required ConditionDto condition,
-    int? lastUpdatedEpoch,
-    required DateTime lastUpdated,
+    required DateTime lastUpdated, int? lastUpdatedEpoch,
     double? tempC,
     double? tempF,
     int? isDay,

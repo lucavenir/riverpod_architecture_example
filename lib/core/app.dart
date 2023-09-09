@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
-import 'package:riverpod_architecture_example/router/routes.dart';
-import 'package:riverpod_architecture_example/theme/dark_theme.dart';
-import 'package:riverpod_architecture_example/theme/light_theme.dart';
+import '../router/routes.dart';
+import '../theme/dark_theme.dart';
+import '../theme/light_theme.dart';
 
 class App extends HookWidget {
   const App({super.key});

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverpod_architecture_example/base/json.dart';
+import '../../../../base/json.dart';
 
 import 'condition_dto.dart';
 

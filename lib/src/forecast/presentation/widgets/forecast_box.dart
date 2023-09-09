@@ -5,10 +5,7 @@ import '../view/forecast_date_view.dart';
 
 class ForecastBox extends StatelessWidget {
   const ForecastBox({
-    super.key,
-    required this.title,
-    required this.image,
-    required this.date,
+    required this.title, required this.image, required this.date, super.key,
   });
 
   final String title;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logging/logging.dart';
-import 'package:riverpod_architecture_example/logs/logger.dart';
-import 'package:riverpod_architecture_example/logs/logger_color.dart';
+import '../../../../logs/logger.dart';
+import '../../../../logs/logger_color.dart';
 
 class StandardErrorWidget extends ConsumerWidget {
   const StandardErrorWidget(

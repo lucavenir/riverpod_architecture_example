@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpod_architecture_example/base/json.dart';
-import 'package:riverpod_architecture_example/client/dio.dart';
+import '../../../../base/json.dart';
+import '../../../../client/dio.dart';
 
 part 'forecast_weather_api.g.dart';
 
@@ -10,7 +10,7 @@ ForecastWeatherApi forecastWeatherApi(ForecastWeatherApiRef ref) {
   final client = ref.watch(httpClientProvider(
     loggerLabel: 'ForecastWeatherApi',
     logResponseBody: false,
-  ));
+  ),);
   return ForecastWeatherApi(client);
 }
 

@@ -46,3 +46,6 @@ app.*.map.json
 # Dart generated code related settings
 *.freezed.dart
 *.g.dart
+
+# Environment config
+*.env
