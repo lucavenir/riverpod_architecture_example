@@ -2,8 +2,8 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_architecture_example/core/app.dart';
-import 'package:riverpod_architecture_example/core/init.dart';
+import 'core/app.dart';
+import 'core/init.dart';
 
 Future<void> main() async {
   final (logger, crashlytics) = init();
