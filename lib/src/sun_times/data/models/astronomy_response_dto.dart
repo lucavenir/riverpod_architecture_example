@@ -1,17 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverpod_architecture_example/base/json.dart';
 
-import '../../../shared/data/models/location_dto.dart';
-import 'astronomy_dto.dart';
+import '../../../../base/json.dart';
+import 'inner_astronomy_dto.dart';
+import 'location_dto.dart';
 
 part 'astronomy_response_dto.freezed.dart';
 part 'astronomy_response_dto.g.dart';
 
 @freezed
-class AstronomyResponseDto with _$AstronomyResponseDto {
-  const factory AstronomyResponseDto({
-    required AstronomyDto astronomy,
+class AstronomyDto with _$AstronomyDto {
+  const factory AstronomyDto({
+    required InnerAstronomyDto astronomy,
     LocationDto? location,
-  }) = _AstronomyResponseDto;
-  factory AstronomyResponseDto.fromJson(Json json) => _$AstronomyResponseDtoFromJson(json);
+  }) = _AstronomyDto;
+  factory AstronomyDto.fromJson(Json json) => _$AstronomyDtoFromJson(json);
 }

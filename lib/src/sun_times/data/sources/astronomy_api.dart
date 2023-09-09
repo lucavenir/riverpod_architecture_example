@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpod_architecture_example/base/json.dart';
-import 'package:riverpod_architecture_example/client/dio.dart';
+
+import '../../../../base/json.dart';
+import '../../../../client/dio.dart';
 
 part 'astronomy_api.g.dart';
 
@@ -16,11 +17,11 @@ class AstronomyApi {
   const AstronomyApi(this.dio);
   final Dio dio;
 
-  /// Accepts a query q and returns the current weather
+  /// Accepts a `query` and returns the astronomy for a certain `dt` (date)
   Future<Json> astronomy(String q, String dt) async {
     final result = await dio.get<Json>(
       '/astronomy.json',
-      // queryParameters: TODO
+      queryParameters: {'q': q, 'dt': dt},
     );
 
     final data = result.data!;

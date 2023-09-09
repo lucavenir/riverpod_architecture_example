@@ -1,21 +1,25 @@
-// import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:intl/intl.dart';
 
-// part 'astronomy_repository.g.dart';
+import '../../../locations/domain/entities/current_location.dart';
+import '../../domain/entities/sun_times.dart';
+import '../../domain/repository/sun_times_repository_interface.dart';
+import '../adapters/sun_times_adapter.dart';
+import '../models/astronomy_response_dto.dart';
+import '../sources/astronomy_api.dart';
 
-// @riverpod
-// AstronomyRepository astronomyRepository(AstronomyRepositoryRef ref) {
-//   final api = ref.watch(astronomyApiProvider);
+class SunTimesRepository implements SunTimesRepositoryInterface {
+  const SunTimesRepository(this.api);
+  final AstronomyApi api;
 
-//   return AstronomyRepository(api);
-// }
+  @override
+  Future<SunTimes> getTodaySunTimes(CurrentLocation location) async {
+    final now = DateTime.now();
+    final formatter = DateFormat.yMd(now);
+    final date = formatter.format(now);
 
-// class AstronomyRepository {
-//   const AstronomyRepository(this.api);
-//   final AstronomyApi api;
+    final result = await api.astronomy(location.cityName, date);
 
-//   Future<AstronomyResponse> getAstronomy(String city) async {
-//     final result = await api.astronomy(city);
-
-//     return AstronomyResponse.fromJson(result);
-//   }
-// }
+    final model = AstronomyDto.fromJson(result);
+    return model.toEntity();
+  }
+}

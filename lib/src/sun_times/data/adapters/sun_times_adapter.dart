@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/sun_times.dart';
 import '../models/astronomy_response_dto.dart';
 
-extension CurrentWeatherFromDto on AstronomyResponseDto {
-  SunTimes toDomain() {
+extension CurrentWeatherFromDto on AstronomyDto {
+  SunTimes toEntity() {
     return SunTimes(
-      timestamp: DateTime.parse(location.localtime!),
+      timestamp: DateTime.parse(location!.localTime),
       sunrise: _parseTimeOfDay(astronomy.astro.sunrise),
       sunset: _parseTimeOfDay(astronomy.astro.sunset),
     );
