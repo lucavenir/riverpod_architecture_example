@@ -7,28 +7,30 @@ import '../adapters/locations_from_dto.dart';
 import '../adapters/position_to_query_adapter.dart';
 import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
+import '../interfaces/geolocator_interface.dart';
 import '../models/location_dto.dart';
 import '../sources/locations_api.dart';
 
 class LocationsRepository implements LocationsRepositoryInterface {
-  const LocationsRepository(this.api);
+  const LocationsRepository(this.api, this.geo);
   final LocationsApi api;
+  final GeolocatorInterface geo;
 
   @override
   Future<CurrentLocation> getCurrentLocation() async {
-    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    final serviceEnabled = await geo.isLocationServiceEnabled();
     if (!serviceEnabled) throw const LocationServiceDisabledException();
 
-    var permission = await Geolocator.checkPermission();
+    var permission = await geo.checkPermission();
     if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
+      permission = await geo.requestPermission();
       if (permission == LocationPermission.denied) throw LocationPermissionDeniedException();
     }
     if (permission == LocationPermission.deniedForever) {
       throw LocationPermissionDeniedForeverException();
     }
 
-    final position = await Geolocator.getCurrentPosition();
+    final position = await geo.getCurrentPosition();
 
     final q = position.associatedQuery;
 

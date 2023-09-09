@@ -1,5 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/interfaces/geolocator_interface.dart';
 import '../../data/repositories/locations_repository.dart';
 import '../../data/sources/locations_api.dart';
 import '../entities/current_location.dart';
@@ -10,7 +11,8 @@ part 'locations_repository_interface.g.dart';
 @riverpod
 LocationsRepository locationsRepository(LocationsRepositoryRef ref) {
   final api = ref.watch(locationsApiProvider);
-  return LocationsRepository(api);
+  final geo = ref.watch(geolocatorRepositoryProvider);
+  return LocationsRepository(api, geo);
 }
 
 abstract interface class LocationsRepositoryInterface {
