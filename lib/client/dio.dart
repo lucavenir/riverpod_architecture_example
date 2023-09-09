@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:logging/logging.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -8,8 +7,15 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../logs/logger.dart';
 import '../logs/logger_color.dart';
+import 'base_dio.dart';
 
 part 'dio.g.dart';
+
+/// Base url of our API service
+const baseUrl = 'https://api.weatherapi.com/v1';
+
+/// Base query parameters needed for the APIs to work
+final baseQueryParams = {'key': dotenv.env['WEATHER_API_KEY']};
 
 @riverpod
 Dio httpClient(
@@ -20,15 +26,8 @@ Dio httpClient(
   bool logResponseHeader = false,
   bool logResponseBody = true,
 }) {
+  final dio = ref.watch(baseHttpClientProvider);
   final logger = ref.watch(loggerProvider(loggerLabel, color: LoggerColor.cyan, level: Level.FINE));
-
-  final options = BaseOptions(
-    baseUrl: 'https://api.weatherapi.com/v1',
-    queryParameters: {'key': dotenv.env['WEATHER_API_KEY']},
-    receiveTimeout: 12.seconds,
-    sendTimeout: 12.seconds,
-    connectTimeout: 12.seconds,
-  );
 
   final loggerInterceptor = PrettyDioLogger(
     logPrint: logger.fine,
@@ -39,7 +38,6 @@ Dio httpClient(
     responseHeader: logResponseHeader,
     responseBody: logResponseBody,
   );
-  final dio = Dio(options);
   if (kDebugMode) dio.interceptors.add(loggerInterceptor);
 
   ref.onDispose(dio.close);
