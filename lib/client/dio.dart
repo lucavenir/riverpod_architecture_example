@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:logging/logging.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -23,14 +24,16 @@ Dio httpClient(
 
   final options = BaseOptions(
     baseUrl: 'https://api.weatherapi.com/v1',
-    queryParameters: {'key': '<your-api-key>'}, // DO NOT commit this key
+    queryParameters: {'key': dotenv.env['WEATHER_API_KEY']},
     receiveTimeout: 12.seconds,
+    sendTimeout: 12.seconds,
+    connectTimeout: 12.seconds,
   );
 
   final loggerInterceptor = PrettyDioLogger(
     logPrint: logger.fine,
     maxWidth: 120,
-    compact: false, // TODO play with this
+    compact: false,
     requestHeader: logRequestHeader,
     requestBody: logRequestBody,
     responseHeader: logResponseHeader,
