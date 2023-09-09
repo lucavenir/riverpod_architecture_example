@@ -6,9 +6,12 @@ import '../../../../client/dio.dart';
 
 part 'search_api.g.dart';
 
+/// Label used for logging, useful for testing purposes
+const locationsApiDebugLogLabel = 'LocationsApi';
+
 @riverpod
 SearchApi locationsApi(LocationsApiRef ref) {
-  final client = ref.watch(httpClientProvider(loggerLabel: 'LocationsApi'));
+  final client = ref.watch(httpClientProvider(loggerLabel: locationsApiDebugLogLabel));
 
   return SearchApi(client);
 }

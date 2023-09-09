@@ -11,6 +11,9 @@ import '../logs/logger_color.dart';
 
 part 'dio.g.dart';
 
+/// Base URL of our API service
+const baseUrl = 'https://api.weatherapi.com/v1';
+
 @riverpod
 Dio httpClient(
   HttpClientRef ref, {
@@ -23,7 +26,7 @@ Dio httpClient(
   final logger = ref.watch(loggerProvider(loggerLabel, color: LoggerColor.cyan, level: Level.FINE));
 
   final options = BaseOptions(
-    baseUrl: 'https://api.weatherapi.com/v1',
+    baseUrl: baseUrl,
     queryParameters: {'key': dotenv.env['WEATHER_API_KEY']},
     receiveTimeout: 12.seconds,
     sendTimeout: 12.seconds,
