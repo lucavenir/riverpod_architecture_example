@@ -10,11 +10,11 @@ part 'logger.g.dart';
 @riverpod
 Logger logger(
   LoggerRef ref,
-  String name, {
+  String label, {
   LoggerColor color = LoggerColor.green,
   Level level = Level.INFO,
 }) {
-  final logger = Logger(name)..level = level;
+  final logger = Logger(label)..level = level;
 
   final subscription = logger.onRecord.listen(
     (record) => dev.log(
@@ -30,6 +30,5 @@ Logger logger(
   );
 
   ref.onDispose(subscription.cancel);
-
   return logger;
 }
