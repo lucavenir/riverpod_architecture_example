@@ -12,7 +12,7 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
   @override
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location) async {
     final result = await api.current(location.cityName);
-    final dto = CurrentWeatherDto.fromJson(result);
-    return dto.toEntity();
+    final model = CurrentWeatherDto.fromJson(result);
+    return model.toEntity();
   }
 }

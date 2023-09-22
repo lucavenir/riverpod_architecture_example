@@ -8,7 +8,7 @@ import '../entities/current_weather.dart';
 part 'current_weather_repository_interface.g.dart';
 
 @riverpod
-CurrentWeatherRepository currentWeatherRepository(CurrentWeatherRepositoryRef ref) {
+CurrentWeatherRepositoryInterface currentWeatherRepository(CurrentWeatherRepositoryRef ref) {
   final api = ref.watch(currentWeatherApiProvider);
   return CurrentWeatherRepository(api);
 }
