@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:logging/logging.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -25,9 +24,10 @@ Dio httpClient(
 }) {
   final logger = ref.watch(loggerProvider(loggerLabel, color: LoggerColor.cyan, level: Level.FINE));
 
+  const apiKey = String.fromEnvironment('WEATHER_API_KEY');
   final options = BaseOptions(
     baseUrl: baseUrl,
-    queryParameters: {'key': dotenv.env['WEATHER_API_KEY']},
+    queryParameters: {'key': apiKey},
     receiveTimeout: 12.seconds,
     sendTimeout: 12.seconds,
     connectTimeout: 12.seconds,

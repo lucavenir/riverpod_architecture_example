@@ -49,3 +49,4 @@ app.*.map.json
 
 # Environment config
 *.env
+*.env.json
