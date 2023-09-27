@@ -1,0 +1,35 @@
+{
+    
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "riverpod_architecture_example",
+        "request": "launch",
+        "type": "dart",
+        "toolArgs": [
+          "--dart-define-from-file",
+          ".env.json"
+        ]
+      },
+      {
+        "name": "riverpod_architecture_example (profile mode)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "profile",
+        "toolArgs": [
+          "--dart-define-from-file",
+          ".env.json"
+        ]
+      },
+      {
+        "name": "riverpod_architecture_example (release mode)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "release",
+        "toolArgs": [
+          "--dart-define-from-file",
+          ".env.json"
+        ]
+      }
+    ]
+  }
