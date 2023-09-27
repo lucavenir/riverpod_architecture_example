@@ -1,9 +1,11 @@
 // ignore_for_file: use_colored_box
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../client/connectivity_stream_provider.dart';
 import '../../../forecast/presentation/widgets/forecast_widget.dart';
 import '../../../locations/presentation/state/current_weather_location.dart';
 import '../../../locations/presentation/widgets/search_bar.dart';
@@ -21,6 +23,23 @@ class CurrentWeatherPage extends HookConsumerWidget {
       currentLocationControllerProvider.select((value) => value.valueOrNull?.cityName ?? ''),
     );
     final currentWeather = ref.watch(currentWeatherProvider);
+
+    _showSnackBar(BuildContext context, String message, Color? color) {
+      final snackBar = SnackBar(content: Text(message), backgroundColor: color);
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+
+    ref.listen(connectivityStreamProvider, (_, next) {
+      final data = next.asData;
+      if (data == null) return;
+
+      final hasInternet = data.value != ConnectivityResult.none;
+
+      final message = hasInternet ? 'You are online' : 'You are offline';
+      final color = hasInternet ? Colors.green : Colors.red;
+
+      _showSnackBar(context, message, color);
+    });
 
     return Scaffold(
       appBar: AppBar(
