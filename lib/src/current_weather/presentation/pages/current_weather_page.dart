@@ -24,11 +24,6 @@ class CurrentWeatherPage extends HookConsumerWidget {
     );
     final currentWeather = ref.watch(currentWeatherProvider);
 
-    _showSnackBar(BuildContext context, String message, Color? color) {
-      final snackBar = SnackBar(content: Text(message), backgroundColor: color);
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    }
-
     ref.listen(connectivityStreamProvider, (_, next) {
       final data = next.asData;
       if (data == null) return;
@@ -38,7 +33,8 @@ class CurrentWeatherPage extends HookConsumerWidget {
       final message = hasInternet ? 'You are online' : 'You are offline';
       final color = hasInternet ? Colors.green : Colors.red;
 
-      _showSnackBar(context, message, color);
+      final snackBar = SnackBar(content: Text(message), backgroundColor: color);
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
     });
 
     return Scaffold(
