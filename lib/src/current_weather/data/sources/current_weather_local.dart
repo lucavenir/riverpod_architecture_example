@@ -4,7 +4,7 @@ part 'current_weather_local.g.dart';
 
 @riverpod
 CurrentWeatherLocal currentWeatherLocal(CurrentWeatherLocalRef ref) {
-  throw UnimplementedError('This provider has to be created yet');
+  throw UnimplementedError('This source has yet to be created ');
 }
 
 class CurrentWeatherLocal {}

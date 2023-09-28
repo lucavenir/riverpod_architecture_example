@@ -1,8 +1,11 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final connectivityStreamProvider = StreamProvider<ConnectivityResult>((ref) async* {
+part 'connectivity_stream_provider.g.dart';
+
+@riverpod
+Stream<ConnectivityResult> connectivityStream(ConnectivityStreamRef ref) async* {
   final connectivity = Connectivity();
   yield await connectivity.checkConnectivity();
   yield* connectivity.onConnectivityChanged;
-});
+}

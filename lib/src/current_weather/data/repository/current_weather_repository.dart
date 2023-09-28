@@ -20,7 +20,7 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
     final connection = await connectivity.checkConnectivity();
     final hasInternet = connection != ConnectivityResult.none;
     if (!hasInternet) {
-      throw GenericServerException();
+      throw const NoInternetAvailableException();
     } //TODO implement Local;
 
     final result = await api.current(location.cityName);

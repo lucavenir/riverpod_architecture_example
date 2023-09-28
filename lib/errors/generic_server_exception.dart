@@ -1,8 +1,7 @@
-class GenericServerException implements Exception {
+class NoInternetAvailableException implements Exception {
+  const NoInternetAvailableException();
   @override
   String toString() {
-    return message;
+    return 'Something went wrong';
   }
-
-  String get message => 'Something went wrong';
 }

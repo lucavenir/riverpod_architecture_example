@@ -33,7 +33,11 @@ class CurrentWeatherPage extends HookConsumerWidget {
       final message = hasInternet ? 'You are online' : 'You are offline';
       final color = hasInternet ? Colors.green : Colors.red;
 
-      final snackBar = SnackBar(content: Text(message), backgroundColor: color);
+      final snackBar = SnackBar(
+        content: Text(message),
+        backgroundColor: color,
+        duration: const Duration(milliseconds: 1500),
+      );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     });
 
