@@ -1,6 +1,5 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-import '../../../../errors/generic_server_exception.dart';
 import '../../../locations/domain/entities/current_location.dart';
 import '../../domain/entities/current_weather.dart';
 import '../../domain/repository/current_weather_repository_interface.dart';
@@ -22,8 +21,7 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
     final hasInternet = connection != ConnectivityResult.none;
     if (!hasInternet) {
       final currentWeather = getCurrentWeatherFromDb();
-      if (currentWeather != null) return currentWeather;
-      throw const NoInternetAvailableException();
+      return currentWeather;
     }
 
     final result = await api.current(location.cityName);
@@ -38,7 +36,7 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
   }
 
   @override
-  CurrentWeather? getCurrentWeatherFromDb() {
+  CurrentWeather getCurrentWeatherFromDb() {
     return local.getCurrentWeatherFromDb();
   }
 }

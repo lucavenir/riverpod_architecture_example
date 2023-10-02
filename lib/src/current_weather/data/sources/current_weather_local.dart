@@ -2,6 +2,7 @@ import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/local_db.dart';
+import '../../../../errors/no_data_available_exception.dart';
 import '../../domain/entities/current_weather.dart';
 import '../adapters/local_current_weather_adapter.dart';
 import '../models/local_current_weather_dto.dart';
@@ -24,8 +25,9 @@ class CurrentWeatherLocal {
     return dto;
   }
 
-  CurrentWeather? getCurrentWeatherFromDb() {
+  CurrentWeather getCurrentWeatherFromDb() {
     final dto = db.localCurrentWeatherDtos.getSync(0);
-    return dto?.toEntity();
+    if (dto == null) throw const NoDataAvailableException();
+    return dto.toEntity();
   }
 }
