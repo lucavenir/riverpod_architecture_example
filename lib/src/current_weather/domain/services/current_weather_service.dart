@@ -1,7 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/domain/entities/current_location.dart';
-import '../../data/models/isar_current_weather_dto.dart';
 import '../entities/current_weather.dart';
 import '../repository/current_weather_repository_interface.dart';
 
@@ -21,11 +20,12 @@ class CurrentWeatherService {
     return repository.getCurrentWeather(location);
   }
 
-  IsarCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
-    return repository.saveCurrentWeather(currentWeather);
-  }
+  // Serve esporre questi servizi?
+  // IsarCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
+  //   return repository.saveCurrentWeather(currentWeather);
+  // }
 
-  CurrentWeather getCurrentWeatherFromIsar() {
-    return repository.getCurrentWeatherFromDb();
-  }
+  // CurrentWeather getCurrentWeatherFromIsar() {
+  //   return repository.getCurrentWeatherFromDb();
+  // }
 }
