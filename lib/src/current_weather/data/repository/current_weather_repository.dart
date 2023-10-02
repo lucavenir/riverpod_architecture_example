@@ -20,23 +20,23 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
     final connection = await connectivity.checkConnectivity();
     final hasInternet = connection != ConnectivityResult.none;
     if (!hasInternet) {
-      final currentWeather = getCurrentWeatherFromDb();
+      final currentWeather = _getCurrentWeatherFromDb();
       return currentWeather;
     }
 
     final result = await api.current(location.cityName);
     final model = CurrentWeatherDto.fromJson(result);
-    saveCurrentWeather(model.toEntity());
+    _saveCurrentWeather(model.toEntity());
     return model.toEntity();
   }
 
   @override
-  LocalCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
+  LocalCurrentWeatherDto _saveCurrentWeather(CurrentWeather currentWeather) {
     return local.saveCurrentWeather(currentWeather);
   }
 
   @override
-  CurrentWeather getCurrentWeatherFromDb() {
+  CurrentWeather _getCurrentWeatherFromDb() {
     return local.getCurrentWeatherFromDb();
   }
 }

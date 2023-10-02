@@ -21,6 +21,6 @@ CurrentWeatherRepositoryInterface currentWeatherRepository(CurrentWeatherReposit
 
 abstract interface class CurrentWeatherRepositoryInterface {
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location);
-  LocalCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather);
-  CurrentWeather? getCurrentWeatherFromDb();
+  LocalCurrentWeatherDto _saveCurrentWeather(CurrentWeather currentWeather);
+  CurrentWeather? _getCurrentWeatherFromDb();
 }
