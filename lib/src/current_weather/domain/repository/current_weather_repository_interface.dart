@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../connectivity/state/connectivity_check_provider.dart';
+import '../../../../clients/connectivity_check_provider.dart';
 import '../../../locations/domain/entities/current_location.dart';
 import '../../data/repository/current_weather_repository.dart';
 import '../../data/sources/current_weather_api.dart';
