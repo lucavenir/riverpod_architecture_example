@@ -11,7 +11,7 @@ class IsarCurrentWeatherDto {
     required this.temp,
     required this.wind,
     required this.humidity,
-    required this.perceivedtemp,
+    required this.perceivedTemp,
     this.id = 0,
   });
 
@@ -22,5 +22,5 @@ class IsarCurrentWeatherDto {
   final int temp;
   final double wind;
   final double humidity;
-  final double perceivedtemp;
+  final double perceivedTemp;
 }
