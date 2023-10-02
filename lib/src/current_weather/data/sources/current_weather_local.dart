@@ -21,7 +21,7 @@ class CurrentWeatherLocal {
 
   LocalCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
     final dto = currentWeather.toDto();
-    db.writeTxn(() => db.localCurrentWeatherDtos.put(dto));
+    db.localCurrentWeatherDtos.putSync(dto);
     return dto;
   }
 
