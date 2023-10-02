@@ -28,6 +28,7 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
 
     final result = await api.current(location.cityName);
     final model = CurrentWeatherDto.fromJson(result);
+    saveCurrentWeather(model.toEntity());
     return model.toEntity();
   }
 
