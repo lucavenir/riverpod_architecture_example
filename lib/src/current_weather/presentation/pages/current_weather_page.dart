@@ -5,7 +5,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../client/connectivity_stream_provider.dart';
+import '../../../../clients/connectivity_stream_provider.dart';
 import '../../../forecast/presentation/widgets/forecast_widget.dart';
 import '../../../locations/presentation/state/current_weather_location.dart';
 import '../../../locations/presentation/widgets/search_bar.dart';

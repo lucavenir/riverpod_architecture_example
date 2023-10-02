@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
-import 'package:riverpod_architecture_example/client/dio.dart';
+import 'package:riverpod_architecture_example/clients/dio.dart';
 import 'package:riverpod_architecture_example/src/locations/data/sources/search_api.dart';
 import 'package:riverpod_architecture_example/src/locations/domain/entities/locations.dart';
 import 'package:riverpod_architecture_example/src/locations/domain/repositories/locations_repository_interface.dart';

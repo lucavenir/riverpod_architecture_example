@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../base/json.dart';
 
+import '../../../../base/json.dart';
 import 'current_dto.dart';
 import 'current_weather_location_dto.dart';
 
