@@ -1,5 +1,7 @@
 import 'package:isar/isar.dart';
 
+part 'isar_current_weather_dto.g.dart';
+
 @collection
 class IsarCurrentWeatherDto {
   IsarCurrentWeatherDto({
@@ -10,6 +12,7 @@ class IsarCurrentWeatherDto {
     required this.windKph,
     required this.humidity,
     required this.feelslikeC,
+    this.id = Isar.autoIncrement,
     this.lastUpdatedEpoch,
     this.tempF,
     this.isDay,
@@ -29,6 +32,7 @@ class IsarCurrentWeatherDto {
     this.gustKph,
   });
 
+  final Id id;
   final String text;
   final String icon;
   final DateTime lastUpdated;
