@@ -21,7 +21,8 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
     final connection = await connectivity.checkConnectivity();
     final hasInternet = connection != ConnectivityResult.none;
     if (!hasInternet) {
-      // Try to get from isar
+      final currentWeather = getCurrentWeatherFromDb();
+      if (currentWeather != null) return currentWeather;
       throw const NoInternetAvailableException();
     }
 
@@ -36,7 +37,7 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
   }
 
   @override
-  CurrentWeather getCurrentWeatherFromDb() {
+  CurrentWeather? getCurrentWeatherFromDb() {
     return local.getCurrentWeatherFromDb();
   }
 }
