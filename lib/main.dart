@@ -9,6 +9,7 @@ import 'core/app.dart';
 import 'core/init.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   hierarchicalLoggingEnabled = true;
   final (logger, crashlytics, isar) = await init();
 
