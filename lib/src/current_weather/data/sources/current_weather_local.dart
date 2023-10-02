@@ -22,8 +22,8 @@ class CurrentWeatherLocal {
     return dto;
   }
 
-  CurrentWeather getCurrentWeatherFromDb() {
+  CurrentWeather? getCurrentWeatherFromDb() {
     final dto = db.isarCurrentWeatherDtos.getSync(0);
-    return dto!.toEntity();
+    return dto?.toEntity();
   }
 }
