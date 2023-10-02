@@ -24,4 +24,8 @@ class CurrentWeatherService {
   IsarCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
     return repository.saveCurrentWeather(currentWeather);
   }
+
+  CurrentWeather getCurrentWeatherFromIsar() {
+    return repository.getCurrentWeatherFromDb();
+  }
 }

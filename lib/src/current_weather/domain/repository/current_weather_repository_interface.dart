@@ -22,4 +22,5 @@ CurrentWeatherRepositoryInterface currentWeatherRepository(CurrentWeatherReposit
 abstract interface class CurrentWeatherRepositoryInterface {
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location);
   IsarCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather);
+  CurrentWeather getCurrentWeatherFromDb();
 }

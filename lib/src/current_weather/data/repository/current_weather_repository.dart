@@ -32,7 +32,11 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
 
   @override
   IsarCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
-    final dto = local.saveCurrentWeather(currentWeather);
-    return dto;
+    return local.saveCurrentWeather(currentWeather);
+  }
+
+  @override
+  CurrentWeather getCurrentWeatherFromDb() {
+    return local.getCurrentWeatherFromDb();
   }
 }

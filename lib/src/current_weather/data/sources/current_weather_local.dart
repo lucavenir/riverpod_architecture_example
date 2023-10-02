@@ -21,4 +21,9 @@ class CurrentWeatherLocal {
     db.writeTxn(() => db.isarCurrentWeatherDtos.put(dto));
     return dto;
   }
+
+  CurrentWeather getCurrentWeatherFromDb() {
+    final dto = db.isarCurrentWeatherDtos.getSync(0);
+    return dto!.toEntity();
+  }
 }
