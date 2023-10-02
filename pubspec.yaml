@@ -27,6 +27,7 @@ dependencies:
   hooks_riverpod: ^2.3.10
   intl: ^0.18.1
   isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
   json_annotation: ^4.8.1
   logging: ^1.2.0
   package_info_plus: ^4.1.0
@@ -43,6 +44,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^2.4.1
   go_router_builder: ^2.3.1
+  isar_generator: ^3.1.0+1
   json_serializable: ^6.7.1
   riverpod_generator: ^2.3.1
   riverpod_lint: ^2.0.3
@@ -55,3 +57,8 @@ flutter:
 
 assets:
   - .env.json
+
+global_options:
+  freezed:freezed:
+    runs_before:
+      - isar_generator:isar_generator
