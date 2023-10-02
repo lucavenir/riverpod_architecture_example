@@ -19,13 +19,4 @@ class CurrentWeatherService {
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location) {
     return repository.getCurrentWeather(location);
   }
-
-  // Serve esporre questi servizi?
-  // IsarCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
-  //   return repository.saveCurrentWeather(currentWeather);
-  // }
-
-  // CurrentWeather getCurrentWeatherFromIsar() {
-  //   return repository.getCurrentWeatherFromDb();
-  // }
 }

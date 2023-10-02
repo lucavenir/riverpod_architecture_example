@@ -72,7 +72,7 @@ Logger _initRiverpodCrashlytics() {
 Future<Isar> _initializeIsar() async {
   final dir = await getApplicationDocumentsDirectory();
   final isar = await Isar.open(
-    [IsarCurrentWeatherDtoSchema],
+    [LocalCurrentWeatherDtoSchema],
     name: 'riverpod_architecture_example',
     directory: dir.path,
     maxSizeMiB: 2 * Isar.defaultMaxSizeMiB,

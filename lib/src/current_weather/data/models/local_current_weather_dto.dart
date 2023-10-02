@@ -1,10 +1,10 @@
 import 'package:isar/isar.dart';
 
-part 'isar_current_weather_dto.g.dart';
+part 'local_current_weather_dto.g.dart';
 
 @collection
-class IsarCurrentWeatherDto {
-  IsarCurrentWeatherDto({
+class LocalCurrentWeatherDto {
+  LocalCurrentWeatherDto({
     required this.weather,
     required this.image,
     required this.updatedAt,

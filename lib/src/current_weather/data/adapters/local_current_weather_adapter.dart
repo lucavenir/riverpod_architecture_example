@@ -1,9 +1,9 @@
 import '../../domain/entities/current_weather.dart';
 import '../models/isar_current_weather_dto.dart';
 
-extension CurrentWeatherToIsarCurrentWeatherAdapter on CurrentWeather {
-  IsarCurrentWeatherDto toDto() {
-    return IsarCurrentWeatherDto(
+extension CurrentWeatherToLocalCurrentWeatherAdapter on CurrentWeather {
+  LocalCurrentWeatherDto toDto() {
+    return LocalCurrentWeatherDto(
       weather: weather,
       image: image,
       temp: temp,
@@ -15,7 +15,7 @@ extension CurrentWeatherToIsarCurrentWeatherAdapter on CurrentWeather {
   }
 }
 
-extension IsarCurrentWeatherToEntityAdapter on IsarCurrentWeatherDto {
+extension LocalCurrentWeatherToEntityAdapter on LocalCurrentWeatherDto {
   CurrentWeather toEntity() {
     return CurrentWeather(
       weather: weather,
