@@ -9,11 +9,11 @@ import 'core/init.dart';
 
 void main() {
   hierarchicalLoggingEnabled = true;
-  final (logger, crashlytics) = init();
+  final (logger, crashlytics, isar) = init();
 
   runApp(
     ProviderScope(
-      observers: [logger, crashlytics],
+      observers: [logger, crashlytics, isar],
       child: const App(),
     ),
   );

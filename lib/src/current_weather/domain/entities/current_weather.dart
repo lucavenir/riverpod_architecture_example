@@ -18,7 +18,7 @@ class CurrentWeather with _$CurrentWeather {
     required String image,
 
     /// a number for the perceived temperature
-    required double perceivedtemp,
+    required double perceivedTemp,
 
     /// a number for the humidity percentage
     required double humidity,
