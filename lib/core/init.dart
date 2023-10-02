@@ -9,7 +9,7 @@ import 'package:stack_trace/stack_trace.dart';
 import '../logs/logger_color.dart';
 import '../logs/riverpod_crashlytics.dart';
 import '../logs/riverpod_logger.dart';
-import '../src/current_weather/data/models/isar_current_weather_dto.dart';
+import '../src/current_weather/data/models/local_current_weather_dto.dart';
 
 Future<(RiverpodLogger, RiverpodCrashlytics, Isar)> init() async {
   hierarchicalLoggingEnabled = true;

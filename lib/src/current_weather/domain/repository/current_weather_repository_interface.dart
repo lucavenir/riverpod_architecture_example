@@ -2,7 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/connectivity_check_provider.dart';
 import '../../../locations/domain/entities/current_location.dart';
-import '../../data/models/isar_current_weather_dto.dart';
+import '../../data/models/local_current_weather_dto.dart';
 import '../../data/repository/current_weather_repository.dart';
 import '../../data/sources/current_weather_api.dart';
 import '../../data/sources/current_weather_local.dart';
