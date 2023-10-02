@@ -9,7 +9,21 @@ extension CurrentWeatherToIsarCurrentWeatherAdapter on CurrentWeather {
       temp: temp,
       updatedAt: updatedAt,
       wind: wind,
-      perceivedtemp: perceivedTemp,
+      perceivedTemp: perceivedTemp,
+      humidity: humidity,
+    );
+  }
+}
+
+extension IsarCurrentWeatherToEntityAdapter on IsarCurrentWeatherDto {
+  CurrentWeather toEntity() {
+    return CurrentWeather(
+      weather: weather,
+      image: image,
+      temp: temp,
+      updatedAt: updatedAt,
+      wind: wind,
+      perceivedTemp: perceivedTemp,
       humidity: humidity,
     );
   }
