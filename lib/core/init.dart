@@ -76,8 +76,6 @@ Future<Isar> _initializeIsar() async {
     name: 'riverpod_architecture_example',
     directory: dir.path,
     maxSizeMiB: 2 * Isar.defaultMaxSizeMiB,
-    // ignore: avoid_redundant_argument_values
-    inspector: kDebugMode,
   );
 
   return isar;

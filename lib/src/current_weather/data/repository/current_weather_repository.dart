@@ -20,8 +20,9 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
     final connection = await connectivity.checkConnectivity();
     final hasInternet = connection != ConnectivityResult.none;
     if (!hasInternet) {
+      // Try to get from isar
       throw const NoInternetAvailableException();
-    } //TODO implement Local;
+    }
 
     final result = await api.current(location.cityName);
     final model = CurrentWeatherDto.fromJson(result);

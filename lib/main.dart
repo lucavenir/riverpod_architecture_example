@@ -4,16 +4,23 @@ import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logging/logging.dart';
 
+import 'clients/local_db.dart';
 import 'core/app.dart';
 import 'core/init.dart';
 
-void main() {
+void main() async {
   hierarchicalLoggingEnabled = true;
-  final (logger, crashlytics, isar) = init();
+  final (logger, crashlytics, isar) = await init();
 
   runApp(
     ProviderScope(
-      observers: [logger, crashlytics, isar],
+      observers: [logger, crashlytics],
+      overrides: [
+        localDbProvider.overrideWith((ref) {
+          ref.keepAlive();
+          return isar;
+        }),
+      ],
       child: const App(),
     ),
   );

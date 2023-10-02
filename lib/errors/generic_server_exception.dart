@@ -1,7 +1,5 @@
 class NoInternetAvailableException implements Exception {
   const NoInternetAvailableException();
   @override
-  String toString() {
-    return 'Something went wrong';
-  }
+  String toString() => 'No internet available. Is this mic on?';
 }
