@@ -1,11 +1,11 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-import '../../../../errors/generic_server_exception.dart';
 import '../../../locations/domain/entities/current_location.dart';
 import '../../domain/entities/current_weather.dart';
 import '../../domain/repository/current_weather_repository_interface.dart';
 import '../adapters/current_weather_from_dto.dart';
 import '../models/current_weather_dto.dart';
+import '../models/local_current_weather_dto.dart';
 import '../sources/current_weather_api.dart';
 import '../sources/current_weather_local.dart';
 
@@ -20,11 +20,21 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
     final connection = await connectivity.checkConnectivity();
     final hasInternet = connection != ConnectivityResult.none;
     if (!hasInternet) {
-      throw const NoInternetAvailableException();
-    } //TODO implement Local;
+      final currentWeather = _getCurrentWeatherFromDb();
+      return currentWeather;
+    }
 
     final result = await api.current(location.cityName);
     final model = CurrentWeatherDto.fromJson(result);
+    _saveCurrentWeather(model.toEntity());
     return model.toEntity();
+  }
+
+  LocalCurrentWeatherDto _saveCurrentWeather(CurrentWeather currentWeather) {
+    return local.saveCurrentWeather(currentWeather);
+  }
+
+  CurrentWeather _getCurrentWeatherFromDb() {
+    return local.getCurrentWeatherFromDb();
   }
 }

@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../base/json.dart';
-import '../../../../client/dio.dart';
+import '../../../../clients/dio.dart';
 
 part 'astronomy_api.g.dart';
 

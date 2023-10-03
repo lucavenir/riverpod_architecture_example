@@ -9,3 +9,10 @@ Connectivity connectivityCheck(ConnectivityCheckRef ref) {
   final connectivity = Connectivity();
   return connectivity;
 }
+
+@riverpod
+Stream<ConnectivityResult> connectivityStream(ConnectivityStreamRef ref) async* {
+  final client = ref.watch(connectivityCheckProvider);
+  yield await client.checkConnectivity();
+  yield* client.onConnectivityChanged;
+}
