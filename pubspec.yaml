@@ -25,6 +25,7 @@ dependencies:
   go_router: ^8.2.0
   google_fonts: ^5.1.0
   hooks_riverpod: ^2.3.10
+  internet_connection_checker: ^1.0.0+1
   intl: ^0.18.1
   isar: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
