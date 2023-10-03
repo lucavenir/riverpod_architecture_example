@@ -1,5 +1,4 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
-
+import '../../../../clients/connectivity_check_provider.dart';
 import '../../../locations/domain/entities/current_location.dart';
 import '../../domain/entities/current_weather.dart';
 import '../../domain/repository/current_weather_repository_interface.dart';
@@ -13,16 +12,12 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
   CurrentWeatherRepository(this.api, this.local, this.connectivity);
   final CurrentWeatherApi api;
   final CurrentWeatherLocal local;
-  final Connectivity connectivity;
+  final ConnectionCheck connectivity;
 
   @override
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location) async {
-    final connection = await connectivity.checkConnectivity();
-    final hasInternet = connection != ConnectivityResult.none;
-    if (!hasInternet) {
-      final currentWeather = _getCurrentWeatherFromDb();
-      return currentWeather;
-    }
+    final hasInternet = await connectivity.checkFullConnectivity();
+    if (!hasInternet) return _getCurrentWeatherFromDb();
 
     final result = await api.current(location.cityName);
     final model = CurrentWeatherDto.fromJson(result);

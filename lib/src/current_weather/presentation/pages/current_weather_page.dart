@@ -1,7 +1,6 @@
 // ignore_for_file: use_colored_box
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -25,20 +24,17 @@ class CurrentWeatherPage extends HookConsumerWidget {
     final currentWeather = ref.watch(currentWeatherProvider);
 
     ref.listen(connectivityStreamProvider, (_, next) {
-      final data = next.asData;
-      if (data == null) return;
+      next.whenData((hasInternet) {
+        final message = hasInternet ? 'You are online' : 'You are offline';
+        final color = hasInternet ? Colors.green : Colors.red;
 
-      final hasInternet = data.value != ConnectivityResult.none;
-
-      final message = hasInternet ? 'You are online' : 'You are offline';
-      final color = hasInternet ? Colors.green : Colors.red;
-
-      final snackBar = SnackBar(
-        content: Text(message),
-        backgroundColor: color,
-        duration: const Duration(milliseconds: 1500),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        final snackBar = SnackBar(
+          content: Text(message),
+          backgroundColor: color,
+          duration: const Duration(milliseconds: 1500),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      });
     });
 
     return Scaffold(
