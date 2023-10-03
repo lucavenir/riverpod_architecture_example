@@ -30,12 +30,10 @@ class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
     return model.toEntity();
   }
 
-  @override
   LocalCurrentWeatherDto _saveCurrentWeather(CurrentWeather currentWeather) {
     return local.saveCurrentWeather(currentWeather);
   }
 
-  @override
   CurrentWeather _getCurrentWeatherFromDb() {
     return local.getCurrentWeatherFromDb();
   }
