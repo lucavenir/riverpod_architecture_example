@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/domain/entities/current_location.dart';
-import '../../data/repository/astronomy_repository.dart';
+import '../../data/repositories/astronomy_repository.dart';
 import '../../data/sources/astronomy_api.dart';
 import '../entities/sun_times.dart';
 

@@ -3,16 +3,16 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../shared/presentation/cache_for.dart';
 import '../../domain/entities/current_location.dart';
-import '../../domain/services/locations_service.dart';
+import '../../domain/interfaces/locations_repository_interface.dart';
 
-part 'current_weather_location.g.dart';
+part 'current_location_controller.g.dart';
 
 @riverpod
 class CurrentLocationController extends _$CurrentLocationController {
   @override
   Future<CurrentLocation> build() async {
-    final locationService = ref.watch(locationsServiceProvider);
-    final currentPosition = await locationService.getCurrentPosition();
+    final locationService = ref.watch(locationsRepositoryProvider);
+    final currentPosition = await locationService.getCurrentLocation();
     ref.cacheFor(60.seconds);
     return currentPosition;
   }

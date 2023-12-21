@@ -1,10 +1,10 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../data/interfaces/geolocator_interface.dart';
 import '../../data/repositories/locations_repository.dart';
 import '../../data/sources/search_api.dart';
 import '../entities/current_location.dart';
 import '../entities/locations.dart';
+import 'geolocator_interface.dart';
 
 part 'locations_repository_interface.g.dart';
 

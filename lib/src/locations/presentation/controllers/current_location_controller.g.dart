@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'current_weather_location.dart';
+part of 'current_location_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
 String _$currentLocationControllerHash() =>
-    r'079fd053aa02f652b4c7eba41fa6038f8d235767';
+    r'dcdc3da14abc05044e098ede8c834ccd14fa1bd7';
 
 /// See also [CurrentLocationController].
 @ProviderFor(CurrentLocationController)
