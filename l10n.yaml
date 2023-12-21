@@ -1,0 +1,13 @@
+arb-dir: lib/l10n/arb
+template-arb-file: app_en.arb
+output-localization-file: riverpod_weather_app_localizations.dart
+output-class: RiverpodWeatherLocalizations
+output-dir: lib/l10n/gen
+untranslated-messages-file: lib/l10n/untranslated.json
+synthetic-package: false
+nullable-getter: false
+use-deferred-loading: true
+required-resource-attributes: true
+format: true
+no-nullable-getter: true
+no-suppress-warnings: true
