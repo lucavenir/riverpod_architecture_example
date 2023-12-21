@@ -2,7 +2,6 @@ import '../../../../clients/connectivity_check_provider.dart';
 import '../../../locations/domain/entities/current_location.dart';
 import '../../domain/entities/current_weather.dart';
 import '../../domain/repository/current_weather_repository_interface.dart';
-import '../adapters/current_weather_from_dto.dart';
 import '../models/current_weather_dto.dart';
 import '../models/local_current_weather_dto.dart';
 import '../sources/current_weather_api.dart';

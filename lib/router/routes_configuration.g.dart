@@ -7,16 +7,16 @@ part of 'routes_configuration.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $counterRoute,
+      $homeRoute,
     ];
 
-RouteBase get $counterRoute => GoRouteData.$route(
+RouteBase get $homeRoute => GoRouteData.$route(
       path: '/',
-      factory: $CounterRouteExtension._fromState,
+      factory: $HomeRouteExtension._fromState,
     );
 
-extension $CounterRouteExtension on CounterRoute {
-  static CounterRoute _fromState(GoRouterState state) => const CounterRoute();
+extension $HomeRouteExtension on HomeRoute {
+  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
 
   String get location => GoRouteData.$location(
         '/',

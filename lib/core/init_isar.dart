@@ -1,10 +1,7 @@
-import 'dart:developer' as dev;
-
-import 'package:flutter/foundation.dart';
 import 'package:isar/isar.dart';
-import 'package:logging/logging.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:stack_trace/stack_trace.dart';
+
+import '../src/current_weather/data/models/local_current_weather_dto.dart';
 
 Future<Isar> initializeIsar() async {
   final dir = await getApplicationDocumentsDirectory();

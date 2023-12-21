@@ -6,7 +6,7 @@ part of 'talker.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$talkerHash() => r'd9af167928b8402047640e317bc7289c23bba474';
+String _$talkerHash() => r'93be0ae87856e4ef673474a51952f4dc1e0f1eba';
 
 /// See also [talker].
 @ProviderFor(talker)

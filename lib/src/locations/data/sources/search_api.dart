@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../clients/dio.dart';
+import '../../../../clients/http_client.dart';
 import '../../../shared/data/json.dart';
 
 part 'search_api.g.dart';

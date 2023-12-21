@@ -1,21 +1,14 @@
 import 'package:dio/dio.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:logging/logging.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 
-import '../logs/logger.dart';
-import '../logs/logger_color.dart';
 import 'talker.dart';
+
+part 'http_client.g.dart';
 
 /// Base URL of our API service
 const baseUrl = 'https://api.weatherapi.com/v1';
-
 @riverpod
 Dio httpClient(
   HttpClientRef ref, {

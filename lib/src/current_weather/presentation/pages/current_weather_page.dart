@@ -144,7 +144,7 @@ class _WeatherIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizeFactor = MediaQuery.of(context).textScaleFactor;
+    final sizeFactor = MediaQuery.textScaleFactorOf(context);
     final textTheme = Theme.of(context).textTheme;
 
     return Padding(

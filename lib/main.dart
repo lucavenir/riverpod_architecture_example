@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'clients/local_db.dart';
 import 'clients/talker.dart';
 import 'core/init_isar.dart';
 import 'core/init_talker.dart';
@@ -20,6 +21,7 @@ Future<void> main() async {
           ref.keepAlive();
           return talker;
         }),
+        localDbProvider.overrideWithValue(isar),
       ],
       observers: [RiverpodWeatherProviderObserver(talker)],
       child: const RiverpodWeather(),

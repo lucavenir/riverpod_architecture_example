@@ -4,7 +4,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../clients/local_db.dart';
 import '../../domain/entities/current_weather.dart';
 import '../../domain/errors/no_data_available_exception.dart';
-import '../adapters/local_current_weather_adapter.dart';
 import '../models/local_current_weather_dto.dart';
 
 part 'current_weather_local.g.dart';
@@ -20,7 +19,7 @@ class CurrentWeatherLocal {
   final Isar db;
 
   LocalCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
-    final dto = currentWeather.toDto();
+    final dto = LocalCurrentWeatherDto.fromEntity(currentWeather);
     db.writeTxnSync(() => db.localCurrentWeatherDtos.putSync(dto));
     return dto;
   }
