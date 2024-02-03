@@ -6,7 +6,7 @@ part of 'http_client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$httpClientHash() => r'f586f711b25a30bb90095c402d0058fd42705544';
+String _$httpClientHash() => r'8cd8f374bcd51a214c361f15e10a1b429ea31e62';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -41,17 +41,11 @@ class HttpClientFamily extends Family<Dio> {
   /// See also [httpClient].
   HttpClientProvider call({
     required String loggerLabel,
-    bool logRequestHeader = false,
-    bool logRequestBody = false,
-    bool logResponseHeader = false,
-    bool logResponseBody = true,
+    bool enableLogging = true,
   }) {
     return HttpClientProvider(
       loggerLabel: loggerLabel,
-      logRequestHeader: logRequestHeader,
-      logRequestBody: logRequestBody,
-      logResponseHeader: logResponseHeader,
-      logResponseBody: logResponseBody,
+      enableLogging: enableLogging,
     );
   }
 
@@ -61,10 +55,7 @@ class HttpClientFamily extends Family<Dio> {
   ) {
     return call(
       loggerLabel: provider.loggerLabel,
-      logRequestHeader: provider.logRequestHeader,
-      logRequestBody: provider.logRequestBody,
-      logResponseHeader: provider.logResponseHeader,
-      logResponseBody: provider.logResponseBody,
+      enableLogging: provider.enableLogging,
     );
   }
 
@@ -88,18 +79,12 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
   /// See also [httpClient].
   HttpClientProvider({
     required String loggerLabel,
-    bool logRequestHeader = false,
-    bool logRequestBody = false,
-    bool logResponseHeader = false,
-    bool logResponseBody = true,
+    bool enableLogging = true,
   }) : this._internal(
           (ref) => httpClient(
             ref as HttpClientRef,
             loggerLabel: loggerLabel,
-            logRequestHeader: logRequestHeader,
-            logRequestBody: logRequestBody,
-            logResponseHeader: logResponseHeader,
-            logResponseBody: logResponseBody,
+            enableLogging: enableLogging,
           ),
           from: httpClientProvider,
           name: r'httpClientProvider',
@@ -111,10 +96,7 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
           allTransitiveDependencies:
               HttpClientFamily._allTransitiveDependencies,
           loggerLabel: loggerLabel,
-          logRequestHeader: logRequestHeader,
-          logRequestBody: logRequestBody,
-          logResponseHeader: logResponseHeader,
-          logResponseBody: logResponseBody,
+          enableLogging: enableLogging,
         );
 
   HttpClientProvider._internal(
@@ -125,17 +107,11 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.loggerLabel,
-    required this.logRequestHeader,
-    required this.logRequestBody,
-    required this.logResponseHeader,
-    required this.logResponseBody,
+    required this.enableLogging,
   }) : super.internal();
 
   final String loggerLabel;
-  final bool logRequestHeader;
-  final bool logRequestBody;
-  final bool logResponseHeader;
-  final bool logResponseBody;
+  final bool enableLogging;
 
   @override
   Override overrideWith(
@@ -151,10 +127,7 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         loggerLabel: loggerLabel,
-        logRequestHeader: logRequestHeader,
-        logRequestBody: logRequestBody,
-        logResponseHeader: logResponseHeader,
-        logResponseBody: logResponseBody,
+        enableLogging: enableLogging,
       ),
     );
   }
@@ -168,20 +141,14 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
   bool operator ==(Object other) {
     return other is HttpClientProvider &&
         other.loggerLabel == loggerLabel &&
-        other.logRequestHeader == logRequestHeader &&
-        other.logRequestBody == logRequestBody &&
-        other.logResponseHeader == logResponseHeader &&
-        other.logResponseBody == logResponseBody;
+        other.enableLogging == enableLogging;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, loggerLabel.hashCode);
-    hash = _SystemHash.combine(hash, logRequestHeader.hashCode);
-    hash = _SystemHash.combine(hash, logRequestBody.hashCode);
-    hash = _SystemHash.combine(hash, logResponseHeader.hashCode);
-    hash = _SystemHash.combine(hash, logResponseBody.hashCode);
+    hash = _SystemHash.combine(hash, enableLogging.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -191,17 +158,8 @@ mixin HttpClientRef on AutoDisposeProviderRef<Dio> {
   /// The parameter `loggerLabel` of this provider.
   String get loggerLabel;
 
-  /// The parameter `logRequestHeader` of this provider.
-  bool get logRequestHeader;
-
-  /// The parameter `logRequestBody` of this provider.
-  bool get logRequestBody;
-
-  /// The parameter `logResponseHeader` of this provider.
-  bool get logResponseHeader;
-
-  /// The parameter `logResponseBody` of this provider.
-  bool get logResponseBody;
+  /// The parameter `enableLogging` of this provider.
+  bool get enableLogging;
 }
 
 class _HttpClientProviderElement extends AutoDisposeProviderElement<Dio>
@@ -211,14 +169,7 @@ class _HttpClientProviderElement extends AutoDisposeProviderElement<Dio>
   @override
   String get loggerLabel => (origin as HttpClientProvider).loggerLabel;
   @override
-  bool get logRequestHeader => (origin as HttpClientProvider).logRequestHeader;
-  @override
-  bool get logRequestBody => (origin as HttpClientProvider).logRequestBody;
-  @override
-  bool get logResponseHeader =>
-      (origin as HttpClientProvider).logResponseHeader;
-  @override
-  bool get logResponseBody => (origin as HttpClientProvider).logResponseBody;
+  bool get enableLogging => (origin as HttpClientProvider).enableLogging;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
