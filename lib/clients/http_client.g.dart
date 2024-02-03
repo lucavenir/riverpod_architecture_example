@@ -6,7 +6,7 @@ part of 'http_client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$httpClientHash() => r'8cd8f374bcd51a214c361f15e10a1b429ea31e62';
+String _$httpClientHash() => r'0a40adc15d1676950e96327811a188f2a852a426';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -40,11 +40,9 @@ class HttpClientFamily extends Family<Dio> {
 
   /// See also [httpClient].
   HttpClientProvider call({
-    required String loggerLabel,
     bool enableLogging = true,
   }) {
     return HttpClientProvider(
-      loggerLabel: loggerLabel,
       enableLogging: enableLogging,
     );
   }
@@ -54,7 +52,6 @@ class HttpClientFamily extends Family<Dio> {
     covariant HttpClientProvider provider,
   ) {
     return call(
-      loggerLabel: provider.loggerLabel,
       enableLogging: provider.enableLogging,
     );
   }
@@ -78,12 +75,10 @@ class HttpClientFamily extends Family<Dio> {
 class HttpClientProvider extends AutoDisposeProvider<Dio> {
   /// See also [httpClient].
   HttpClientProvider({
-    required String loggerLabel,
     bool enableLogging = true,
   }) : this._internal(
           (ref) => httpClient(
             ref as HttpClientRef,
-            loggerLabel: loggerLabel,
             enableLogging: enableLogging,
           ),
           from: httpClientProvider,
@@ -95,7 +90,6 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
           dependencies: HttpClientFamily._dependencies,
           allTransitiveDependencies:
               HttpClientFamily._allTransitiveDependencies,
-          loggerLabel: loggerLabel,
           enableLogging: enableLogging,
         );
 
@@ -106,11 +100,9 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
     required super.allTransitiveDependencies,
     required super.debugGetCreateSourceHash,
     required super.from,
-    required this.loggerLabel,
     required this.enableLogging,
   }) : super.internal();
 
-  final String loggerLabel;
   final bool enableLogging;
 
   @override
@@ -126,7 +118,6 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
-        loggerLabel: loggerLabel,
         enableLogging: enableLogging,
       ),
     );
@@ -139,15 +130,12 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
 
   @override
   bool operator ==(Object other) {
-    return other is HttpClientProvider &&
-        other.loggerLabel == loggerLabel &&
-        other.enableLogging == enableLogging;
+    return other is HttpClientProvider && other.enableLogging == enableLogging;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, loggerLabel.hashCode);
     hash = _SystemHash.combine(hash, enableLogging.hashCode);
 
     return _SystemHash.finish(hash);
@@ -155,9 +143,6 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
 }
 
 mixin HttpClientRef on AutoDisposeProviderRef<Dio> {
-  /// The parameter `loggerLabel` of this provider.
-  String get loggerLabel;
-
   /// The parameter `enableLogging` of this provider.
   bool get enableLogging;
 }
@@ -166,8 +151,6 @@ class _HttpClientProviderElement extends AutoDisposeProviderElement<Dio>
     with HttpClientRef {
   _HttpClientProviderElement(super.provider);
 
-  @override
-  String get loggerLabel => (origin as HttpClientProvider).loggerLabel;
   @override
   bool get enableLogging => (origin as HttpClientProvider).enableLogging;
 }

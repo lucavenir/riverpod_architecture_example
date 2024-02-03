@@ -7,7 +7,7 @@ part of 'forecast_weather_api.dart';
 // **************************************************************************
 
 String _$forecastWeatherApiHash() =>
-    r'ae2553b916b4327b65ec1f2ffcbac4310630105a';
+    r'd49459890c6df9e3c634aab923d3dc8f9fb35745';
 
 /// See also [forecastWeatherApi].
 @ProviderFor(forecastWeatherApi)

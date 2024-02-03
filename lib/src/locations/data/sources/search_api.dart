@@ -11,7 +11,7 @@ const locationsApiDebugLogLabel = 'LocationsApi';
 
 @riverpod
 SearchApi locationsApi(LocationsApiRef ref) {
-  final client = ref.watch(httpClientProvider(loggerLabel: locationsApiDebugLogLabel));
+  final client = ref.watch(httpClientProvider());
 
   return SearchApi(client);
 }

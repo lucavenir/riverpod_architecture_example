@@ -8,7 +8,7 @@ part 'current_weather_api.g.dart';
 
 @riverpod
 CurrentWeatherApi currentWeatherApi(CurrentWeatherApiRef ref) {
-  final client = ref.watch(httpClientProvider(loggerLabel: 'CurrentWeatherApi'));
+  final client = ref.watch(httpClientProvider());
   return CurrentWeatherApi(client);
 }
 

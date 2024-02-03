@@ -6,7 +6,7 @@ part of 'astronomy_api.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$astronomyApiHash() => r'772dbe4f0b1e1686595057cec28a0d3c7140b5e9';
+String _$astronomyApiHash() => r'8fcc60d4a3b686d9bd39e5ec5f78f3f0429648ef';
 
 /// See also [astronomyApi].
 @ProviderFor(astronomyApi)

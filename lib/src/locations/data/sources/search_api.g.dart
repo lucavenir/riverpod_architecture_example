@@ -6,7 +6,7 @@ part of 'search_api.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$locationsApiHash() => r'25118110fa07598ebadd2c97be877f82656bcf88';
+String _$locationsApiHash() => r'c68bc728757d80cd7f8fa17c55a55e8244f58583';
 
 /// See also [locationsApi].
 @ProviderFor(locationsApi)

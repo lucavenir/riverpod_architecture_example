@@ -8,7 +8,7 @@ part 'astronomy_api.g.dart';
 
 @riverpod
 AstronomyApi astronomyApi(AstronomyApiRef ref) {
-  final client = ref.watch(httpClientProvider(loggerLabel: 'AstronomyApi'));
+  final client = ref.watch(httpClientProvider());
 
   return AstronomyApi(client);
 }
