@@ -26,4 +26,4 @@ GoRouter router(RouterRef ref) {
 }
 
 @riverpod
-String initialLocation(InitialLocationRef ref) => '/';
+String initialLocation(InitialLocationRef ref) => '/splash';

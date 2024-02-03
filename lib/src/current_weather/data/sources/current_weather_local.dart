@@ -10,7 +10,7 @@ part 'current_weather_local.g.dart';
 
 @riverpod
 CurrentWeatherLocal currentWeatherLocal(CurrentWeatherLocalRef ref) {
-  final db = ref.watch(localDbProvider);
+  final db = ref.watch(localDbProvider.select((value) => value.requireValue));
   return CurrentWeatherLocal(db);
 }
 

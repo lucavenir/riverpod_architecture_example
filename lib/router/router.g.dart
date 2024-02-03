@@ -20,7 +20,7 @@ final routerProvider = AutoDisposeProvider<GoRouter>.internal(
 );
 
 typedef RouterRef = AutoDisposeProviderRef<GoRouter>;
-String _$initialLocationHash() => r'a2d8c5b8fe5c0e72535d0781099daaede93501cf';
+String _$initialLocationHash() => r'd728fe399ea383d7607a72ba504a8d4b021c0a48';
 
 /// See also [initialLocation].
 @ProviderFor(initialLocation)

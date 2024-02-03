@@ -6,11 +6,11 @@ part of 'local_db.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$localDbHash() => r'3aec0691ab476a30a7e19dccbde5ac0d043528a4';
+String _$localDbHash() => r'c2eabdbfd023e90ed61f5835f1ccbc184a0a315a';
 
 /// See also [localDb].
 @ProviderFor(localDb)
-final localDbProvider = AutoDisposeProvider<Isar>.internal(
+final localDbProvider = AutoDisposeFutureProvider<Isar>.internal(
   localDb,
   name: r'localDbProvider',
   debugGetCreateSourceHash:
@@ -19,6 +19,6 @@ final localDbProvider = AutoDisposeProvider<Isar>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef LocalDbRef = AutoDisposeProviderRef<Isar>;
+typedef LocalDbRef = AutoDisposeFutureProviderRef<Isar>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
