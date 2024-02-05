@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../shared/presentation/widgets/standard_when.dart';
-import '../providers/forecast_weather_provider.dart';
+import '../providers/forecast_weather.provider.dart';
 import '../view/forecast_weather_views.dart';
 import 'forecast_box.dart';
 

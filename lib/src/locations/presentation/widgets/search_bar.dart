@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../domain/entities/current_location.dart';
-import '../controllers/current_location_controller.dart';
+import '../../domain/entities/current_location.model.dart';
+import '../controllers/current_location.controller.dart';
 import 'location_results_widget.dart';
 
 class LocationSearchBar extends HookConsumerWidget {
@@ -32,27 +32,48 @@ class LocationSearchBar extends HookConsumerWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-      child: TextField(
+      child: SearchBar(
         onSubmitted: (_) => dialogBuilder(),
         controller: controller,
-        decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-          hintText: 'Your city...',
-          prefixIcon: isSearchEmpty
-              ? null
-              : IconButton(
-                  onPressed: controller.clear,
-                  icon: const Icon(Icons.close),
-                ),
-          suffixIcon: IconButton(
-            icon: const Icon(
+        hintText: 'Your city...',
+        leading: isSearchEmpty
+            ? null
+            : IconButton.filledTonal(
+                onPressed: controller.clear,
+                icon: const Icon(Icons.close),
+                color: Theme.of(context).colorScheme.primary,
+              ),
+        trailing: [
+          IconButton.filledTonal(
+            icon: Icon(
               Icons.search,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.primary,
             ),
             onPressed: dialogBuilder,
           ),
-        ),
+        ],
       ),
+      //     TextField(
+      //   onSubmitted: (_) => dialogBuilder(),
+      //   controller: controller,
+      //   decoration: InputDecoration(
+      //     contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      //     hintText: 'Your city...',
+      //     prefixIcon: isSearchEmpty
+      //         ? null
+      //         : IconButton(
+      //             onPressed: controller.clear,
+      //             icon: const Icon(Icons.close),
+      //           ),
+      //     suffixIcon: IconButton(
+      //       icon: const Icon(
+      //         Icons.search,
+      //         color: Colors.white,
+      //       ),
+      //       onPressed: dialogBuilder,
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

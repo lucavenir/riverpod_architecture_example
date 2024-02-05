@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-import '../../domain/entities/forecast_day.dart';
+import '../../domain/entities/forecast_day.model.dart';
 
 extension TemperatureView on ForecastDay {
   String get formattedTemperature {

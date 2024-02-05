@@ -4,12 +4,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../clients/connectivity_check_provider.dart';
+import '../../../../clients/connectivity_check.provider.dart';
 import '../../../forecast/presentation/widgets/forecast_widget.dart';
-import '../../../locations/presentation/controllers/current_location_controller.dart';
+import '../../../locations/presentation/controllers/current_location.controller.dart';
 import '../../../locations/presentation/widgets/search_bar.dart';
 import '../../../shared/presentation/widgets/standard_when.dart';
-import '../providers/current_weather_provider.dart';
+import '../providers/current_weather.provider.dart';
 import '../view/current_date_view.dart';
 import '../view/current_weather_views.dart';
 

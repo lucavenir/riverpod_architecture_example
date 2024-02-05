@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-import '../../domain/entities/current_weather.dart';
+import '../../domain/entities/current_weather.model.dart';
 
 extension HumidityView on CurrentWeather {
   String get formattedHumidity {
