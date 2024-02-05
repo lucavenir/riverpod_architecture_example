@@ -12,7 +12,7 @@ class ForecastDay with _$ForecastDay {
     required DateTime date,
     required String image,
   }) = _ForecastDay;
-  ForecastDay._();
+  const ForecastDay._();
   factory ForecastDay.fromModel(ForecastDayModel dto) {
     final truncatedUrl = dto.day.condition.icon.substring(2);
     final imageUrl = 'https://$truncatedUrl';

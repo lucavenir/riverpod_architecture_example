@@ -15,7 +15,7 @@ class ForecastWeather with _$ForecastWeather {
     required List<ForecastDay> previsions,
   }) = _ForecastWeather;
 
-  ForecastWeather._();
+  const ForecastWeather._();
   factory ForecastWeather.fromModel(ForecastWeatherModel dto) {
     return ForecastWeather(
       updatedAt: dto.current.lastUpdated,
