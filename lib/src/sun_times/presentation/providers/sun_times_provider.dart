@@ -13,5 +13,5 @@ FutureOr<SunTimes> sunTimes(SunTimesRef ref) async {
   final currentLocation = await ref.watch(currentLocationControllerProvider.future);
   final sunTimes = await repo.getTodaySunTimes(currentLocation);
 
-  return sunTimes;
+  return SunTimes.fromModel(sunTimes);
 }
