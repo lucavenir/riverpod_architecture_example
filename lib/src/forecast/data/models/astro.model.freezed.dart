@@ -25,7 +25,7 @@ mixin _$AstroModel {
   String? get moonrise => throw _privateConstructorUsedError;
   String? get moonset => throw _privateConstructorUsedError;
   String? get moonPhase => throw _privateConstructorUsedError;
-  String? get moonIllumination => throw _privateConstructorUsedError;
+  int? get moonIllumination => throw _privateConstructorUsedError;
   int? get isMoonUp => throw _privateConstructorUsedError;
   int? get isSunUp => throw _privateConstructorUsedError;
 
@@ -47,7 +47,7 @@ abstract class $AstroModelCopyWith<$Res> {
       String? moonrise,
       String? moonset,
       String? moonPhase,
-      String? moonIllumination,
+      int? moonIllumination,
       int? isMoonUp,
       int? isSunUp});
 }
@@ -98,7 +98,7 @@ class _$AstroModelCopyWithImpl<$Res, $Val extends AstroModel>
       moonIllumination: freezed == moonIllumination
           ? _value.moonIllumination
           : moonIllumination // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       isMoonUp: freezed == isMoonUp
           ? _value.isMoonUp
           : isMoonUp // ignore: cast_nullable_to_non_nullable
@@ -125,7 +125,7 @@ abstract class _$$AstroModelImplCopyWith<$Res>
       String? moonrise,
       String? moonset,
       String? moonPhase,
-      String? moonIllumination,
+      int? moonIllumination,
       int? isMoonUp,
       int? isSunUp});
 }
@@ -174,7 +174,7 @@ class __$$AstroModelImplCopyWithImpl<$Res>
       freezed == moonIllumination
           ? _value.moonIllumination
           : moonIllumination // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       freezed == isMoonUp
           ? _value.isMoonUp
           : isMoonUp // ignore: cast_nullable_to_non_nullable
@@ -207,7 +207,7 @@ class _$AstroModelImpl implements _AstroModel {
   @override
   final String? moonPhase;
   @override
-  final String? moonIllumination;
+  final int? moonIllumination;
   @override
   final int? isMoonUp;
   @override
@@ -263,7 +263,7 @@ abstract class _AstroModel implements AstroModel {
       final String? moonrise,
       final String? moonset,
       final String? moonPhase,
-      final String? moonIllumination,
+      final int? moonIllumination,
       final int? isMoonUp,
       final int? isSunUp) = _$AstroModelImpl;
 
@@ -281,7 +281,7 @@ abstract class _AstroModel implements AstroModel {
   @override
   String? get moonPhase;
   @override
-  String? get moonIllumination;
+  int? get moonIllumination;
   @override
   int? get isMoonUp;
   @override

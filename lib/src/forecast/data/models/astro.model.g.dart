@@ -17,7 +17,7 @@ _$AstroModelImpl _$$AstroModelImplFromJson(Map<String, dynamic> json) =>
           $checkedConvert('moonrise', (v) => v as String?),
           $checkedConvert('moonset', (v) => v as String?),
           $checkedConvert('moon_phase', (v) => v as String?),
-          $checkedConvert('moon_illumination', (v) => v as String?),
+          $checkedConvert('moon_illumination', (v) => v as int?),
           $checkedConvert('is_moon_up', (v) => v as int?),
           $checkedConvert('is_sun_up', (v) => v as int?),
         );
