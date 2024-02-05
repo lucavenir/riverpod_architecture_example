@@ -2,7 +2,7 @@ import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/local_db.client.dart';
-import '../../domain/entities/current_weather.dart';
+import '../../domain/entities/current_weather.model.dart';
 import '../../domain/errors/no_data_available_exception.dart';
 import '../models/local_current_weather.model.dart';
 

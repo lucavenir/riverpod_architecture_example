@@ -1,6 +1,6 @@
 import 'package:isar/isar.dart';
 
-import '../../domain/entities/current_weather.dart';
+import '../../domain/entities/current_weather.model.dart';
 
 part 'local_current_weather.model.g.dart';
 
