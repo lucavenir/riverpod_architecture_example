@@ -1,8 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/domain/entities/current_location.dart';
-import '../../domain/entities/forecast_weather.dart';
-import '../adapters/forecast_weather_from_dto.dart';
 import '../models/forecast_weather_dto.dart';
 import '../sources/forecast_weather_api.dart';
 
@@ -18,13 +16,13 @@ class ForecastWeatherRepository {
   const ForecastWeatherRepository(this.api);
   final ForecastWeatherApi api;
 
-  Future<ForecastWeather> getForecastWeather(CurrentLocation location, int days) async {
+  Future<ForecastWeatherDto> getForecastWeather(CurrentLocation location, int days) async {
     final result = await api.forecast(
       q: location.cityName,
       days: days,
     );
 
     final dto = ForecastWeatherDto.fromJson(result);
-    return dto.toDomain();
+    return dto;
   }
 }

@@ -12,5 +12,5 @@ FutureOr<ForecastWeather> forecastWeather(ForecastWeatherRef ref) async {
   final location = await ref.watch(currentLocationControllerProvider.future);
   final forecastWeather = await service.getForecastWeather(location, 14);
 
-  return forecastWeather;
+  return ForecastWeather.fromModel(forecastWeather);
 }

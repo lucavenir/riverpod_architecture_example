@@ -105,10 +105,11 @@ class __$$ForecastWeatherImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ForecastWeatherImpl implements _ForecastWeather {
+class _$ForecastWeatherImpl extends _ForecastWeather {
   const _$ForecastWeatherImpl(
       {required this.updatedAt, required final List<ForecastDay> previsions})
-      : _previsions = previsions;
+      : _previsions = previsions,
+        super._();
 
   /// latest update of the weather conditions
   @override
@@ -153,10 +154,11 @@ class _$ForecastWeatherImpl implements _ForecastWeather {
           this, _$identity);
 }
 
-abstract class _ForecastWeather implements ForecastWeather {
+abstract class _ForecastWeather extends ForecastWeather {
   const factory _ForecastWeather(
       {required final DateTime updatedAt,
       required final List<ForecastDay> previsions}) = _$ForecastWeatherImpl;
+  const _ForecastWeather._() : super._();
 
   @override
 
