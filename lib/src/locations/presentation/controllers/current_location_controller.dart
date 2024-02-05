@@ -14,7 +14,7 @@ class CurrentLocationController extends _$CurrentLocationController {
     final locationService = ref.watch(locationsRepositoryProvider);
     final currentPosition = await locationService.getCurrentLocation();
     ref.cacheFor(60.seconds);
-    return currentPosition;
+    return CurrentLocation.fromModel(currentPosition);
   }
 
   void updateLocation(CurrentLocation location) => state = AsyncValue.data(location);
