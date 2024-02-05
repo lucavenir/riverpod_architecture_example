@@ -26,8 +26,8 @@ class CurrentWeatherRepository {
   final ConnectionCheck connectivity;
 
   Future<CurrentWeatherModel> getCurrentWeather(CurrentLocation location) async {
-    // final hasInternet = await connectivity.checkFullConnectivity();
-    // if (!hasInternet) return _getCurrentWeatherFromDb(); //TODO(arturo) wtf do i do with this...
+    final hasInternet = await connectivity.checkFullConnectivity();
+    if (!hasInternet) return _getCurrentWeatherFromDb();
 
     final result = await api.current(location.cityName);
     final model = CurrentWeatherModel.fromJson(result);
@@ -39,7 +39,8 @@ class CurrentWeatherRepository {
     return local.saveCurrentWeather(currentWeather);
   }
 
-  LocalCurrentWeatherModel _getCurrentWeatherFromDb() {
-    return local.getCurrentWeatherFromDb();
+  CurrentWeatherModel _getCurrentWeatherFromDb() {
+    final model = local.getCurrentWeatherFromDb();
+    return CurrentWeatherModel.fromDb(model);
   }
 }
