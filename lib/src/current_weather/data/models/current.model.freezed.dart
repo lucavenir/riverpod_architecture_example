@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'current_dto.dart';
+part of 'current.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,13 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-CurrentDto _$CurrentDtoFromJson(Map<String, dynamic> json) {
-  return _CurrentDto.fromJson(json);
+CurrentModel _$CurrentModelFromJson(Map<String, dynamic> json) {
+  return _CurrentModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$CurrentDto {
-  ConditionDto get condition => throw _privateConstructorUsedError;
+mixin _$CurrentModel {
+  ConditionModel get condition => throw _privateConstructorUsedError;
   DateTime get lastUpdated => throw _privateConstructorUsedError;
   double get tempC => throw _privateConstructorUsedError;
   double get windKph => throw _privateConstructorUsedError;
@@ -46,18 +46,18 @@ mixin _$CurrentDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CurrentDtoCopyWith<CurrentDto> get copyWith =>
+  $CurrentModelCopyWith<CurrentModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CurrentDtoCopyWith<$Res> {
-  factory $CurrentDtoCopyWith(
-          CurrentDto value, $Res Function(CurrentDto) then) =
-      _$CurrentDtoCopyWithImpl<$Res, CurrentDto>;
+abstract class $CurrentModelCopyWith<$Res> {
+  factory $CurrentModelCopyWith(
+          CurrentModel value, $Res Function(CurrentModel) then) =
+      _$CurrentModelCopyWithImpl<$Res, CurrentModel>;
   @useResult
   $Res call(
-      {ConditionDto condition,
+      {ConditionModel condition,
       DateTime lastUpdated,
       double tempC,
       double windKph,
@@ -81,13 +81,13 @@ abstract class $CurrentDtoCopyWith<$Res> {
       double? gustMph,
       double? gustKph});
 
-  $ConditionDtoCopyWith<$Res> get condition;
+  $ConditionModelCopyWith<$Res> get condition;
 }
 
 /// @nodoc
-class _$CurrentDtoCopyWithImpl<$Res, $Val extends CurrentDto>
-    implements $CurrentDtoCopyWith<$Res> {
-  _$CurrentDtoCopyWithImpl(this._value, this._then);
+class _$CurrentModelCopyWithImpl<$Res, $Val extends CurrentModel>
+    implements $CurrentModelCopyWith<$Res> {
+  _$CurrentModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -125,7 +125,7 @@ class _$CurrentDtoCopyWithImpl<$Res, $Val extends CurrentDto>
       condition: null == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as ConditionDto,
+              as ConditionModel,
       lastUpdated: null == lastUpdated
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
@@ -219,23 +219,23 @@ class _$CurrentDtoCopyWithImpl<$Res, $Val extends CurrentDto>
 
   @override
   @pragma('vm:prefer-inline')
-  $ConditionDtoCopyWith<$Res> get condition {
-    return $ConditionDtoCopyWith<$Res>(_value.condition, (value) {
+  $ConditionModelCopyWith<$Res> get condition {
+    return $ConditionModelCopyWith<$Res>(_value.condition, (value) {
       return _then(_value.copyWith(condition: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$CurrentDtoImplCopyWith<$Res>
-    implements $CurrentDtoCopyWith<$Res> {
-  factory _$$CurrentDtoImplCopyWith(
-          _$CurrentDtoImpl value, $Res Function(_$CurrentDtoImpl) then) =
-      __$$CurrentDtoImplCopyWithImpl<$Res>;
+abstract class _$$CurrentModelImplCopyWith<$Res>
+    implements $CurrentModelCopyWith<$Res> {
+  factory _$$CurrentModelImplCopyWith(
+          _$CurrentModelImpl value, $Res Function(_$CurrentModelImpl) then) =
+      __$$CurrentModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {ConditionDto condition,
+      {ConditionModel condition,
       DateTime lastUpdated,
       double tempC,
       double windKph,
@@ -260,15 +260,15 @@ abstract class _$$CurrentDtoImplCopyWith<$Res>
       double? gustKph});
 
   @override
-  $ConditionDtoCopyWith<$Res> get condition;
+  $ConditionModelCopyWith<$Res> get condition;
 }
 
 /// @nodoc
-class __$$CurrentDtoImplCopyWithImpl<$Res>
-    extends _$CurrentDtoCopyWithImpl<$Res, _$CurrentDtoImpl>
-    implements _$$CurrentDtoImplCopyWith<$Res> {
-  __$$CurrentDtoImplCopyWithImpl(
-      _$CurrentDtoImpl _value, $Res Function(_$CurrentDtoImpl) _then)
+class __$$CurrentModelImplCopyWithImpl<$Res>
+    extends _$CurrentModelCopyWithImpl<$Res, _$CurrentModelImpl>
+    implements _$$CurrentModelImplCopyWith<$Res> {
+  __$$CurrentModelImplCopyWithImpl(
+      _$CurrentModelImpl _value, $Res Function(_$CurrentModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -298,11 +298,11 @@ class __$$CurrentDtoImplCopyWithImpl<$Res>
     Object? gustMph = freezed,
     Object? gustKph = freezed,
   }) {
-    return _then(_$CurrentDtoImpl(
+    return _then(_$CurrentModelImpl(
       condition: null == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as ConditionDto,
+              as ConditionModel,
       lastUpdated: null == lastUpdated
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
@@ -397,8 +397,8 @@ class __$$CurrentDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentDtoImpl implements _CurrentDto {
-  const _$CurrentDtoImpl(
+class _$CurrentModelImpl implements _CurrentModel {
+  const _$CurrentModelImpl(
       {required this.condition,
       required this.lastUpdated,
       required this.tempC,
@@ -423,11 +423,11 @@ class _$CurrentDtoImpl implements _CurrentDto {
       this.gustMph,
       this.gustKph});
 
-  factory _$CurrentDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CurrentDtoImplFromJson(json);
+  factory _$CurrentModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CurrentModelImplFromJson(json);
 
   @override
-  final ConditionDto condition;
+  final ConditionModel condition;
   @override
   final DateTime lastUpdated;
   @override
@@ -475,14 +475,14 @@ class _$CurrentDtoImpl implements _CurrentDto {
 
   @override
   String toString() {
-    return 'CurrentDto(condition: $condition, lastUpdated: $lastUpdated, tempC: $tempC, windKph: $windKph, humidity: $humidity, feelslikeC: $feelslikeC, lastUpdatedEpoch: $lastUpdatedEpoch, tempF: $tempF, isDay: $isDay, windMph: $windMph, windDegree: $windDegree, windDir: $windDir, pressureMb: $pressureMb, pressureIn: $pressureIn, precipMm: $precipMm, precipIn: $precipIn, cloud: $cloud, feelslikeF: $feelslikeF, visKm: $visKm, visMiles: $visMiles, uv: $uv, gustMph: $gustMph, gustKph: $gustKph)';
+    return 'CurrentModel(condition: $condition, lastUpdated: $lastUpdated, tempC: $tempC, windKph: $windKph, humidity: $humidity, feelslikeC: $feelslikeC, lastUpdatedEpoch: $lastUpdatedEpoch, tempF: $tempF, isDay: $isDay, windMph: $windMph, windDegree: $windDegree, windDir: $windDir, pressureMb: $pressureMb, pressureIn: $pressureIn, precipMm: $precipMm, precipIn: $precipIn, cloud: $cloud, feelslikeF: $feelslikeF, visKm: $visKm, visMiles: $visMiles, uv: $uv, gustMph: $gustMph, gustKph: $gustKph)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CurrentDtoImpl &&
+            other is _$CurrentModelImpl &&
             (identical(other.condition, condition) ||
                 other.condition == condition) &&
             (identical(other.lastUpdated, lastUpdated) ||
@@ -552,20 +552,20 @@ class _$CurrentDtoImpl implements _CurrentDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CurrentDtoImplCopyWith<_$CurrentDtoImpl> get copyWith =>
-      __$$CurrentDtoImplCopyWithImpl<_$CurrentDtoImpl>(this, _$identity);
+  _$$CurrentModelImplCopyWith<_$CurrentModelImpl> get copyWith =>
+      __$$CurrentModelImplCopyWithImpl<_$CurrentModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CurrentDtoImplToJson(
+    return _$$CurrentModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _CurrentDto implements CurrentDto {
-  const factory _CurrentDto(
-      {required final ConditionDto condition,
+abstract class _CurrentModel implements CurrentModel {
+  const factory _CurrentModel(
+      {required final ConditionModel condition,
       required final DateTime lastUpdated,
       required final double tempC,
       required final double windKph,
@@ -587,13 +587,13 @@ abstract class _CurrentDto implements CurrentDto {
       final double? visMiles,
       final double? uv,
       final double? gustMph,
-      final double? gustKph}) = _$CurrentDtoImpl;
+      final double? gustKph}) = _$CurrentModelImpl;
 
-  factory _CurrentDto.fromJson(Map<String, dynamic> json) =
-      _$CurrentDtoImpl.fromJson;
+  factory _CurrentModel.fromJson(Map<String, dynamic> json) =
+      _$CurrentModelImpl.fromJson;
 
   @override
-  ConditionDto get condition;
+  ConditionModel get condition;
   @override
   DateTime get lastUpdated;
   @override
@@ -640,6 +640,6 @@ abstract class _CurrentDto implements CurrentDto {
   double? get gustKph;
   @override
   @JsonKey(ignore: true)
-  _$$CurrentDtoImplCopyWith<_$CurrentDtoImpl> get copyWith =>
+  _$$CurrentModelImplCopyWith<_$CurrentModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

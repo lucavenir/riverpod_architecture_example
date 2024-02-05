@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../current_weather/data/models/condition_dto.dart';
+import '../../../current_weather/data/models/condition.model.dart';
 import '../../../shared/data/json.dart';
 
 part 'hour_dto.freezed.dart';
@@ -14,7 +14,7 @@ class HourDto with _$HourDto {
     double? tempC,
     double? tempF,
     int? isDay,
-    ConditionDto? condition,
+    ConditionModel? condition,
     double? windMph,
     double? windKph,
     double? windDegree,

@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../clients/http.client.dart';
 import '../../../shared/data/json.dart';
 
-part 'current_weather_api.g.dart';
+part 'current_weather_api.source.g.dart';
 
 @riverpod
 CurrentWeatherApi currentWeatherApi(CurrentWeatherApiRef ref) {

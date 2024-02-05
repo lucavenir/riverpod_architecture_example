@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'current_weather_location_dto.dart';
+part of 'current_weather_location.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentWeatherLocationDtoImpl _$$CurrentWeatherLocationDtoImplFromJson(
+_$CurrentWeatherLocationModelImpl _$$CurrentWeatherLocationModelImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CurrentWeatherLocationDtoImpl',
+      r'_$CurrentWeatherLocationModelImpl',
       json,
       ($checkedConvert) {
-        final val = _$CurrentWeatherLocationDtoImpl(
+        final val = _$CurrentWeatherLocationModelImpl(
           name: $checkedConvert('name', (v) => v as String),
           region: $checkedConvert('region', (v) => v as String?),
           country: $checkedConvert('country', (v) => v as String?),
@@ -27,8 +27,8 @@ _$CurrentWeatherLocationDtoImpl _$$CurrentWeatherLocationDtoImplFromJson(
       fieldKeyMap: const {'tzId': 'tz_id'},
     );
 
-Map<String, dynamic> _$$CurrentWeatherLocationDtoImplToJson(
-        _$CurrentWeatherLocationDtoImpl instance) =>
+Map<String, dynamic> _$$CurrentWeatherLocationModelImplToJson(
+        _$CurrentWeatherLocationModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'region': instance.region,

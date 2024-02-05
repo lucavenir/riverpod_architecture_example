@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/current_weather_dto.dart';
+import '../../data/models/current_weather.model.dart';
 
-part 'current_weather.freezed.dart';
+part 'current_weather.model.freezed.dart';
 
 @freezed
 class CurrentWeather with _$CurrentWeather {
@@ -29,7 +29,7 @@ class CurrentWeather with _$CurrentWeather {
     required double wind,
   }) = _CurrentWeather;
 
-  factory CurrentWeather.fromModel(CurrentWeatherDto dto) {
+  factory CurrentWeather.fromModel(CurrentWeatherModel dto) {
     final truncatedUrl = dto.current.condition.icon.substring(2);
     final imageUrl = 'https://$truncatedUrl';
 

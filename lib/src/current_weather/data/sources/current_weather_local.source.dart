@@ -4,9 +4,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../clients/local_db.client.dart';
 import '../../domain/entities/current_weather.dart';
 import '../../domain/errors/no_data_available_exception.dart';
-import '../models/local_current_weather_dto.dart';
+import '../models/local_current_weather.model.dart';
 
-part 'current_weather_local.g.dart';
+part 'current_weather_local.source.g.dart';
 
 @riverpod
 CurrentWeatherLocal currentWeatherLocal(CurrentWeatherLocalRef ref) {
@@ -18,14 +18,14 @@ class CurrentWeatherLocal {
   const CurrentWeatherLocal(this.db);
   final Isar db;
 
-  LocalCurrentWeatherDto saveCurrentWeather(CurrentWeather currentWeather) {
-    final dto = LocalCurrentWeatherDto.fromEntity(currentWeather);
-    db.writeTxnSync(() => db.localCurrentWeatherDtos.putSync(dto));
+  LocalCurrentWeatherModel saveCurrentWeather(CurrentWeather currentWeather) {
+    final dto = LocalCurrentWeatherModel.fromEntity(currentWeather);
+    db.writeTxnSync(() => db.localCurrentWeatherModels.putSync(dto));
     return dto;
   }
 
-  LocalCurrentWeatherDto getCurrentWeatherFromDb() {
-    final dto = db.writeTxnSync(() => db.localCurrentWeatherDtos.getSync(0));
+  LocalCurrentWeatherModel getCurrentWeatherFromDb() {
+    final dto = db.writeTxnSync(() => db.localCurrentWeatherModels.getSync(0));
     if (dto == null) throw const NoDataAvailableException();
     return dto;
   }

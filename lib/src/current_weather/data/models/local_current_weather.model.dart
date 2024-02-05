@@ -2,11 +2,11 @@ import 'package:isar/isar.dart';
 
 import '../../domain/entities/current_weather.dart';
 
-part 'local_current_weather_dto.g.dart';
+part 'local_current_weather.model.g.dart';
 
 @collection
-class LocalCurrentWeatherDto {
-  LocalCurrentWeatherDto({
+class LocalCurrentWeatherModel {
+  LocalCurrentWeatherModel({
     required this.weather,
     required this.image,
     required this.updatedAt,
@@ -16,8 +16,8 @@ class LocalCurrentWeatherDto {
     required this.perceivedTemp,
     this.id = 0,
   });
-  factory LocalCurrentWeatherDto.fromEntity(CurrentWeather entity) {
-    return LocalCurrentWeatherDto(
+  factory LocalCurrentWeatherModel.fromEntity(CurrentWeather entity) {
+    return LocalCurrentWeatherModel(
       weather: entity.weather,
       image: entity.image,
       temp: entity.temp,

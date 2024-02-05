@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'condition_dto.dart';
+part of 'condition.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,35 +14,35 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ConditionDto _$ConditionDtoFromJson(Map<String, dynamic> json) {
-  return _ConditionDto.fromJson(json);
+ConditionModel _$ConditionModelFromJson(Map<String, dynamic> json) {
+  return _ConditionModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ConditionDto {
+mixin _$ConditionModel {
   String get text => throw _privateConstructorUsedError;
   String get icon => throw _privateConstructorUsedError;
   int? get code => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConditionDtoCopyWith<ConditionDto> get copyWith =>
+  $ConditionModelCopyWith<ConditionModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ConditionDtoCopyWith<$Res> {
-  factory $ConditionDtoCopyWith(
-          ConditionDto value, $Res Function(ConditionDto) then) =
-      _$ConditionDtoCopyWithImpl<$Res, ConditionDto>;
+abstract class $ConditionModelCopyWith<$Res> {
+  factory $ConditionModelCopyWith(
+          ConditionModel value, $Res Function(ConditionModel) then) =
+      _$ConditionModelCopyWithImpl<$Res, ConditionModel>;
   @useResult
   $Res call({String text, String icon, int? code});
 }
 
 /// @nodoc
-class _$ConditionDtoCopyWithImpl<$Res, $Val extends ConditionDto>
-    implements $ConditionDtoCopyWith<$Res> {
-  _$ConditionDtoCopyWithImpl(this._value, this._then);
+class _$ConditionModelCopyWithImpl<$Res, $Val extends ConditionModel>
+    implements $ConditionModelCopyWith<$Res> {
+  _$ConditionModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -74,22 +74,22 @@ class _$ConditionDtoCopyWithImpl<$Res, $Val extends ConditionDto>
 }
 
 /// @nodoc
-abstract class _$$ConditionDtoImplCopyWith<$Res>
-    implements $ConditionDtoCopyWith<$Res> {
-  factory _$$ConditionDtoImplCopyWith(
-          _$ConditionDtoImpl value, $Res Function(_$ConditionDtoImpl) then) =
-      __$$ConditionDtoImplCopyWithImpl<$Res>;
+abstract class _$$ConditionModelImplCopyWith<$Res>
+    implements $ConditionModelCopyWith<$Res> {
+  factory _$$ConditionModelImplCopyWith(_$ConditionModelImpl value,
+          $Res Function(_$ConditionModelImpl) then) =
+      __$$ConditionModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text, String icon, int? code});
 }
 
 /// @nodoc
-class __$$ConditionDtoImplCopyWithImpl<$Res>
-    extends _$ConditionDtoCopyWithImpl<$Res, _$ConditionDtoImpl>
-    implements _$$ConditionDtoImplCopyWith<$Res> {
-  __$$ConditionDtoImplCopyWithImpl(
-      _$ConditionDtoImpl _value, $Res Function(_$ConditionDtoImpl) _then)
+class __$$ConditionModelImplCopyWithImpl<$Res>
+    extends _$ConditionModelCopyWithImpl<$Res, _$ConditionModelImpl>
+    implements _$$ConditionModelImplCopyWith<$Res> {
+  __$$ConditionModelImplCopyWithImpl(
+      _$ConditionModelImpl _value, $Res Function(_$ConditionModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$ConditionDtoImplCopyWithImpl<$Res>
     Object? icon = null,
     Object? code = freezed,
   }) {
-    return _then(_$ConditionDtoImpl(
+    return _then(_$ConditionModelImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -118,11 +118,12 @@ class __$$ConditionDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConditionDtoImpl implements _ConditionDto {
-  const _$ConditionDtoImpl({required this.text, required this.icon, this.code});
+class _$ConditionModelImpl implements _ConditionModel {
+  const _$ConditionModelImpl(
+      {required this.text, required this.icon, this.code});
 
-  factory _$ConditionDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConditionDtoImplFromJson(json);
+  factory _$ConditionModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConditionModelImplFromJson(json);
 
   @override
   final String text;
@@ -133,14 +134,14 @@ class _$ConditionDtoImpl implements _ConditionDto {
 
   @override
   String toString() {
-    return 'ConditionDto(text: $text, icon: $icon, code: $code)';
+    return 'ConditionModel(text: $text, icon: $icon, code: $code)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConditionDtoImpl &&
+            other is _$ConditionModelImpl &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.code, code) || other.code == code));
@@ -153,25 +154,26 @@ class _$ConditionDtoImpl implements _ConditionDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ConditionDtoImplCopyWith<_$ConditionDtoImpl> get copyWith =>
-      __$$ConditionDtoImplCopyWithImpl<_$ConditionDtoImpl>(this, _$identity);
+  _$$ConditionModelImplCopyWith<_$ConditionModelImpl> get copyWith =>
+      __$$ConditionModelImplCopyWithImpl<_$ConditionModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ConditionDtoImplToJson(
+    return _$$ConditionModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _ConditionDto implements ConditionDto {
-  const factory _ConditionDto(
+abstract class _ConditionModel implements ConditionModel {
+  const factory _ConditionModel(
       {required final String text,
       required final String icon,
-      final int? code}) = _$ConditionDtoImpl;
+      final int? code}) = _$ConditionModelImpl;
 
-  factory _ConditionDto.fromJson(Map<String, dynamic> json) =
-      _$ConditionDtoImpl.fromJson;
+  factory _ConditionModel.fromJson(Map<String, dynamic> json) =
+      _$ConditionModelImpl.fromJson;
 
   @override
   String get text;
@@ -181,6 +183,6 @@ abstract class _ConditionDto implements ConditionDto {
   int? get code;
   @override
   @JsonKey(ignore: true)
-  _$$ConditionDtoImplCopyWith<_$ConditionDtoImpl> get copyWith =>
+  _$$ConditionModelImplCopyWith<_$ConditionModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

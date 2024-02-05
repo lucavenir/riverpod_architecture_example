@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'current_dto.dart';
+part of 'current.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentDtoImpl _$$CurrentDtoImplFromJson(Map<String, dynamic> json) =>
+_$CurrentModelImpl _$$CurrentModelImplFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CurrentDtoImpl',
+      r'_$CurrentModelImpl',
       json,
       ($checkedConvert) {
-        final val = _$CurrentDtoImpl(
+        final val = _$CurrentModelImpl(
           condition: $checkedConvert('condition',
-              (v) => ConditionDto.fromJson(v as Map<String, dynamic>)),
+              (v) => ConditionModel.fromJson(v as Map<String, dynamic>)),
           lastUpdated: $checkedConvert(
               'last_updated', (v) => DateTime.parse(v as String)),
           tempC: $checkedConvert('temp_c', (v) => (v as num).toDouble()),
@@ -72,7 +72,7 @@ _$CurrentDtoImpl _$$CurrentDtoImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$CurrentDtoImplToJson(_$CurrentDtoImpl instance) =>
+Map<String, dynamic> _$$CurrentModelImplToJson(_$CurrentModelImpl instance) =>
     <String, dynamic>{
       'condition': instance.condition.toJson(),
       'last_updated': instance.lastUpdated.toIso8601String(),

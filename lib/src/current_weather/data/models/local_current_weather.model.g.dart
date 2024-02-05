@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'local_current_weather_dto.dart';
+part of 'local_current_weather.model.dart';
 
 // **************************************************************************
 // IsarCollectionGenerator
@@ -9,14 +9,14 @@ part of 'local_current_weather_dto.dart';
 // coverage:ignore-file
 // ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, prefer_const_constructors, lines_longer_than_80_chars, require_trailing_commas, inference_failure_on_function_invocation, unnecessary_parenthesis, unnecessary_raw_strings, unnecessary_null_checks, join_return_with_assignment, prefer_final_locals, avoid_js_rounded_ints, avoid_positional_boolean_parameters, always_specify_types
 
-extension GetLocalCurrentWeatherDtoCollection on Isar {
-  IsarCollection<LocalCurrentWeatherDto> get localCurrentWeatherDtos =>
+extension GetLocalCurrentWeatherModelCollection on Isar {
+  IsarCollection<LocalCurrentWeatherModel> get localCurrentWeatherModels =>
       this.collection();
 }
 
-const LocalCurrentWeatherDtoSchema = CollectionSchema(
-  name: r'LocalCurrentWeatherDto',
-  id: 3400579101497303452,
+const LocalCurrentWeatherModelSchema = CollectionSchema(
+  name: r'LocalCurrentWeatherModel',
+  id: -6070197540142754388,
   properties: {
     r'humidity': PropertySchema(
       id: 0,
@@ -54,22 +54,22 @@ const LocalCurrentWeatherDtoSchema = CollectionSchema(
       type: IsarType.double,
     )
   },
-  estimateSize: _localCurrentWeatherDtoEstimateSize,
-  serialize: _localCurrentWeatherDtoSerialize,
-  deserialize: _localCurrentWeatherDtoDeserialize,
-  deserializeProp: _localCurrentWeatherDtoDeserializeProp,
+  estimateSize: _localCurrentWeatherModelEstimateSize,
+  serialize: _localCurrentWeatherModelSerialize,
+  deserialize: _localCurrentWeatherModelDeserialize,
+  deserializeProp: _localCurrentWeatherModelDeserializeProp,
   idName: r'id',
   indexes: {},
   links: {},
   embeddedSchemas: {},
-  getId: _localCurrentWeatherDtoGetId,
-  getLinks: _localCurrentWeatherDtoGetLinks,
-  attach: _localCurrentWeatherDtoAttach,
+  getId: _localCurrentWeatherModelGetId,
+  getLinks: _localCurrentWeatherModelGetLinks,
+  attach: _localCurrentWeatherModelAttach,
   version: '3.1.0+1',
 );
 
-int _localCurrentWeatherDtoEstimateSize(
-  LocalCurrentWeatherDto object,
+int _localCurrentWeatherModelEstimateSize(
+  LocalCurrentWeatherModel object,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
@@ -79,8 +79,8 @@ int _localCurrentWeatherDtoEstimateSize(
   return bytesCount;
 }
 
-void _localCurrentWeatherDtoSerialize(
-  LocalCurrentWeatherDto object,
+void _localCurrentWeatherModelSerialize(
+  LocalCurrentWeatherModel object,
   IsarWriter writer,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
@@ -94,13 +94,13 @@ void _localCurrentWeatherDtoSerialize(
   writer.writeDouble(offsets[6], object.wind);
 }
 
-LocalCurrentWeatherDto _localCurrentWeatherDtoDeserialize(
+LocalCurrentWeatherModel _localCurrentWeatherModelDeserialize(
   Id id,
   IsarReader reader,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  final object = LocalCurrentWeatherDto(
+  final object = LocalCurrentWeatherModel(
     humidity: reader.readDouble(offsets[0]),
     id: id,
     image: reader.readString(offsets[1]),
@@ -113,7 +113,7 @@ LocalCurrentWeatherDto _localCurrentWeatherDtoDeserialize(
   return object;
 }
 
-P _localCurrentWeatherDtoDeserializeProp<P>(
+P _localCurrentWeatherModelDeserializeProp<P>(
   IsarReader reader,
   int propertyId,
   int offset,
@@ -139,21 +139,21 @@ P _localCurrentWeatherDtoDeserializeProp<P>(
   }
 }
 
-Id _localCurrentWeatherDtoGetId(LocalCurrentWeatherDto object) {
+Id _localCurrentWeatherModelGetId(LocalCurrentWeatherModel object) {
   return object.id;
 }
 
-List<IsarLinkBase<dynamic>> _localCurrentWeatherDtoGetLinks(
-    LocalCurrentWeatherDto object) {
+List<IsarLinkBase<dynamic>> _localCurrentWeatherModelGetLinks(
+    LocalCurrentWeatherModel object) {
   return [];
 }
 
-void _localCurrentWeatherDtoAttach(
-    IsarCollection<dynamic> col, Id id, LocalCurrentWeatherDto object) {}
+void _localCurrentWeatherModelAttach(
+    IsarCollection<dynamic> col, Id id, LocalCurrentWeatherModel object) {}
 
-extension LocalCurrentWeatherDtoQueryWhereSort
-    on QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QWhere> {
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterWhere>
+extension LocalCurrentWeatherModelQueryWhereSort on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QWhere> {
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterWhere>
       anyId() {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(const IdWhereClause.any());
@@ -161,9 +161,9 @@ extension LocalCurrentWeatherDtoQueryWhereSort
   }
 }
 
-extension LocalCurrentWeatherDtoQueryWhere on QueryBuilder<
-    LocalCurrentWeatherDto, LocalCurrentWeatherDto, QWhereClause> {
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+extension LocalCurrentWeatherModelQueryWhere on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QWhereClause> {
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterWhereClause> idEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(IdWhereClause.between(
@@ -173,7 +173,7 @@ extension LocalCurrentWeatherDtoQueryWhere on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterWhereClause> idNotEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       if (query.whereSort == Sort.asc) {
@@ -196,7 +196,7 @@ extension LocalCurrentWeatherDtoQueryWhere on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterWhereClause> idGreaterThan(Id id, {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
@@ -205,7 +205,7 @@ extension LocalCurrentWeatherDtoQueryWhere on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterWhereClause> idLessThan(Id id, {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
@@ -214,7 +214,7 @@ extension LocalCurrentWeatherDtoQueryWhere on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterWhereClause> idBetween(
     Id lowerId,
     Id upperId, {
@@ -232,9 +232,9 @@ extension LocalCurrentWeatherDtoQueryWhere on QueryBuilder<
   }
 }
 
-extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
-    LocalCurrentWeatherDto, LocalCurrentWeatherDto, QFilterCondition> {
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+extension LocalCurrentWeatherModelQueryFilter on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QFilterCondition> {
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> humidityEqualTo(
     double value, {
     double epsilon = Query.epsilon,
@@ -248,7 +248,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> humidityGreaterThan(
     double value, {
     bool include = false,
@@ -264,7 +264,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> humidityLessThan(
     double value, {
     bool include = false,
@@ -280,7 +280,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> humidityBetween(
     double lower,
     double upper, {
@@ -300,7 +300,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> idEqualTo(Id value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -310,7 +310,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> idGreaterThan(
     Id value, {
     bool include = false,
@@ -324,7 +324,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> idLessThan(
     Id value, {
     bool include = false,
@@ -338,7 +338,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> idBetween(
     Id lower,
     Id upper, {
@@ -356,7 +356,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageEqualTo(
     String value, {
     bool caseSensitive = true,
@@ -370,7 +370,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageGreaterThan(
     String value, {
     bool include = false,
@@ -386,7 +386,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageLessThan(
     String value, {
     bool include = false,
@@ -402,7 +402,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageBetween(
     String lower,
     String upper, {
@@ -422,7 +422,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageStartsWith(
     String value, {
     bool caseSensitive = true,
@@ -436,7 +436,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageEndsWith(
     String value, {
     bool caseSensitive = true,
@@ -450,7 +450,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
           QAfterFilterCondition>
       imageContains(String value, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -462,7 +462,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
           QAfterFilterCondition>
       imageMatches(String pattern, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -474,7 +474,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -484,7 +484,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> imageIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
@@ -494,7 +494,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> perceivedTempEqualTo(
     double value, {
     double epsilon = Query.epsilon,
@@ -508,7 +508,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> perceivedTempGreaterThan(
     double value, {
     bool include = false,
@@ -524,7 +524,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> perceivedTempLessThan(
     double value, {
     bool include = false,
@@ -540,7 +540,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> perceivedTempBetween(
     double lower,
     double upper, {
@@ -560,7 +560,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> tempEqualTo(int value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -570,7 +570,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> tempGreaterThan(
     int value, {
     bool include = false,
@@ -584,7 +584,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> tempLessThan(
     int value, {
     bool include = false,
@@ -598,7 +598,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> tempBetween(
     int lower,
     int upper, {
@@ -616,7 +616,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> updatedAtEqualTo(DateTime value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -626,7 +626,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> updatedAtGreaterThan(
     DateTime value, {
     bool include = false,
@@ -640,7 +640,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> updatedAtLessThan(
     DateTime value, {
     bool include = false,
@@ -654,7 +654,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> updatedAtBetween(
     DateTime lower,
     DateTime upper, {
@@ -672,7 +672,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherEqualTo(
     String value, {
     bool caseSensitive = true,
@@ -686,7 +686,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherGreaterThan(
     String value, {
     bool include = false,
@@ -702,7 +702,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherLessThan(
     String value, {
     bool include = false,
@@ -718,7 +718,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherBetween(
     String lower,
     String upper, {
@@ -738,7 +738,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherStartsWith(
     String value, {
     bool caseSensitive = true,
@@ -752,7 +752,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherEndsWith(
     String value, {
     bool caseSensitive = true,
@@ -766,7 +766,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
           QAfterFilterCondition>
       weatherContains(String value, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -778,7 +778,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
           QAfterFilterCondition>
       weatherMatches(String pattern, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -790,7 +790,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -800,7 +800,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> weatherIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
@@ -810,7 +810,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> windEqualTo(
     double value, {
     double epsilon = Query.epsilon,
@@ -824,7 +824,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> windGreaterThan(
     double value, {
     bool include = false,
@@ -840,7 +840,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> windLessThan(
     double value, {
     bool include = false,
@@ -856,7 +856,7 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto,
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel,
       QAfterFilterCondition> windBetween(
     double lower,
     double upper, {
@@ -877,106 +877,106 @@ extension LocalCurrentWeatherDtoQueryFilter on QueryBuilder<
   }
 }
 
-extension LocalCurrentWeatherDtoQueryObject on QueryBuilder<
-    LocalCurrentWeatherDto, LocalCurrentWeatherDto, QFilterCondition> {}
+extension LocalCurrentWeatherModelQueryObject on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QFilterCondition> {}
 
-extension LocalCurrentWeatherDtoQueryLinks on QueryBuilder<
-    LocalCurrentWeatherDto, LocalCurrentWeatherDto, QFilterCondition> {}
+extension LocalCurrentWeatherModelQueryLinks on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QFilterCondition> {}
 
-extension LocalCurrentWeatherDtoQuerySortBy
-    on QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QSortBy> {
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+extension LocalCurrentWeatherModelQuerySortBy on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QSortBy> {
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByHumidity() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'humidity', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByHumidityDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'humidity', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByImage() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'image', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByImageDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'image', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByPerceivedTemp() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'perceivedTemp', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByPerceivedTempDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'perceivedTemp', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByTemp() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'temp', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByTempDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'temp', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByUpdatedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'updatedAt', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByUpdatedAtDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'updatedAt', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByWeather() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'weather', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByWeatherDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'weather', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByWind() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'wind', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       sortByWindDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'wind', Sort.desc);
@@ -984,114 +984,114 @@ extension LocalCurrentWeatherDtoQuerySortBy
   }
 }
 
-extension LocalCurrentWeatherDtoQuerySortThenBy on QueryBuilder<
-    LocalCurrentWeatherDto, LocalCurrentWeatherDto, QSortThenBy> {
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+extension LocalCurrentWeatherModelQuerySortThenBy on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QSortThenBy> {
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByHumidity() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'humidity', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByHumidityDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'humidity', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenById() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByIdDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByImage() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'image', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByImageDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'image', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByPerceivedTemp() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'perceivedTemp', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByPerceivedTempDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'perceivedTemp', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByTemp() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'temp', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByTempDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'temp', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByUpdatedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'updatedAt', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByUpdatedAtDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'updatedAt', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByWeather() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'weather', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByWeatherDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'weather', Sort.desc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByWind() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'wind', Sort.asc);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QAfterSortBy>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QAfterSortBy>
       thenByWindDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'wind', Sort.desc);
@@ -1099,51 +1099,51 @@ extension LocalCurrentWeatherDtoQuerySortThenBy on QueryBuilder<
   }
 }
 
-extension LocalCurrentWeatherDtoQueryWhereDistinct
-    on QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct> {
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct>
+extension LocalCurrentWeatherModelQueryWhereDistinct on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct> {
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct>
       distinctByHumidity() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'humidity');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct>
       distinctByImage({bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'image', caseSensitive: caseSensitive);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct>
       distinctByPerceivedTemp() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'perceivedTemp');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct>
       distinctByTemp() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'temp');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct>
       distinctByUpdatedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'updatedAt');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct>
       distinctByWeather({bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'weather', caseSensitive: caseSensitive);
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, LocalCurrentWeatherDto, QDistinct>
+  QueryBuilder<LocalCurrentWeatherModel, LocalCurrentWeatherModel, QDistinct>
       distinctByWind() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'wind');
@@ -1151,56 +1151,56 @@ extension LocalCurrentWeatherDtoQueryWhereDistinct
   }
 }
 
-extension LocalCurrentWeatherDtoQueryProperty on QueryBuilder<
-    LocalCurrentWeatherDto, LocalCurrentWeatherDto, QQueryProperty> {
-  QueryBuilder<LocalCurrentWeatherDto, int, QQueryOperations> idProperty() {
+extension LocalCurrentWeatherModelQueryProperty on QueryBuilder<
+    LocalCurrentWeatherModel, LocalCurrentWeatherModel, QQueryProperty> {
+  QueryBuilder<LocalCurrentWeatherModel, int, QQueryOperations> idProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, double, QQueryOperations>
+  QueryBuilder<LocalCurrentWeatherModel, double, QQueryOperations>
       humidityProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'humidity');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, String, QQueryOperations>
+  QueryBuilder<LocalCurrentWeatherModel, String, QQueryOperations>
       imageProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'image');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, double, QQueryOperations>
+  QueryBuilder<LocalCurrentWeatherModel, double, QQueryOperations>
       perceivedTempProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'perceivedTemp');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, int, QQueryOperations> tempProperty() {
+  QueryBuilder<LocalCurrentWeatherModel, int, QQueryOperations> tempProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'temp');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, DateTime, QQueryOperations>
+  QueryBuilder<LocalCurrentWeatherModel, DateTime, QQueryOperations>
       updatedAtProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'updatedAt');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, String, QQueryOperations>
+  QueryBuilder<LocalCurrentWeatherModel, String, QQueryOperations>
       weatherProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'weather');
     });
   }
 
-  QueryBuilder<LocalCurrentWeatherDto, double, QQueryOperations>
+  QueryBuilder<LocalCurrentWeatherModel, double, QQueryOperations>
       windProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'wind');

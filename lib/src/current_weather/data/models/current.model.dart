@@ -1,15 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../shared/data/json.dart';
-import 'condition_dto.dart';
+import 'condition.model.dart';
 
-part 'current_dto.freezed.dart';
-part 'current_dto.g.dart';
+part 'current.model.freezed.dart';
+part 'current.model.g.dart';
 
 @freezed
-class CurrentDto with _$CurrentDto {
-  const factory CurrentDto({
-    required ConditionDto condition,
+class CurrentModel with _$CurrentModel {
+  const factory CurrentModel({
+    required ConditionModel condition,
     required DateTime lastUpdated,
     required double tempC,
     required double windKph,
@@ -32,7 +32,7 @@ class CurrentDto with _$CurrentDto {
     double? uv,
     double? gustMph,
     double? gustKph,
-  }) = _CurrentDto;
+  }) = _CurrentModel;
 
-  factory CurrentDto.fromJson(Json json) => _$CurrentDtoFromJson(json);
+  factory CurrentModel.fromJson(Json json) => _$CurrentModelFromJson(json);
 }

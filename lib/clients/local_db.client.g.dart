@@ -6,7 +6,7 @@ part of 'local_db.client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$localDbHash() => r'c2eabdbfd023e90ed61f5835f1ccbc184a0a315a';
+String _$localDbHash() => r'9eed8843ec96e3f6fe44a423ec70e2c3cca31849';
 
 /// See also [localDb].
 @ProviderFor(localDb)

@@ -21,7 +21,7 @@ _$HourDtoImpl _$$HourDtoImplFromJson(Map<String, dynamic> json) =>
               'condition',
               (v) => v == null
                   ? null
-                  : ConditionDto.fromJson(v as Map<String, dynamic>)),
+                  : ConditionModel.fromJson(v as Map<String, dynamic>)),
           $checkedConvert('wind_mph', (v) => (v as num?)?.toDouble()),
           $checkedConvert('wind_kph', (v) => (v as num?)?.toDouble()),
           $checkedConvert('wind_degree', (v) => (v as num?)?.toDouble()),

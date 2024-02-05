@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'current_weather_location_dto.dart';
+part of 'current_weather_location.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,13 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-CurrentWeatherLocationDto _$CurrentWeatherLocationDtoFromJson(
+CurrentWeatherLocationModel _$CurrentWeatherLocationModelFromJson(
     Map<String, dynamic> json) {
-  return _CurrentWeatherLocationDto.fromJson(json);
+  return _CurrentWeatherLocationModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$CurrentWeatherLocationDto {
+mixin _$CurrentWeatherLocationModel {
   String get name => throw _privateConstructorUsedError;
   String? get region => throw _privateConstructorUsedError;
   String? get country => throw _privateConstructorUsedError;
@@ -32,15 +32,17 @@ mixin _$CurrentWeatherLocationDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CurrentWeatherLocationDtoCopyWith<CurrentWeatherLocationDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CurrentWeatherLocationModelCopyWith<CurrentWeatherLocationModel>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CurrentWeatherLocationDtoCopyWith<$Res> {
-  factory $CurrentWeatherLocationDtoCopyWith(CurrentWeatherLocationDto value,
-          $Res Function(CurrentWeatherLocationDto) then) =
-      _$CurrentWeatherLocationDtoCopyWithImpl<$Res, CurrentWeatherLocationDto>;
+abstract class $CurrentWeatherLocationModelCopyWith<$Res> {
+  factory $CurrentWeatherLocationModelCopyWith(
+          CurrentWeatherLocationModel value,
+          $Res Function(CurrentWeatherLocationModel) then) =
+      _$CurrentWeatherLocationModelCopyWithImpl<$Res,
+          CurrentWeatherLocationModel>;
   @useResult
   $Res call(
       {String name,
@@ -54,10 +56,10 @@ abstract class $CurrentWeatherLocationDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CurrentWeatherLocationDtoCopyWithImpl<$Res,
-        $Val extends CurrentWeatherLocationDto>
-    implements $CurrentWeatherLocationDtoCopyWith<$Res> {
-  _$CurrentWeatherLocationDtoCopyWithImpl(this._value, this._then);
+class _$CurrentWeatherLocationModelCopyWithImpl<$Res,
+        $Val extends CurrentWeatherLocationModel>
+    implements $CurrentWeatherLocationModelCopyWith<$Res> {
+  _$CurrentWeatherLocationModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -114,12 +116,12 @@ class _$CurrentWeatherLocationDtoCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$CurrentWeatherLocationDtoImplCopyWith<$Res>
-    implements $CurrentWeatherLocationDtoCopyWith<$Res> {
-  factory _$$CurrentWeatherLocationDtoImplCopyWith(
-          _$CurrentWeatherLocationDtoImpl value,
-          $Res Function(_$CurrentWeatherLocationDtoImpl) then) =
-      __$$CurrentWeatherLocationDtoImplCopyWithImpl<$Res>;
+abstract class _$$CurrentWeatherLocationModelImplCopyWith<$Res>
+    implements $CurrentWeatherLocationModelCopyWith<$Res> {
+  factory _$$CurrentWeatherLocationModelImplCopyWith(
+          _$CurrentWeatherLocationModelImpl value,
+          $Res Function(_$CurrentWeatherLocationModelImpl) then) =
+      __$$CurrentWeatherLocationModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -134,13 +136,13 @@ abstract class _$$CurrentWeatherLocationDtoImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CurrentWeatherLocationDtoImplCopyWithImpl<$Res>
-    extends _$CurrentWeatherLocationDtoCopyWithImpl<$Res,
-        _$CurrentWeatherLocationDtoImpl>
-    implements _$$CurrentWeatherLocationDtoImplCopyWith<$Res> {
-  __$$CurrentWeatherLocationDtoImplCopyWithImpl(
-      _$CurrentWeatherLocationDtoImpl _value,
-      $Res Function(_$CurrentWeatherLocationDtoImpl) _then)
+class __$$CurrentWeatherLocationModelImplCopyWithImpl<$Res>
+    extends _$CurrentWeatherLocationModelCopyWithImpl<$Res,
+        _$CurrentWeatherLocationModelImpl>
+    implements _$$CurrentWeatherLocationModelImplCopyWith<$Res> {
+  __$$CurrentWeatherLocationModelImplCopyWithImpl(
+      _$CurrentWeatherLocationModelImpl _value,
+      $Res Function(_$CurrentWeatherLocationModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -155,7 +157,7 @@ class __$$CurrentWeatherLocationDtoImplCopyWithImpl<$Res>
     Object? localtimeepoch = freezed,
     Object? localtime = freezed,
   }) {
-    return _then(_$CurrentWeatherLocationDtoImpl(
+    return _then(_$CurrentWeatherLocationModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -194,8 +196,9 @@ class __$$CurrentWeatherLocationDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentWeatherLocationDtoImpl implements _CurrentWeatherLocationDto {
-  const _$CurrentWeatherLocationDtoImpl(
+class _$CurrentWeatherLocationModelImpl
+    implements _CurrentWeatherLocationModel {
+  const _$CurrentWeatherLocationModelImpl(
       {required this.name,
       this.region,
       this.country,
@@ -205,8 +208,9 @@ class _$CurrentWeatherLocationDtoImpl implements _CurrentWeatherLocationDto {
       this.localtimeepoch,
       this.localtime});
 
-  factory _$CurrentWeatherLocationDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CurrentWeatherLocationDtoImplFromJson(json);
+  factory _$CurrentWeatherLocationModelImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$CurrentWeatherLocationModelImplFromJson(json);
 
   @override
   final String name;
@@ -227,14 +231,14 @@ class _$CurrentWeatherLocationDtoImpl implements _CurrentWeatherLocationDto {
 
   @override
   String toString() {
-    return 'CurrentWeatherLocationDto(name: $name, region: $region, country: $country, lat: $lat, lon: $lon, tzId: $tzId, localtimeepoch: $localtimeepoch, localtime: $localtime)';
+    return 'CurrentWeatherLocationModel(name: $name, region: $region, country: $country, lat: $lat, lon: $lon, tzId: $tzId, localtimeepoch: $localtimeepoch, localtime: $localtime)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CurrentWeatherLocationDtoImpl &&
+            other is _$CurrentWeatherLocationModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.region, region) || other.region == region) &&
             (identical(other.country, country) || other.country == country) &&
@@ -255,20 +259,21 @@ class _$CurrentWeatherLocationDtoImpl implements _CurrentWeatherLocationDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CurrentWeatherLocationDtoImplCopyWith<_$CurrentWeatherLocationDtoImpl>
-      get copyWith => __$$CurrentWeatherLocationDtoImplCopyWithImpl<
-          _$CurrentWeatherLocationDtoImpl>(this, _$identity);
+  _$$CurrentWeatherLocationModelImplCopyWith<_$CurrentWeatherLocationModelImpl>
+      get copyWith => __$$CurrentWeatherLocationModelImplCopyWithImpl<
+          _$CurrentWeatherLocationModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CurrentWeatherLocationDtoImplToJson(
+    return _$$CurrentWeatherLocationModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _CurrentWeatherLocationDto implements CurrentWeatherLocationDto {
-  const factory _CurrentWeatherLocationDto(
+abstract class _CurrentWeatherLocationModel
+    implements CurrentWeatherLocationModel {
+  const factory _CurrentWeatherLocationModel(
       {required final String name,
       final String? region,
       final String? country,
@@ -276,10 +281,10 @@ abstract class _CurrentWeatherLocationDto implements CurrentWeatherLocationDto {
       final double? lon,
       final String? tzId,
       final int? localtimeepoch,
-      final String? localtime}) = _$CurrentWeatherLocationDtoImpl;
+      final String? localtime}) = _$CurrentWeatherLocationModelImpl;
 
-  factory _CurrentWeatherLocationDto.fromJson(Map<String, dynamic> json) =
-      _$CurrentWeatherLocationDtoImpl.fromJson;
+  factory _CurrentWeatherLocationModel.fromJson(Map<String, dynamic> json) =
+      _$CurrentWeatherLocationModelImpl.fromJson;
 
   @override
   String get name;
@@ -299,6 +304,6 @@ abstract class _CurrentWeatherLocationDto implements CurrentWeatherLocationDto {
   String? get localtime;
   @override
   @JsonKey(ignore: true)
-  _$$CurrentWeatherLocationDtoImplCopyWith<_$CurrentWeatherLocationDtoImpl>
+  _$$CurrentWeatherLocationModelImplCopyWith<_$CurrentWeatherLocationModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
