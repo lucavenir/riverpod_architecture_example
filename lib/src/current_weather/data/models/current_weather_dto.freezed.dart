@@ -135,9 +135,8 @@ class __$$CurrentWeatherDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentWeatherDtoImpl extends _CurrentWeatherDto {
-  const _$CurrentWeatherDtoImpl({required this.current, this.location})
-      : super._();
+class _$CurrentWeatherDtoImpl implements _CurrentWeatherDto {
+  const _$CurrentWeatherDtoImpl({required this.current, this.location});
 
   factory _$CurrentWeatherDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$CurrentWeatherDtoImplFromJson(json);
@@ -181,11 +180,10 @@ class _$CurrentWeatherDtoImpl extends _CurrentWeatherDto {
   }
 }
 
-abstract class _CurrentWeatherDto extends CurrentWeatherDto {
+abstract class _CurrentWeatherDto implements CurrentWeatherDto {
   const factory _CurrentWeatherDto(
       {required final CurrentDto current,
       final CurrentWeatherLocationDto? location}) = _$CurrentWeatherDtoImpl;
-  const _CurrentWeatherDto._() : super._();
 
   factory _CurrentWeatherDto.fromJson(Map<String, dynamic> json) =
       _$CurrentWeatherDtoImpl.fromJson;

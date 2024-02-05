@@ -15,5 +15,5 @@ FutureOr<CurrentWeather> currentWeather(CurrentWeatherRef ref) async {
   final currentWeather = await service.getCurrentWeather(location);
 
   ref.cacheFor(60.seconds);
-  return currentWeather;
+  return CurrentWeather.fromModel(currentWeather);
 }

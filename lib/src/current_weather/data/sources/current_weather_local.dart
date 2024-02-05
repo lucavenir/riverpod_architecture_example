@@ -24,9 +24,9 @@ class CurrentWeatherLocal {
     return dto;
   }
 
-  CurrentWeather getCurrentWeatherFromDb() {
+  LocalCurrentWeatherDto getCurrentWeatherFromDb() {
     final dto = db.writeTxnSync(() => db.localCurrentWeatherDtos.getSync(0));
     if (dto == null) throw const NoDataAvailableException();
-    return dto.toEntity();
+    return dto;
   }
 }
