@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../src/current_weather/presentation/pages/current_weather_page.dart';
 import '../src/splash/presentation/pages/splash_page.dart';
 
-part 'routes_configuration.g.dart';
+part 'config.routes.g.dart';
 
 @TypedGoRoute<HomeRoute>(path: '/')
 class HomeRoute extends GoRouteData {

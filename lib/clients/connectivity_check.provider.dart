@@ -2,7 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'connectivity_check_provider.g.dart';
+part 'connectivity_check.provider.g.dart';
 
 typedef ConnectionCheck = ({Connectivity lanCheck, InternetConnectionChecker wanCheck});
 

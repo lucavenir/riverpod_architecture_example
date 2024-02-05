@@ -4,7 +4,7 @@ import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 
 import 'talker.dart';
 
-part 'http_client.g.dart';
+part 'http.client.g.dart';
 
 /// Base URL of our API service
 const baseUrl = 'https://api.weatherapi.com/v1';

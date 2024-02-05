@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 import '../clients/talker.dart';
-import 'routes_configuration.dart';
+import 'config.routes.dart';
 
 part 'router.g.dart';
 

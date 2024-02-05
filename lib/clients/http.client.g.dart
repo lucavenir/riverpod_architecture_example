@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'http_client.dart';
+part of 'http.client.dart';
 
 // **************************************************************************
 // RiverpodGenerator

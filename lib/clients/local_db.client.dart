@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../src/current_weather/data/models/local_current_weather_dto.dart';
 
-part 'local_db.g.dart';
+part 'local_db.client.g.dart';
 
 @riverpod
 Future<Isar> localDb(LocalDbRef ref) async {

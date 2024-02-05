@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'connectivity_check_provider.dart';
+part of 'connectivity_check.provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator

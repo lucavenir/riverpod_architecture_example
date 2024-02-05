@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'local_db.dart';
+part of 'local_db.client.dart';
 
 // **************************************************************************
 // RiverpodGenerator

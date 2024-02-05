@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../clients/http_client.dart';
+import '../../../../clients/http.client.dart';
 import '../../../shared/data/json.dart';
 
 part 'current_weather_api.g.dart';
