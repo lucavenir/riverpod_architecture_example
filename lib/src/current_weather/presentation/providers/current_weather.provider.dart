@@ -3,7 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/presentation/controllers/current_location.controller.dart';
 import '../../../shared/presentation/cache_for.dart';
-import '../../data/repository/current_weather_repository.dart';
+import '../../data/repository/current_weather.repository.dart';
 import '../../domain/entities/current_weather.dart';
 
 part 'current_weather.provider.g.dart';

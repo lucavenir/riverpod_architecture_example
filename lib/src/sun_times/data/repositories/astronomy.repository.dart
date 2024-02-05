@@ -5,7 +5,7 @@ import '../../../locations/domain/entities/current_location.dart';
 import '../models/astronomy_response_dto.dart';
 import '../sources/astronomy_api.dart';
 
-part 'astronomy_repository.g.dart';
+part 'astronomy.repository.g.dart';
 
 @riverpod
 SunTimesRepository sunTimesRepository(SunTimesRepositoryRef ref) {

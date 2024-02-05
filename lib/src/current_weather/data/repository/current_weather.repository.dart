@@ -8,7 +8,7 @@ import '../models/local_current_weather_dto.dart';
 import '../sources/current_weather_api.dart';
 import '../sources/current_weather_local.dart';
 
-part 'current_weather_repository.g.dart';
+part 'current_weather.repository.g.dart';
 
 @riverpod
 CurrentWeatherRepository currentWeatherRepository(CurrentWeatherRepositoryRef ref) {

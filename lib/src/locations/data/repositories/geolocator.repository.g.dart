@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'geolocator_repository.dart';
+part of 'geolocator.repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator

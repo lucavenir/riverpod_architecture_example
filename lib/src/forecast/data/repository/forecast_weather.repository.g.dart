@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'forecast_weather_repository.dart';
+part of 'forecast_weather.repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator

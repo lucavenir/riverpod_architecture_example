@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../data/repositories/locations_repository.dart';
+import '../../data/repositories/locations.repository.dart';
 import '../../domain/entities/current_location.dart';
 import '../../domain/entities/locations.dart';
 

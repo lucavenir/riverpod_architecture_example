@@ -6,9 +6,9 @@ import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
 import '../models/location_dto.dart';
 import '../sources/search_api.dart';
-import 'geolocator_repository.dart';
+import 'geolocator.repository.dart';
 
-part 'locations_repository.g.dart';
+part 'locations.repository.g.dart';
 
 @riverpod
 LocationsRepository locationsRepository(LocationsRepositoryRef ref) {

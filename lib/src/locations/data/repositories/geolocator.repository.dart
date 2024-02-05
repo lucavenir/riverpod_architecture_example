@@ -1,7 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'geolocator_repository.g.dart';
+part 'geolocator.repository.g.dart';
 
 @riverpod
 GeolocatorRepository geolocatorRepository(GeolocatorRepositoryRef ref) {

@@ -4,7 +4,7 @@ import '../../../locations/domain/entities/current_location.dart';
 import '../models/forecast_weather_dto.dart';
 import '../sources/forecast_weather_api.dart';
 
-part 'forecast_weather_repository.g.dart';
+part 'forecast_weather.repository.g.dart';
 
 @riverpod
 ForecastWeatherRepository forecastWeatherRepository(ForecastWeatherRepositoryRef ref) {

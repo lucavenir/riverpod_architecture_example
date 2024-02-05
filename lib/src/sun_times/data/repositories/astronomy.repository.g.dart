@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'locations_repository.dart';
+part of 'astronomy.repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$locationsRepositoryHash() =>
-    r'1ea0e37f3d7e1326345a243f3479c3f85351e8c6';
+String _$sunTimesRepositoryHash() =>
+    r'a6b94f4e86cd81aae83e349d100868176fa46e3c';
 
-/// See also [locationsRepository].
-@ProviderFor(locationsRepository)
-final locationsRepositoryProvider =
-    AutoDisposeProvider<LocationsRepository>.internal(
-  locationsRepository,
-  name: r'locationsRepositoryProvider',
+/// See also [sunTimesRepository].
+@ProviderFor(sunTimesRepository)
+final sunTimesRepositoryProvider =
+    AutoDisposeProvider<SunTimesRepository>.internal(
+  sunTimesRepository,
+  name: r'sunTimesRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$locationsRepositoryHash,
+      : _$sunTimesRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef LocationsRepositoryRef = AutoDisposeProviderRef<LocationsRepository>;
+typedef SunTimesRepositoryRef = AutoDisposeProviderRef<SunTimesRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
