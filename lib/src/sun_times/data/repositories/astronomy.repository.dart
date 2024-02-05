@@ -1,9 +1,9 @@
 import 'package:intl/intl.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../locations/domain/entities/current_location.dart';
-import '../models/astronomy_response_dto.dart';
-import '../sources/astronomy_api.dart';
+import '../../../locations/domain/entities/current_location.model.dart';
+import '../models/astronomy.model.dart';
+import '../sources/astronomy_api.source.dart';
 
 part 'astronomy.repository.g.dart';
 
@@ -17,14 +17,14 @@ class SunTimesRepository {
   const SunTimesRepository(this.api);
   final AstronomyApi api;
 
-  Future<AstronomyDto> getTodaySunTimes(CurrentLocation location) async {
+  Future<AstronomyModel> getTodaySunTimes(CurrentLocation location) async {
     final now = DateTime.now();
     final formatter = DateFormat.yMd(now);
     final date = formatter.format(now);
 
     final result = await api.astronomy(location.cityName, date);
 
-    final model = AstronomyDto.fromJson(result);
+    final model = AstronomyModel.fromJson(result);
     return model;
   }
 }

@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'inner_astronomy_dto.dart';
+part of 'inner_astronomy.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InnerAstronomyDtoImpl _$$InnerAstronomyDtoImplFromJson(
+_$InnerAstronomyModelImpl _$$InnerAstronomyModelImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$InnerAstronomyDtoImpl',
+      r'_$InnerAstronomyModelImpl',
       json,
       ($checkedConvert) {
-        final val = _$InnerAstronomyDtoImpl(
+        final val = _$InnerAstronomyModelImpl(
           astro: $checkedConvert(
-              'astro', (v) => AstroDto.fromJson(v as Map<String, dynamic>)),
+              'astro', (v) => AstroModel.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$$InnerAstronomyDtoImplToJson(
-        _$InnerAstronomyDtoImpl instance) =>
+Map<String, dynamic> _$$InnerAstronomyModelImplToJson(
+        _$InnerAstronomyModelImpl instance) =>
     <String, dynamic>{
       'astro': instance.astro.toJson(),
     };

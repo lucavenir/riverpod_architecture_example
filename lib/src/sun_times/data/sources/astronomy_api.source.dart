@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../clients/http.client.dart';
 import '../../../shared/data/json.dart';
 
-part 'astronomy_api.g.dart';
+part 'astronomy_api.source.g.dart';
 
 @riverpod
 AstronomyApi astronomyApi(AstronomyApiRef ref) {

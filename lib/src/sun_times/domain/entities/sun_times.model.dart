@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/astronomy_response_dto.dart';
+import '../../data/models/astronomy.model.dart';
 
-part 'sun_times.freezed.dart';
+part 'sun_times.model.freezed.dart';
 
 @freezed
 class SunTimes with _$SunTimes {
@@ -14,7 +14,7 @@ class SunTimes with _$SunTimes {
   }) = _SunTimes;
 
   const SunTimes._();
-  factory SunTimes.fromModel(AstronomyDto dto) {
+  factory SunTimes.fromModel(AstronomyModel dto) {
     TimeOfDay parseTimeOfDay(String input) {
       final [hourMinute, amPm] = input.split(' ');
       final [hours, minutes] = hourMinute.split(':');

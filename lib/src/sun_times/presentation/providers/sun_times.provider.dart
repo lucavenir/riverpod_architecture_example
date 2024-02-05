@@ -2,7 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/presentation/controllers/current_location.controller.dart';
 import '../../data/repositories/astronomy.repository.dart';
-import '../../domain/entities/sun_times.dart';
+import '../../domain/entities/sun_times.model.dart';
 
 part 'sun_times.provider.g.dart';
 

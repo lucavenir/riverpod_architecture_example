@@ -2,19 +2,19 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../shared/data/json.dart';
 
-part 'astro_dto.freezed.dart';
-part 'astro_dto.g.dart';
+part 'astro.model.freezed.dart';
+part 'astro.model.g.dart';
 
 @freezed
-class AstroDto with _$AstroDto {
-  const factory AstroDto({
+class AstroModel with _$AstroModel {
+  const factory AstroModel({
     required String sunrise,
     required String sunset,
     String? moonrise,
     String? moonset,
     String? moonPhase,
     String? moonIllumination,
-  }) = _AstroDto;
+  }) = _AstroModel;
 
-  factory AstroDto.fromJson(Json json) => _$AstroDtoFromJson(json);
+  factory AstroModel.fromJson(Json json) => _$AstroModelFromJson(json);
 }
