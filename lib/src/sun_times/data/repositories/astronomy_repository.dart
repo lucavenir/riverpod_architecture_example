@@ -1,17 +1,24 @@
 import 'package:intl/intl.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/domain/entities/current_location.dart';
 import '../../domain/entities/sun_times.dart';
-import '../../domain/interfaces/sun_times_repository_interface.dart';
 import '../adapters/sun_times_adapter.dart';
 import '../models/astronomy_response_dto.dart';
 import '../sources/astronomy_api.dart';
 
-class SunTimesRepository implements SunTimesRepositoryInterface {
+part 'astronomy_repository.g.dart';
+
+@riverpod
+SunTimesRepository sunTimesRepository(SunTimesRepositoryRef ref) {
+  final api = ref.watch(astronomyApiProvider);
+  return SunTimesRepository(api);
+}
+
+class SunTimesRepository {
   const SunTimesRepository(this.api);
   final AstronomyApi api;
 
-  @override
   Future<SunTimes> getTodaySunTimes(CurrentLocation location) async {
     final now = DateTime.now();
     final formatter = DateFormat.yMd(now);

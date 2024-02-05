@@ -1,22 +1,30 @@
 import 'package:geolocator/geolocator.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../domain/entities/current_location.dart';
 import '../../domain/entities/locations.dart';
-import '../../domain/interfaces/geolocator_interface.dart';
-import '../../domain/interfaces/locations_repository_interface.dart';
 import '../adapters/locations_from_dto.dart';
 import '../adapters/position_to_query_adapter.dart';
 import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
 import '../models/location_dto.dart';
 import '../sources/search_api.dart';
+import 'geolocator_repository.dart';
 
-class LocationsRepository implements LocationsRepositoryInterface {
+part 'locations_repository.g.dart';
+
+@riverpod
+LocationsRepository locationsRepository(LocationsRepositoryRef ref) {
+  final api = ref.watch(locationsApiProvider);
+  final geo = ref.watch(geolocatorRepositoryProvider);
+  return LocationsRepository(api, geo);
+}
+
+class LocationsRepository {
   const LocationsRepository(this.api, this.geo);
   final SearchApi api;
-  final GeolocatorInterface geo;
+  final GeolocatorRepository geo;
 
-  @override
   Future<CurrentLocation> getCurrentLocation() async {
     final serviceEnabled = await geo.isLocationServiceEnabled();
     if (!serviceEnabled) throw const LocationServiceDisabledException();
@@ -39,7 +47,6 @@ class LocationsRepository implements LocationsRepositoryInterface {
     return locations.places.first;
   }
 
-  @override
   Future<Locations> findLocations(String query) async {
     final result = await api.locations(q: query);
     final dto = result.map(LocationDto.fromJson);

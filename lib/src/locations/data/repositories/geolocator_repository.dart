@@ -1,14 +1,16 @@
 import 'package:geolocator/geolocator.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../domain/interfaces/geolocator_interface.dart';
+part 'geolocator_repository.g.dart';
 
-class GeolocatorRepository implements GeolocatorInterface {
-  @override
+@riverpod
+GeolocatorRepository geolocatorRepository(GeolocatorRepositoryRef ref) {
+  return GeolocatorRepository();
+}
+
+class GeolocatorRepository {
   Future<LocationPermission> checkPermission() => Geolocator.checkPermission();
-  @override
   Future<Position> getCurrentPosition() => Geolocator.getCurrentPosition();
-  @override
   Future<bool> isLocationServiceEnabled() => Geolocator.isLocationServiceEnabled();
-  @override
   Future<LocationPermission> requestPermission() => Geolocator.requestPermission();
 }

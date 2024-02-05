@@ -1,8 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../locations/presentation/controllers/current_location_controller.dart';
+import '../../data/repository/forecast_weather_repository.dart';
 import '../../domain/entities/forecast_weather.dart';
-import '../../domain/interfaces/forecast_weather_repository_interface.dart';
 
 part 'forecast_weather_provider.g.dart';
 

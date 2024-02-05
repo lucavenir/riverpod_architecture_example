@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sun_times_repository_interface.dart';
+part of 'astronomy_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator

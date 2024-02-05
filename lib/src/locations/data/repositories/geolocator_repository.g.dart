@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'locations_repository_interface.dart';
+part of 'geolocator_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$locationsRepositoryHash() =>
-    r'1ea0e37f3d7e1326345a243f3479c3f85351e8c6';
+String _$geolocatorRepositoryHash() =>
+    r'10083166eb34cd2b04170b8c53a2bd3be7ad5d6a';
 
-/// See also [locationsRepository].
-@ProviderFor(locationsRepository)
-final locationsRepositoryProvider =
-    AutoDisposeProvider<LocationsRepository>.internal(
-  locationsRepository,
-  name: r'locationsRepositoryProvider',
+/// See also [geolocatorRepository].
+@ProviderFor(geolocatorRepository)
+final geolocatorRepositoryProvider =
+    AutoDisposeProvider<GeolocatorRepository>.internal(
+  geolocatorRepository,
+  name: r'geolocatorRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$locationsRepositoryHash,
+      : _$geolocatorRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef LocationsRepositoryRef = AutoDisposeProviderRef<LocationsRepository>;
+typedef GeolocatorRepositoryRef = AutoDisposeProviderRef<GeolocatorRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -1,19 +1,30 @@
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../../../../clients/connectivity_check_provider.dart';
 import '../../../locations/domain/entities/current_location.dart';
 import '../../domain/entities/current_weather.dart';
-import '../../domain/interfaces/current_weather_repository_interface.dart';
 import '../models/current_weather_dto.dart';
 import '../models/local_current_weather_dto.dart';
 import '../sources/current_weather_api.dart';
 import '../sources/current_weather_local.dart';
 
-class CurrentWeatherRepository implements CurrentWeatherRepositoryInterface {
+part 'current_weather_repository.g.dart';
+
+@riverpod
+CurrentWeatherRepository currentWeatherRepository(CurrentWeatherRepositoryRef ref) {
+  final api = ref.watch(currentWeatherApiProvider);
+  final local = ref.watch(currentWeatherLocalProvider);
+  final connectivity = ref.watch(connectivityCheckProvider);
+
+  return CurrentWeatherRepository(api, local, connectivity);
+}
+
+class CurrentWeatherRepository {
   CurrentWeatherRepository(this.api, this.local, this.connectivity);
   final CurrentWeatherApi api;
   final CurrentWeatherLocal local;
   final ConnectionCheck connectivity;
 
-  @override
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location) async {
     final hasInternet = await connectivity.checkFullConnectivity();
     if (!hasInternet) return _getCurrentWeatherFromDb();

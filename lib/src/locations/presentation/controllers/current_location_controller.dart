@@ -2,8 +2,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../shared/presentation/cache_for.dart';
+import '../../data/repositories/locations_repository.dart';
 import '../../domain/entities/current_location.dart';
-import '../../domain/interfaces/locations_repository_interface.dart';
 
 part 'current_location_controller.g.dart';
 
