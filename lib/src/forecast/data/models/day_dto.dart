@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../base/json.dart';
 
+import '../../../shared/data/json.dart';
 import 'condition_dto.dart';
 
 //import 'condition_dto.dart';

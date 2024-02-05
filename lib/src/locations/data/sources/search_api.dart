@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../base/json.dart';
-import '../../../../clients/dio.dart';
+import '../../../../clients/http_client.dart';
+import '../../../shared/data/json.dart';
 
 part 'search_api.g.dart';
 
@@ -11,7 +11,7 @@ const locationsApiDebugLogLabel = 'LocationsApi';
 
 @riverpod
 SearchApi locationsApi(LocationsApiRef ref) {
-  final client = ref.watch(httpClientProvider(loggerLabel: locationsApiDebugLogLabel));
+  final client = ref.watch(httpClientProvider());
 
   return SearchApi(client);
 }

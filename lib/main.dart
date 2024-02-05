@@ -1,28 +1,26 @@
-// ignore_for_file: file_names
-
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:logging/logging.dart';
+import 'package:stack_trace/stack_trace.dart';
 
-import 'clients/local_db.dart';
-import 'core/app.dart';
-import 'core/init.dart';
+import 'clients/talker.dart';
+import 'core/riverpod_weather.dart';
+import 'logs/riverpod_weather_provider_observer.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  hierarchicalLoggingEnabled = true;
-  final (logger, crashlytics, isar) = await init();
+  FlutterError.onError = (details) => talker.handle(
+        details.exception,
+        switch (details.stack) {
+          final value? => Trace.from(value).terse,
+          _ => null,
+        },
+        details.exceptionAsString(),
+      );
 
   runApp(
     ProviderScope(
-      observers: [logger, crashlytics],
-      overrides: [
-        localDbProvider.overrideWith((ref) {
-          ref.keepAlive();
-          return isar;
-        }),
-      ],
-      child: const App(),
+      observers: [RiverpodWeatherProviderObserver(talker)],
+      child: const RiverpodWeather(),
     ),
   );
 }

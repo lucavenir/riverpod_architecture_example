@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../base/json.dart';
 
+import '../../../shared/data/json.dart';
 import 'condition_dto.dart';
 
 part 'current_dto.freezed.dart';
@@ -10,7 +10,8 @@ part 'current_dto.g.dart';
 class CurrentDto with _$CurrentDto {
   const factory CurrentDto({
     required ConditionDto condition,
-    required DateTime lastUpdated, int? lastUpdatedEpoch,
+    required DateTime lastUpdated,
+    int? lastUpdatedEpoch,
     double? tempC,
     double? tempF,
     int? isDay,

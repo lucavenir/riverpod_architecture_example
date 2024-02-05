@@ -1,6 +1,6 @@
 import '../../../locations/domain/entities/current_location.dart';
 import '../../domain/entities/forecast_weather.dart';
-import '../../domain/repository/forecast_weather_repository_interface.dart';
+import '../../domain/interfaces/forecast_weather_repository_interface.dart';
 import '../adapters/forecast_weather_from_dto.dart';
 import '../models/forecast_weather_dto.dart';
 import '../sources/forecast_weather_api.dart';

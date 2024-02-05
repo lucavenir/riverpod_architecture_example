@@ -1,6 +1,6 @@
 import 'package:geolocator/geolocator.dart';
 
-import '../interfaces/geolocator_interface.dart';
+import '../../domain/interfaces/geolocator_interface.dart';
 
 class GeolocatorRepository implements GeolocatorInterface {
   @override

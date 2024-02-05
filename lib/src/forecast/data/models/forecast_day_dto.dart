@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../base/json.dart';
 
+import '../../../shared/data/json.dart';
 import 'astro_dto.dart';
 import 'day_dto.dart';
 import 'hour_dto.dart';
