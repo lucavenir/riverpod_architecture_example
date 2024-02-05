@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/location_dto.dart';
+import '../../data/models/location.model.dart';
 
-part 'current_location.freezed.dart';
+part 'current_location.model.freezed.dart';
 
 @freezed
 class CurrentLocation with _$CurrentLocation {
@@ -20,7 +20,7 @@ class CurrentLocation with _$CurrentLocation {
     double? long,
   }) = _CurrentLocation;
   const CurrentLocation._();
-  factory CurrentLocation.fromModel(LocationDto dto) {
+  factory CurrentLocation.fromModel(LocationModel dto) {
     return CurrentLocation(
       cityName: dto.name,
       lat: dto.lat,

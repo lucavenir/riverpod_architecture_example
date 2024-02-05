@@ -1,8 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/repositories/locations.repository.dart';
-import '../../domain/entities/current_location.dart';
-import '../../domain/entities/locations.dart';
+import '../../domain/entities/current_location.model.dart';
+import '../../domain/entities/locations.model.dart';
 
 part 'locations.provider.g.dart';
 

@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/connectivity_check.provider.dart';
-import '../../../locations/domain/entities/current_location.dart';
+import '../../../locations/domain/entities/current_location.model.dart';
 import '../../domain/entities/current_weather.model.dart';
 import '../models/current_weather.model.dart';
 import '../models/local_current_weather.model.dart';

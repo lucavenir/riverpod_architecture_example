@@ -4,8 +4,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../adapters/position_to_query_adapter.dart';
 import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
-import '../models/location_dto.dart';
-import '../sources/search_api.dart';
+import '../models/location.model.dart';
+import '../sources/search_api.source.dart';
 import 'geolocator.repository.dart';
 
 part 'locations.repository.g.dart';
@@ -22,7 +22,7 @@ class LocationsRepository {
   final SearchApi api;
   final GeolocatorRepository geo;
 
-  Future<LocationDto> getCurrentLocation() async {
+  Future<LocationModel> getCurrentLocation() async {
     final serviceEnabled = await geo.isLocationServiceEnabled();
     if (!serviceEnabled) throw const LocationServiceDisabledException();
 
@@ -44,9 +44,9 @@ class LocationsRepository {
     return locations.first;
   }
 
-  Future<List<LocationDto>> findLocations(String query) async {
+  Future<List<LocationModel>> findLocations(String query) async {
     final result = await api.locations(q: query);
-    final dto = result.map(LocationDto.fromJson);
+    final dto = result.map(LocationModel.fromJson);
 
     final locations = [...dto];
 

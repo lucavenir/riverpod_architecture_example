@@ -2,12 +2,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../shared/data/json.dart';
 
-part 'location_dto.freezed.dart';
-part 'location_dto.g.dart';
+part 'location.model.freezed.dart';
+part 'location.model.g.dart';
 
 @freezed
-class LocationDto with _$LocationDto {
-  const factory LocationDto({
+class LocationModel with _$LocationModel {
+  const factory LocationModel({
     required String name,
     required String country,
     int? id,
@@ -15,6 +15,6 @@ class LocationDto with _$LocationDto {
     double? lat,
     double? lon,
     String? url,
-  }) = _LocationDto;
-  factory LocationDto.fromJson(Json json) => _$LocationDtoFromJson(json);
+  }) = _LocationModel;
+  factory LocationModel.fromJson(Json json) => _$LocationModelFromJson(json);
 }

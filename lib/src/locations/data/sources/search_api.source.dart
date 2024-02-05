@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../clients/http.client.dart';
 import '../../../shared/data/json.dart';
 
-part 'search_api.g.dart';
+part 'search_api.source.g.dart';
 
 /// Label used for logging, useful for testing purposes
 const locationsApiDebugLogLabel = 'LocationsApi';

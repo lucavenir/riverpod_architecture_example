@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../domain/entities/current_location.dart';
+import '../../domain/entities/current_location.model.dart';
 import '../controllers/current_location.controller.dart';
 import 'location_results_widget.dart';
 

@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../locations/domain/entities/current_location.dart';
+import '../../../locations/domain/entities/current_location.model.dart';
 import '../models/forecast_weather.model.dart';
 import '../sources/forecast_weather_api.source.dart';
 
