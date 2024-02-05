@@ -4,7 +4,7 @@ import '../../data/repositories/locations_repository.dart';
 import '../../domain/entities/current_location.dart';
 import '../../domain/entities/locations.dart';
 
-part 'locations_provider.g.dart';
+part 'locations.provider.g.dart';
 
 @riverpod
 FutureOr<Locations> searchLocations(SearchLocationsRef ref, String query) async {

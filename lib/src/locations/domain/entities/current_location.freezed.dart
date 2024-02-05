@@ -131,9 +131,10 @@ class __$$CurrentLocationImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CurrentLocationImpl implements _CurrentLocation {
+class _$CurrentLocationImpl extends _CurrentLocation {
   const _$CurrentLocationImpl(
-      {required this.cityName, required this.country, this.lat, this.long});
+      {required this.cityName, required this.country, this.lat, this.long})
+      : super._();
 
   /// City name
   @override
@@ -179,12 +180,13 @@ class _$CurrentLocationImpl implements _CurrentLocation {
           this, _$identity);
 }
 
-abstract class _CurrentLocation implements CurrentLocation {
+abstract class _CurrentLocation extends CurrentLocation {
   const factory _CurrentLocation(
       {required final String cityName,
       required final String country,
       final double? lat,
       final double? long}) = _$CurrentLocationImpl;
+  const _CurrentLocation._() : super._();
 
   @override
 

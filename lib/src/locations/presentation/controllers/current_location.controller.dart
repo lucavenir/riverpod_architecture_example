@@ -5,7 +5,7 @@ import '../../../shared/presentation/cache_for.dart';
 import '../../data/repositories/locations_repository.dart';
 import '../../domain/entities/current_location.dart';
 
-part 'current_location_controller.g.dart';
+part 'current_location.controller.g.dart';
 
 @riverpod
 class CurrentLocationController extends _$CurrentLocationController {

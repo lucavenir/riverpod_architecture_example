@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'locations_provider.dart';
+part of 'locations.provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$searchLocationsHash() => r'7dbc46d6fda8d7e6f0fce1b29b4e332c18626522';
+String _$searchLocationsHash() => r'52f194b447b424bde4543ea4d77ec2b2951194fc';
 
 /// Copied from Dart SDK
 class _SystemHash {

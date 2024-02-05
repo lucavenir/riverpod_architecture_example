@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sun_times_provider.dart';
+part of 'sun_times.provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sunTimesHash() => r'fd104d897444f7b93517c848ba1551731aad91a0';
+String _$sunTimesHash() => r'fc1e4010b0ae131ef58568e5e570f618e544a955';
 
 /// See also [sunTimes].
 @ProviderFor(sunTimes)

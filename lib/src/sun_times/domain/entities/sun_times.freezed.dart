@@ -112,9 +112,10 @@ class __$$SunTimesImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SunTimesImpl implements _SunTimes {
+class _$SunTimesImpl extends _SunTimes {
   const _$SunTimesImpl(
-      {required this.timestamp, required this.sunrise, required this.sunset});
+      {required this.timestamp, required this.sunrise, required this.sunset})
+      : super._();
 
   @override
   final DateTime timestamp;
@@ -149,11 +150,12 @@ class _$SunTimesImpl implements _SunTimes {
       __$$SunTimesImplCopyWithImpl<_$SunTimesImpl>(this, _$identity);
 }
 
-abstract class _SunTimes implements SunTimes {
+abstract class _SunTimes extends SunTimes {
   const factory _SunTimes(
       {required final DateTime timestamp,
       required final TimeOfDay sunrise,
       required final TimeOfDay sunset}) = _$SunTimesImpl;
+  const _SunTimes._() : super._();
 
   @override
   DateTime get timestamp;

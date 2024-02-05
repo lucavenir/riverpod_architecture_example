@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'forecast_weather_provider.dart';
+part of 'current_weather.provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$forecastWeatherHash() => r'f01946defdfd2c7e2bc5c0e1308b8c4ed1e46d27';
+String _$currentWeatherHash() => r'a9211ac971c6493f96d2c745f478621c8011ed26';
 
-/// See also [forecastWeather].
-@ProviderFor(forecastWeather)
-final forecastWeatherProvider =
-    AutoDisposeFutureProvider<ForecastWeather>.internal(
-  forecastWeather,
-  name: r'forecastWeatherProvider',
+/// See also [currentWeather].
+@ProviderFor(currentWeather)
+final currentWeatherProvider =
+    AutoDisposeFutureProvider<CurrentWeather>.internal(
+  currentWeather,
+  name: r'currentWeatherProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$forecastWeatherHash,
+      : _$currentWeatherHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef ForecastWeatherRef = AutoDisposeFutureProviderRef<ForecastWeather>;
+typedef CurrentWeatherRef = AutoDisposeFutureProviderRef<CurrentWeather>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

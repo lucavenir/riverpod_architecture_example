@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../shared/presentation/widgets/standard_when.dart';
-import '../providers/locations_provider.dart';
+import '../providers/locations.provider.dart';
 
 class LocationResultsWidget extends HookConsumerWidget {
   const LocationResultsWidget(this.query, {super.key});
