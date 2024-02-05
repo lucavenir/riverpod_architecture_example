@@ -3,6 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../clients/connectivity_check.provider.dart';
 import '../../../locations/domain/entities/current_location.model.dart';
 import '../../domain/entities/current_weather.model.dart';
+import '../interfaces/current_weather_interface.dart';
 import '../models/current_weather.model.dart';
 import '../models/local_current_weather.model.dart';
 import '../sources/current_weather_api.source.dart';
@@ -25,7 +26,7 @@ class CurrentWeatherRepository {
   final CurrentWeatherLocal local;
   final ConnectionCheck connectivity;
 
-  Future<CurrentWeatherModel> getCurrentWeather(CurrentLocation location) async {
+  Future<CurrentWeatherInterface> getCurrentWeather(CurrentLocation location) async {
     final hasInternet = await connectivity.checkFullConnectivity();
     if (!hasInternet) return _getCurrentWeatherFromDb();
 
@@ -39,8 +40,8 @@ class CurrentWeatherRepository {
     return local.saveCurrentWeather(currentWeather);
   }
 
-  CurrentWeatherModel _getCurrentWeatherFromDb() {
+  CurrentWeatherInterface _getCurrentWeatherFromDb() {
     final model = local.getCurrentWeatherFromDb();
-    return CurrentWeatherModel.fromDb(model);
+    return model;
   }
 }

@@ -7,8 +7,8 @@ part 'current.model.freezed.dart';
 part 'current.model.g.dart';
 
 @freezed
-class CurrentModel with _$CurrentModel {
-  const factory CurrentModel({
+class CurrentForecastModel with _$CurrentForecastModel {
+  const factory CurrentForecastModel({
     required ConditionModel condition,
     required DateTime lastUpdated,
     int? lastUpdatedEpoch,
@@ -32,7 +32,7 @@ class CurrentModel with _$CurrentModel {
     double? uv,
     double? gustMph,
     double? gustKph,
-  }) = _CurrentModel_$CurrentModel;
+  }) = _CurrentForecastModel;
 
-  factory CurrentModel.fromJson(Json json) => _$CurrentModelFromJson(json);
+  factory CurrentForecastModel.fromJson(Json json) => _$CurrentForecastModelFromJson(json);
 }

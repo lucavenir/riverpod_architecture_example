@@ -6,13 +6,13 @@ part of 'current.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentModel_$CurrentModelImpl _$$CurrentModel_$CurrentModelImplFromJson(
+_$CurrentForecastModelImpl _$$CurrentForecastModelImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CurrentModel_$CurrentModelImpl',
+      r'_$CurrentForecastModelImpl',
       json,
       ($checkedConvert) {
-        final val = _$CurrentModel_$CurrentModelImpl(
+        final val = _$CurrentForecastModelImpl(
           condition: $checkedConvert('condition',
               (v) => ConditionModel.fromJson(v as Map<String, dynamic>)),
           lastUpdated: $checkedConvert(
@@ -73,8 +73,8 @@ _$CurrentModel_$CurrentModelImpl _$$CurrentModel_$CurrentModelImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CurrentModel_$CurrentModelImplToJson(
-        _$CurrentModel_$CurrentModelImpl instance) =>
+Map<String, dynamic> _$$CurrentForecastModelImplToJson(
+        _$CurrentForecastModelImpl instance) =>
     <String, dynamic>{
       'condition': instance.condition.toJson(),
       'last_updated': instance.lastUpdated.toIso8601String(),

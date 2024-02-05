@@ -1,11 +1,14 @@
 import 'package:isar/isar.dart';
 
 import '../../domain/entities/current_weather.model.dart';
+import '../interfaces/current_weather_interface.dart';
+import 'condition.model.dart';
+import 'current.model.dart';
 
 part 'local_current_weather.model.g.dart';
 
 @collection
-class LocalCurrentWeatherModel {
+class LocalCurrentWeatherModel implements CurrentWeatherInterface {
   LocalCurrentWeatherModel({
     required this.weather,
     required this.image,
@@ -48,4 +51,15 @@ class LocalCurrentWeatherModel {
   final double wind;
   final double humidity;
   final double perceivedTemp;
+
+  @ignore
+  @override
+  CurrentModel get current => CurrentModel(
+        condition: ConditionModel(text: weather, icon: image),
+        lastUpdated: updatedAt,
+        tempC: temp.toDouble(),
+        windKph: wind,
+        humidity: humidity,
+        feelslikeC: perceivedTemp,
+      );
 }

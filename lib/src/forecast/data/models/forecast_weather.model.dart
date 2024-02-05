@@ -11,7 +11,7 @@ part 'forecast_weather.model.g.dart';
 @freezed
 class ForecastWeatherModel with _$ForecastWeatherModel {
   const factory ForecastWeatherModel({
-    required CurrentModel current,
+    required CurrentForecastModel current,
     required ForecastModel forecast,
     ForecastLocationModel? location,
   }) = _ForecastWeatherModel;

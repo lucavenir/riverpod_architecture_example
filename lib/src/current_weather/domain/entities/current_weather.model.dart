@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/current_weather.model.dart';
+import '../../data/interfaces/current_weather_interface.dart';
 
 part 'current_weather.model.freezed.dart';
 
@@ -29,18 +29,18 @@ class CurrentWeather with _$CurrentWeather {
     required double wind,
   }) = _CurrentWeather;
 
-  factory CurrentWeather.fromModel(CurrentWeatherModel dto) {
-    final truncatedUrl = dto.current.condition.icon.substring(2);
+  factory CurrentWeather.fromModel(CurrentWeatherInterface model) {
+    final truncatedUrl = model.current.condition.icon.substring(2);
     final imageUrl = 'https://$truncatedUrl';
 
     return CurrentWeather(
-      temp: dto.current.tempC.toInt(),
-      weather: dto.current.condition.text,
-      updatedAt: dto.current.lastUpdated,
+      temp: model.current.tempC.toInt(),
+      weather: model.current.condition.text,
+      updatedAt: model.current.lastUpdated,
       image: imageUrl,
-      wind: dto.current.windKph,
-      perceivedTemp: dto.current.feelslikeC,
-      humidity: dto.current.humidity,
+      wind: model.current.windKph,
+      perceivedTemp: model.current.feelslikeC,
+      humidity: model.current.humidity,
     );
   }
 }

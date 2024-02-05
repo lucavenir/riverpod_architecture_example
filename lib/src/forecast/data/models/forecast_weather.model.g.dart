@@ -14,7 +14,7 @@ _$ForecastWeatherModelImpl _$$ForecastWeatherModelImplFromJson(
       ($checkedConvert) {
         final val = _$ForecastWeatherModelImpl(
           current: $checkedConvert('current',
-              (v) => CurrentModel.fromJson(v as Map<String, dynamic>)),
+              (v) => CurrentForecastModel.fromJson(v as Map<String, dynamic>)),
           forecast: $checkedConvert('forecast',
               (v) => ForecastModel.fromJson(v as Map<String, dynamic>)),
           location: $checkedConvert(

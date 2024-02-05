@@ -20,7 +20,7 @@ ForecastWeatherModel _$ForecastWeatherModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ForecastWeatherModel {
-  CurrentModel get current => throw _privateConstructorUsedError;
+  CurrentForecastModel get current => throw _privateConstructorUsedError;
   ForecastModel get forecast => throw _privateConstructorUsedError;
   ForecastLocationModel? get location => throw _privateConstructorUsedError;
 
@@ -37,11 +37,11 @@ abstract class $ForecastWeatherModelCopyWith<$Res> {
       _$ForecastWeatherModelCopyWithImpl<$Res, ForecastWeatherModel>;
   @useResult
   $Res call(
-      {CurrentModel current,
+      {CurrentForecastModel current,
       ForecastModel forecast,
       ForecastLocationModel? location});
 
-  $CurrentModelCopyWith<$Res> get current;
+  $CurrentForecastModelCopyWith<$Res> get current;
   $ForecastModelCopyWith<$Res> get forecast;
   $ForecastLocationModelCopyWith<$Res>? get location;
 }
@@ -68,7 +68,7 @@ class _$ForecastWeatherModelCopyWithImpl<$Res,
       current: null == current
           ? _value.current
           : current // ignore: cast_nullable_to_non_nullable
-              as CurrentModel,
+              as CurrentForecastModel,
       forecast: null == forecast
           ? _value.forecast
           : forecast // ignore: cast_nullable_to_non_nullable
@@ -82,8 +82,8 @@ class _$ForecastWeatherModelCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $CurrentModelCopyWith<$Res> get current {
-    return $CurrentModelCopyWith<$Res>(_value.current, (value) {
+  $CurrentForecastModelCopyWith<$Res> get current {
+    return $CurrentForecastModelCopyWith<$Res>(_value.current, (value) {
       return _then(_value.copyWith(current: value) as $Val);
     });
   }
@@ -118,12 +118,12 @@ abstract class _$$ForecastWeatherModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CurrentModel current,
+      {CurrentForecastModel current,
       ForecastModel forecast,
       ForecastLocationModel? location});
 
   @override
-  $CurrentModelCopyWith<$Res> get current;
+  $CurrentForecastModelCopyWith<$Res> get current;
   @override
   $ForecastModelCopyWith<$Res> get forecast;
   @override
@@ -149,7 +149,7 @@ class __$$ForecastWeatherModelImplCopyWithImpl<$Res>
       current: null == current
           ? _value.current
           : current // ignore: cast_nullable_to_non_nullable
-              as CurrentModel,
+              as CurrentForecastModel,
       forecast: null == forecast
           ? _value.forecast
           : forecast // ignore: cast_nullable_to_non_nullable
@@ -172,7 +172,7 @@ class _$ForecastWeatherModelImpl implements _ForecastWeatherModel {
       _$$ForecastWeatherModelImplFromJson(json);
 
   @override
-  final CurrentModel current;
+  final CurrentForecastModel current;
   @override
   final ForecastModel forecast;
   @override
@@ -217,7 +217,7 @@ class _$ForecastWeatherModelImpl implements _ForecastWeatherModel {
 
 abstract class _ForecastWeatherModel implements ForecastWeatherModel {
   const factory _ForecastWeatherModel(
-      {required final CurrentModel current,
+      {required final CurrentForecastModel current,
       required final ForecastModel forecast,
       final ForecastLocationModel? location}) = _$ForecastWeatherModelImpl;
 
@@ -225,7 +225,7 @@ abstract class _ForecastWeatherModel implements ForecastWeatherModel {
       _$ForecastWeatherModelImpl.fromJson;
 
   @override
-  CurrentModel get current;
+  CurrentForecastModel get current;
   @override
   ForecastModel get forecast;
   @override

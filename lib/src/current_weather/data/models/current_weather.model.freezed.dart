@@ -182,7 +182,8 @@ class _$CurrentWeatherModelImpl implements _CurrentWeatherModel {
   }
 }
 
-abstract class _CurrentWeatherModel implements CurrentWeatherModel {
+abstract class _CurrentWeatherModel
+    implements CurrentWeatherModel, CurrentWeatherInterface {
   const factory _CurrentWeatherModel(
       {required final CurrentModel current,
       final CurrentWeatherLocationModel? location}) = _$CurrentWeatherModelImpl;
