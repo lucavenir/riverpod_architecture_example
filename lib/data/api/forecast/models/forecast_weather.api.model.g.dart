@@ -13,15 +13,18 @@ _$ForecastWeatherApiModelImpl _$$ForecastWeatherApiModelImplFromJson(
       json,
       ($checkedConvert) {
         final val = _$ForecastWeatherApiModelImpl(
-          current: $checkedConvert('current',
-              (v) => CurrentForecastModel.fromJson(v as Map<String, dynamic>)),
+          current: $checkedConvert(
+              'current',
+              (v) =>
+                  CurrentForecastApiModel.fromJson(v as Map<String, dynamic>)),
           forecast: $checkedConvert('forecast',
-              (v) => ForecastModel.fromJson(v as Map<String, dynamic>)),
+              (v) => ForecastApiModel.fromJson(v as Map<String, dynamic>)),
           location: $checkedConvert(
               'location',
               (v) => v == null
                   ? null
-                  : ForecastLocationModel.fromJson(v as Map<String, dynamic>)),
+                  : ForecastLocationApiModel.fromJson(
+                      v as Map<String, dynamic>)),
         );
         return val;
       },

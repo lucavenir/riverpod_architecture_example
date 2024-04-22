@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../clients/local_db.client.dart';
+import '../../../clients/local_db.client.dart';
 
 part 'splash_loading.provider.g.dart';
 

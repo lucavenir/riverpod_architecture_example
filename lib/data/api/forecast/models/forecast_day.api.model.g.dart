@@ -15,17 +15,17 @@ _$ForecastDayApiModelImpl _$$ForecastDayApiModelImplFromJson(
         final val = _$ForecastDayApiModelImpl(
           date: $checkedConvert('date', (v) => DateTime.parse(v as String)),
           day: $checkedConvert(
-              'day', (v) => DayModel.fromJson(v as Map<String, dynamic>)),
+              'day', (v) => DayApiModel.fromJson(v as Map<String, dynamic>)),
           dateEpoch: $checkedConvert('date_epoch', (v) => v as int?),
           astro: $checkedConvert(
               'astro',
               (v) => v == null
                   ? null
-                  : AstroModel.fromJson(v as Map<String, dynamic>)),
+                  : AstroApiModel.fromJson(v as Map<String, dynamic>)),
           hour: $checkedConvert(
               'hour',
               (v) => (v as List<dynamic>?)
-                  ?.map((e) => HourModel.fromJson(e as Map<String, dynamic>))
+                  ?.map((e) => HourApiModel.fromJson(e as Map<String, dynamic>))
                   .toList()),
         );
         return val;

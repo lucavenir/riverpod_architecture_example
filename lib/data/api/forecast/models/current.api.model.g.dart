@@ -14,7 +14,7 @@ _$CurrentForecastApiModelImpl _$$CurrentForecastApiModelImplFromJson(
       ($checkedConvert) {
         final val = _$CurrentForecastApiModelImpl(
           condition: $checkedConvert('condition',
-              (v) => ConditionModel.fromJson(v as Map<String, dynamic>)),
+              (v) => ConditionApiModel.fromJson(v as Map<String, dynamic>)),
           lastUpdated: $checkedConvert(
               'last_updated', (v) => DateTime.parse(v as String)),
           lastUpdatedEpoch:

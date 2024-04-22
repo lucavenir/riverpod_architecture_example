@@ -17,7 +17,8 @@ _$ForecastApiModelImpl _$$ForecastApiModelImplFromJson(
               'forecastday',
               (v) =>
                   (v as List<dynamic>?)?.map((e) =>
-                      ForecastDayModel.fromJson(e as Map<String, dynamic>)) ??
+                      ForecastDayApiModel.fromJson(
+                          e as Map<String, dynamic>)) ??
                   const []),
         );
         return val;

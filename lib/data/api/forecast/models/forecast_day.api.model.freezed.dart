@@ -21,10 +21,10 @@ ForecastDayApiModel _$ForecastDayApiModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ForecastDayApiModel {
   DateTime get date => throw _privateConstructorUsedError;
-  DayModel get day => throw _privateConstructorUsedError;
+  DayApiModel get day => throw _privateConstructorUsedError;
   int? get dateEpoch => throw _privateConstructorUsedError;
-  AstroModel? get astro => throw _privateConstructorUsedError;
-  List<HourModel>? get hour => throw _privateConstructorUsedError;
+  AstroApiModel? get astro => throw _privateConstructorUsedError;
+  List<HourApiModel>? get hour => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,13 +40,13 @@ abstract class $ForecastDayApiModelCopyWith<$Res> {
   @useResult
   $Res call(
       {DateTime date,
-      DayModel day,
+      DayApiModel day,
       int? dateEpoch,
-      AstroModel? astro,
-      List<HourModel>? hour});
+      AstroApiModel? astro,
+      List<HourApiModel>? hour});
 
-  $DayModelCopyWith<$Res> get day;
-  $AstroModelCopyWith<$Res>? get astro;
+  $DayApiModelCopyWith<$Res> get day;
+  $AstroApiModelCopyWith<$Res>? get astro;
 }
 
 /// @nodoc
@@ -76,7 +76,7 @@ class _$ForecastDayApiModelCopyWithImpl<$Res, $Val extends ForecastDayApiModel>
       day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
-              as DayModel,
+              as DayApiModel,
       dateEpoch: freezed == dateEpoch
           ? _value.dateEpoch
           : dateEpoch // ignore: cast_nullable_to_non_nullable
@@ -84,30 +84,30 @@ class _$ForecastDayApiModelCopyWithImpl<$Res, $Val extends ForecastDayApiModel>
       astro: freezed == astro
           ? _value.astro
           : astro // ignore: cast_nullable_to_non_nullable
-              as AstroModel?,
+              as AstroApiModel?,
       hour: freezed == hour
           ? _value.hour
           : hour // ignore: cast_nullable_to_non_nullable
-              as List<HourModel>?,
+              as List<HourApiModel>?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DayModelCopyWith<$Res> get day {
-    return $DayModelCopyWith<$Res>(_value.day, (value) {
+  $DayApiModelCopyWith<$Res> get day {
+    return $DayApiModelCopyWith<$Res>(_value.day, (value) {
       return _then(_value.copyWith(day: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AstroModelCopyWith<$Res>? get astro {
+  $AstroApiModelCopyWith<$Res>? get astro {
     if (_value.astro == null) {
       return null;
     }
 
-    return $AstroModelCopyWith<$Res>(_value.astro!, (value) {
+    return $AstroApiModelCopyWith<$Res>(_value.astro!, (value) {
       return _then(_value.copyWith(astro: value) as $Val);
     });
   }
@@ -123,15 +123,15 @@ abstract class _$$ForecastDayApiModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {DateTime date,
-      DayModel day,
+      DayApiModel day,
       int? dateEpoch,
-      AstroModel? astro,
-      List<HourModel>? hour});
+      AstroApiModel? astro,
+      List<HourApiModel>? hour});
 
   @override
-  $DayModelCopyWith<$Res> get day;
+  $DayApiModelCopyWith<$Res> get day;
   @override
-  $AstroModelCopyWith<$Res>? get astro;
+  $AstroApiModelCopyWith<$Res>? get astro;
 }
 
 /// @nodoc
@@ -159,7 +159,7 @@ class __$$ForecastDayApiModelImplCopyWithImpl<$Res>
       day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
-              as DayModel,
+              as DayApiModel,
       dateEpoch: freezed == dateEpoch
           ? _value.dateEpoch
           : dateEpoch // ignore: cast_nullable_to_non_nullable
@@ -167,11 +167,11 @@ class __$$ForecastDayApiModelImplCopyWithImpl<$Res>
       astro: freezed == astro
           ? _value.astro
           : astro // ignore: cast_nullable_to_non_nullable
-              as AstroModel?,
+              as AstroApiModel?,
       hour: freezed == hour
           ? _value._hour
           : hour // ignore: cast_nullable_to_non_nullable
-              as List<HourModel>?,
+              as List<HourApiModel>?,
     ));
   }
 }
@@ -184,7 +184,7 @@ class _$ForecastDayApiModelImpl implements _ForecastDayApiModel {
       required this.day,
       this.dateEpoch,
       this.astro,
-      final List<HourModel>? hour})
+      final List<HourApiModel>? hour})
       : _hour = hour;
 
   factory _$ForecastDayApiModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -193,14 +193,14 @@ class _$ForecastDayApiModelImpl implements _ForecastDayApiModel {
   @override
   final DateTime date;
   @override
-  final DayModel day;
+  final DayApiModel day;
   @override
   final int? dateEpoch;
   @override
-  final AstroModel? astro;
-  final List<HourModel>? _hour;
+  final AstroApiModel? astro;
+  final List<HourApiModel>? _hour;
   @override
-  List<HourModel>? get hour {
+  List<HourApiModel>? get hour {
     final value = _hour;
     if (value == null) return null;
     if (_hour is EqualUnmodifiableListView) return _hour;
@@ -249,10 +249,10 @@ class _$ForecastDayApiModelImpl implements _ForecastDayApiModel {
 abstract class _ForecastDayApiModel implements ForecastDayApiModel {
   const factory _ForecastDayApiModel(
       {required final DateTime date,
-      required final DayModel day,
+      required final DayApiModel day,
       final int? dateEpoch,
-      final AstroModel? astro,
-      final List<HourModel>? hour}) = _$ForecastDayApiModelImpl;
+      final AstroApiModel? astro,
+      final List<HourApiModel>? hour}) = _$ForecastDayApiModelImpl;
 
   factory _ForecastDayApiModel.fromJson(Map<String, dynamic> json) =
       _$ForecastDayApiModelImpl.fromJson;
@@ -260,13 +260,13 @@ abstract class _ForecastDayApiModel implements ForecastDayApiModel {
   @override
   DateTime get date;
   @override
-  DayModel get day;
+  DayApiModel get day;
   @override
   int? get dateEpoch;
   @override
-  AstroModel? get astro;
+  AstroApiModel? get astro;
   @override
-  List<HourModel>? get hour;
+  List<HourApiModel>? get hour;
   @override
   @JsonKey(ignore: true)
   _$$ForecastDayApiModelImplCopyWith<_$ForecastDayApiModelImpl> get copyWith =>

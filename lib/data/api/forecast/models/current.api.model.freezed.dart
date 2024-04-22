@@ -21,7 +21,7 @@ CurrentForecastApiModel _$CurrentForecastApiModelFromJson(
 
 /// @nodoc
 mixin _$CurrentForecastApiModel {
-  ConditionModel get condition => throw _privateConstructorUsedError;
+  ConditionApiModel get condition => throw _privateConstructorUsedError;
   DateTime get lastUpdated => throw _privateConstructorUsedError;
   int? get lastUpdatedEpoch => throw _privateConstructorUsedError;
   double? get tempC => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $CurrentForecastApiModelCopyWith<$Res> {
       _$CurrentForecastApiModelCopyWithImpl<$Res, CurrentForecastApiModel>;
   @useResult
   $Res call(
-      {ConditionModel condition,
+      {ConditionApiModel condition,
       DateTime lastUpdated,
       int? lastUpdatedEpoch,
       double? tempC,
@@ -82,7 +82,7 @@ abstract class $CurrentForecastApiModelCopyWith<$Res> {
       double? gustMph,
       double? gustKph});
 
-  $ConditionModelCopyWith<$Res> get condition;
+  $ConditionApiModelCopyWith<$Res> get condition;
 }
 
 /// @nodoc
@@ -127,7 +127,7 @@ class _$CurrentForecastApiModelCopyWithImpl<$Res,
       condition: null == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as ConditionModel,
+              as ConditionApiModel,
       lastUpdated: null == lastUpdated
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
@@ -221,8 +221,8 @@ class _$CurrentForecastApiModelCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ConditionModelCopyWith<$Res> get condition {
-    return $ConditionModelCopyWith<$Res>(_value.condition, (value) {
+  $ConditionApiModelCopyWith<$Res> get condition {
+    return $ConditionApiModelCopyWith<$Res>(_value.condition, (value) {
       return _then(_value.copyWith(condition: value) as $Val);
     });
   }
@@ -238,7 +238,7 @@ abstract class _$$CurrentForecastApiModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ConditionModel condition,
+      {ConditionApiModel condition,
       DateTime lastUpdated,
       int? lastUpdatedEpoch,
       double? tempC,
@@ -263,7 +263,7 @@ abstract class _$$CurrentForecastApiModelImplCopyWith<$Res>
       double? gustKph});
 
   @override
-  $ConditionModelCopyWith<$Res> get condition;
+  $ConditionApiModelCopyWith<$Res> get condition;
 }
 
 /// @nodoc
@@ -307,7 +307,7 @@ class __$$CurrentForecastApiModelImplCopyWithImpl<$Res>
       condition: null == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as ConditionModel,
+              as ConditionApiModel,
       lastUpdated: null == lastUpdated
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
@@ -432,7 +432,7 @@ class _$CurrentForecastApiModelImpl implements _CurrentForecastApiModel {
       _$$CurrentForecastApiModelImplFromJson(json);
 
   @override
-  final ConditionModel condition;
+  final ConditionApiModel condition;
   @override
   final DateTime lastUpdated;
   @override
@@ -571,7 +571,7 @@ class _$CurrentForecastApiModelImpl implements _CurrentForecastApiModel {
 
 abstract class _CurrentForecastApiModel implements CurrentForecastApiModel {
   const factory _CurrentForecastApiModel(
-      {required final ConditionModel condition,
+      {required final ConditionApiModel condition,
       required final DateTime lastUpdated,
       final int? lastUpdatedEpoch,
       final double? tempC,
@@ -599,7 +599,7 @@ abstract class _CurrentForecastApiModel implements CurrentForecastApiModel {
       _$CurrentForecastApiModelImpl.fromJson;
 
   @override
-  ConditionModel get condition;
+  ConditionApiModel get condition;
   @override
   DateTime get lastUpdated;
   @override

@@ -124,13 +124,12 @@ class __$$ForecastDayImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ForecastDayImpl extends _ForecastDay {
+class _$ForecastDayImpl implements _ForecastDay {
   const _$ForecastDayImpl(
       {required this.temp,
       required this.weather,
       required this.date,
-      required this.image})
-      : super._();
+      required this.image});
 
   @override
   final double temp;
@@ -167,13 +166,12 @@ class _$ForecastDayImpl extends _ForecastDay {
       __$$ForecastDayImplCopyWithImpl<_$ForecastDayImpl>(this, _$identity);
 }
 
-abstract class _ForecastDay extends ForecastDay {
+abstract class _ForecastDay implements ForecastDay {
   const factory _ForecastDay(
       {required final double temp,
       required final String weather,
       required final DateTime date,
       required final String image}) = _$ForecastDayImpl;
-  const _ForecastDay._() : super._();
 
   @override
   double get temp;

@@ -21,9 +21,9 @@ ForecastWeatherApiModel _$ForecastWeatherApiModelFromJson(
 
 /// @nodoc
 mixin _$ForecastWeatherApiModel {
-  CurrentForecastModel get current => throw _privateConstructorUsedError;
-  ForecastModel get forecast => throw _privateConstructorUsedError;
-  ForecastLocationModel? get location => throw _privateConstructorUsedError;
+  CurrentForecastApiModel get current => throw _privateConstructorUsedError;
+  ForecastApiModel get forecast => throw _privateConstructorUsedError;
+  ForecastLocationApiModel? get location => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,13 +38,13 @@ abstract class $ForecastWeatherApiModelCopyWith<$Res> {
       _$ForecastWeatherApiModelCopyWithImpl<$Res, ForecastWeatherApiModel>;
   @useResult
   $Res call(
-      {CurrentForecastModel current,
-      ForecastModel forecast,
-      ForecastLocationModel? location});
+      {CurrentForecastApiModel current,
+      ForecastApiModel forecast,
+      ForecastLocationApiModel? location});
 
-  $CurrentForecastModelCopyWith<$Res> get current;
-  $ForecastModelCopyWith<$Res> get forecast;
-  $ForecastLocationModelCopyWith<$Res>? get location;
+  $CurrentForecastApiModelCopyWith<$Res> get current;
+  $ForecastApiModelCopyWith<$Res> get forecast;
+  $ForecastLocationApiModelCopyWith<$Res>? get location;
 }
 
 /// @nodoc
@@ -69,42 +69,42 @@ class _$ForecastWeatherApiModelCopyWithImpl<$Res,
       current: null == current
           ? _value.current
           : current // ignore: cast_nullable_to_non_nullable
-              as CurrentForecastModel,
+              as CurrentForecastApiModel,
       forecast: null == forecast
           ? _value.forecast
           : forecast // ignore: cast_nullable_to_non_nullable
-              as ForecastModel,
+              as ForecastApiModel,
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as ForecastLocationModel?,
+              as ForecastLocationApiModel?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CurrentForecastModelCopyWith<$Res> get current {
-    return $CurrentForecastModelCopyWith<$Res>(_value.current, (value) {
+  $CurrentForecastApiModelCopyWith<$Res> get current {
+    return $CurrentForecastApiModelCopyWith<$Res>(_value.current, (value) {
       return _then(_value.copyWith(current: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ForecastModelCopyWith<$Res> get forecast {
-    return $ForecastModelCopyWith<$Res>(_value.forecast, (value) {
+  $ForecastApiModelCopyWith<$Res> get forecast {
+    return $ForecastApiModelCopyWith<$Res>(_value.forecast, (value) {
       return _then(_value.copyWith(forecast: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ForecastLocationModelCopyWith<$Res>? get location {
+  $ForecastLocationApiModelCopyWith<$Res>? get location {
     if (_value.location == null) {
       return null;
     }
 
-    return $ForecastLocationModelCopyWith<$Res>(_value.location!, (value) {
+    return $ForecastLocationApiModelCopyWith<$Res>(_value.location!, (value) {
       return _then(_value.copyWith(location: value) as $Val);
     });
   }
@@ -120,16 +120,16 @@ abstract class _$$ForecastWeatherApiModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CurrentForecastModel current,
-      ForecastModel forecast,
-      ForecastLocationModel? location});
+      {CurrentForecastApiModel current,
+      ForecastApiModel forecast,
+      ForecastLocationApiModel? location});
 
   @override
-  $CurrentForecastModelCopyWith<$Res> get current;
+  $CurrentForecastApiModelCopyWith<$Res> get current;
   @override
-  $ForecastModelCopyWith<$Res> get forecast;
+  $ForecastApiModelCopyWith<$Res> get forecast;
   @override
-  $ForecastLocationModelCopyWith<$Res>? get location;
+  $ForecastLocationApiModelCopyWith<$Res>? get location;
 }
 
 /// @nodoc
@@ -153,15 +153,15 @@ class __$$ForecastWeatherApiModelImplCopyWithImpl<$Res>
       current: null == current
           ? _value.current
           : current // ignore: cast_nullable_to_non_nullable
-              as CurrentForecastModel,
+              as CurrentForecastApiModel,
       forecast: null == forecast
           ? _value.forecast
           : forecast // ignore: cast_nullable_to_non_nullable
-              as ForecastModel,
+              as ForecastApiModel,
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as ForecastLocationModel?,
+              as ForecastLocationApiModel?,
     ));
   }
 }
@@ -176,11 +176,11 @@ class _$ForecastWeatherApiModelImpl implements _ForecastWeatherApiModel {
       _$$ForecastWeatherApiModelImplFromJson(json);
 
   @override
-  final CurrentForecastModel current;
+  final CurrentForecastApiModel current;
   @override
-  final ForecastModel forecast;
+  final ForecastApiModel forecast;
   @override
-  final ForecastLocationModel? location;
+  final ForecastLocationApiModel? location;
 
   @override
   String toString() {
@@ -220,19 +220,20 @@ class _$ForecastWeatherApiModelImpl implements _ForecastWeatherApiModel {
 
 abstract class _ForecastWeatherApiModel implements ForecastWeatherApiModel {
   const factory _ForecastWeatherApiModel(
-      {required final CurrentForecastModel current,
-      required final ForecastModel forecast,
-      final ForecastLocationModel? location}) = _$ForecastWeatherApiModelImpl;
+          {required final CurrentForecastApiModel current,
+          required final ForecastApiModel forecast,
+          final ForecastLocationApiModel? location}) =
+      _$ForecastWeatherApiModelImpl;
 
   factory _ForecastWeatherApiModel.fromJson(Map<String, dynamic> json) =
       _$ForecastWeatherApiModelImpl.fromJson;
 
   @override
-  CurrentForecastModel get current;
+  CurrentForecastApiModel get current;
   @override
-  ForecastModel get forecast;
+  ForecastApiModel get forecast;
   @override
-  ForecastLocationModel? get location;
+  ForecastLocationApiModel? get location;
   @override
   @JsonKey(ignore: true)
   _$$ForecastWeatherApiModelImplCopyWith<_$ForecastWeatherApiModelImpl>

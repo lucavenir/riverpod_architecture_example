@@ -20,7 +20,7 @@ ForecastApiModel _$ForecastApiModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ForecastApiModel {
-  Iterable<ForecastDayModel> get forecastday =>
+  Iterable<ForecastDayApiModel> get forecastday =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $ForecastApiModelCopyWith<$Res> {
           ForecastApiModel value, $Res Function(ForecastApiModel) then) =
       _$ForecastApiModelCopyWithImpl<$Res, ForecastApiModel>;
   @useResult
-  $Res call({Iterable<ForecastDayModel> forecastday});
+  $Res call({Iterable<ForecastDayApiModel> forecastday});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$ForecastApiModelCopyWithImpl<$Res, $Val extends ForecastApiModel>
       forecastday: null == forecastday
           ? _value.forecastday
           : forecastday // ignore: cast_nullable_to_non_nullable
-              as Iterable<ForecastDayModel>,
+              as Iterable<ForecastDayApiModel>,
     ) as $Val);
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$ForecastApiModelImplCopyWith<$Res>
       __$$ForecastApiModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Iterable<ForecastDayModel> forecastday});
+  $Res call({Iterable<ForecastDayApiModel> forecastday});
 }
 
 /// @nodoc
@@ -90,7 +90,7 @@ class __$$ForecastApiModelImplCopyWithImpl<$Res>
       forecastday: null == forecastday
           ? _value.forecastday
           : forecastday // ignore: cast_nullable_to_non_nullable
-              as Iterable<ForecastDayModel>,
+              as Iterable<ForecastDayApiModel>,
     ));
   }
 }
@@ -105,7 +105,7 @@ class _$ForecastApiModelImpl implements _ForecastApiModel {
 
   @override
   @JsonKey()
-  final Iterable<ForecastDayModel> forecastday;
+  final Iterable<ForecastDayApiModel> forecastday;
 
   @override
   String toString() {
@@ -143,13 +143,14 @@ class _$ForecastApiModelImpl implements _ForecastApiModel {
 
 abstract class _ForecastApiModel implements ForecastApiModel {
   const factory _ForecastApiModel(
-      {final Iterable<ForecastDayModel> forecastday}) = _$ForecastApiModelImpl;
+          {final Iterable<ForecastDayApiModel> forecastday}) =
+      _$ForecastApiModelImpl;
 
   factory _ForecastApiModel.fromJson(Map<String, dynamic> json) =
       _$ForecastApiModelImpl.fromJson;
 
   @override
-  Iterable<ForecastDayModel> get forecastday;
+  Iterable<ForecastDayApiModel> get forecastday;
   @override
   @JsonKey(ignore: true)
   _$$ForecastApiModelImplCopyWith<_$ForecastApiModelImpl> get copyWith =>

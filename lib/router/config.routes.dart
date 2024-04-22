@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../src/current_weather/pages/current_weather_page.dart';
-import '../src/splash/presentation/pages/splash_page.dart';
+import '../src/splash/pages/splash_page.dart';
 
 part 'config.routes.g.dart';
 
