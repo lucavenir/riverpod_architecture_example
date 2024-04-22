@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../locations/domain/entities/current_location.model.dart';
+import '../../../locations/models/current_location.model.dart';
 import '../models/astronomy.model.dart';
 import '../sources/astronomy_api.source.dart';
 

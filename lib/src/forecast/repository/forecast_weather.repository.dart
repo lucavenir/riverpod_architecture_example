@@ -2,7 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../data/api/forecast/forecast_weather.api.dart';
 import '../../../data/api/forecast/models/forecast_weather.api.model.dart';
-import '../../locations/domain/entities/current_location.model.dart';
+import '../../locations/models/current_location.model.dart';
 import '../models/forecast_weather.model.dart';
 
 part 'forecast_weather.repository.g.dart';

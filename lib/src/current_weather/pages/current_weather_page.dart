@@ -7,9 +7,9 @@ import 'package:intl/intl.dart';
 
 import '../../../clients/connectivity_check.provider.dart';
 import '../../forecast/widgets/forecast_widget.dart';
-import '../../locations/presentation/controllers/current_location.controller.dart';
-import '../../locations/presentation/widgets/search_bar.dart';
-import '../../shared/presentation/widgets/standard_when.dart';
+import '../../locations/controllers/current_location.controller.dart';
+import '../../locations/widgets/search_bar.dart';
+import '../../shared/widgets/standard_when.dart';
 import '../models/current_weather.model.dart';
 import '../providers/current_weather.provider.dart';
 

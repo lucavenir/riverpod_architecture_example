@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../clients/http.client.dart';
-import '../../../../data/json.dart';
+import '../../../../../clients/http.client.dart';
+import '../../../../../data/json.dart';
+import 'models/location.model.dart';
 
-part 'search_api.source.g.dart';
+part 'search.api.g.dart';
 
 /// Label used for logging, useful for testing purposes
 const locationsApiDebugLogLabel = 'LocationsApi';
@@ -20,13 +21,14 @@ class SearchApi {
   const SearchApi(this.dio);
   final Dio dio;
 
-  Future<Iterable<Json>> locations({required String q}) async {
-    final result = await dio.get<List<dynamic>>(
+  Future<Iterable<LocationApiModel>> locations({required String q}) async {
+    final result = await dio.get<List<Object?>>(
       searchUri,
       queryParameters: {'q': q},
     );
-    final data = result.data!;
-    return data.map((e) => e as Json);
+    return result.data! //
+        .map((e) => e! as Json)
+        .map(LocationApiModel.fromJson);
   }
 
   static const searchUri = '/search.json';

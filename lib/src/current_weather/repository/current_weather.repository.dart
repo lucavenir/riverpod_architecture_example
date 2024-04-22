@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../clients/connectivity_check.provider.dart';
 import '../../../data/api/current_weather/current_weather.api.dart';
 import '../../../data/db/current_weather/current_weather.db.dart';
-import '../../locations/domain/entities/current_location.model.dart';
+import '../../locations/models/current_location.model.dart';
 import '../models/current_weather.model.dart';
 
 part 'current_weather.repository.g.dart';

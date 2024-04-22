@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/location.model.dart';
+import '../../../data/api/search/models/location.model.dart';
 
 part 'current_location.model.freezed.dart';
 
@@ -19,13 +19,15 @@ class CurrentLocation with _$CurrentLocation {
     /// Longitude of this place
     double? long,
   }) = _CurrentLocation;
-  const CurrentLocation._();
-  factory CurrentLocation.fromModel(LocationModel dto) {
+}
+
+extension CurrentLocationApiMapper on LocationApiModel {
+  CurrentLocation toEntity() {
     return CurrentLocation(
-      cityName: dto.name,
-      lat: dto.lat,
-      long: dto.lon,
-      country: dto.country,
+      cityName: name,
+      lat: lat,
+      long: lon,
+      country: country,
     );
   }
 }

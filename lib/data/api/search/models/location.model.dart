@@ -1,13 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../data/json.dart';
+import '../../../json.dart';
 
 part 'location.model.freezed.dart';
 part 'location.model.g.dart';
 
 @freezed
-class LocationModel with _$LocationModel {
-  const factory LocationModel({
+class LocationApiModel with _$LocationApiModel {
+  const factory LocationApiModel({
     required String name,
     required String country,
     int? id,
@@ -15,6 +15,6 @@ class LocationModel with _$LocationModel {
     double? lat,
     double? lon,
     String? url,
-  }) = _LocationModel;
-  factory LocationModel.fromJson(Json json) => _$LocationModelFromJson(json);
+  }) = _LocationApiModel;
+  factory LocationApiModel.fromJson(Json json) => _$LocationApiModelFromJson(json);
 }

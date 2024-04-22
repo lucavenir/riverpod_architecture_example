@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../shared/presentation/widgets/standard_when.dart';
+import '../../shared/widgets/standard_when.dart';
 import '../models/forecast_day.model.dart';
 import '../providers/forecast_weather.provider.dart';
 import 'forecast_box.dart';

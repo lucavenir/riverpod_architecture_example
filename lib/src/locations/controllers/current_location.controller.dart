@@ -1,9 +1,9 @@
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../shared/presentation/cache_for.dart';
-import '../../data/repositories/locations.repository.dart';
-import '../../domain/entities/current_location.model.dart';
+import '../../shared/logic/cache_for.dart';
+import '../models/current_location.model.dart';
+import '../repositories/locations.repository.dart';
 
 part 'current_location.controller.g.dart';
 
@@ -12,9 +12,9 @@ class CurrentLocationController extends _$CurrentLocationController {
   @override
   Future<CurrentLocation> build() async {
     final locationService = ref.watch(locationsRepositoryProvider);
-    final currentPosition = await locationService.getCurrentLocation();
+    final location = await locationService.getCurrentLocation();
     ref.cacheFor(60.seconds);
-    return CurrentLocation.fromModel(currentPosition);
+    return location;
   }
 
   void updateLocation(CurrentLocation location) => state = AsyncValue.data(location);
