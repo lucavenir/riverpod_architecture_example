@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../clients/connectivity_check.provider.dart';
-import '../../forecast/presentation/widgets/forecast_widget.dart';
+import '../../forecast/widgets/forecast_widget.dart';
 import '../../locations/presentation/controllers/current_location.controller.dart';
 import '../../locations/presentation/widgets/search_bar.dart';
 import '../../shared/presentation/widgets/standard_when.dart';
