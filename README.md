@@ -1,72 +1,66 @@
 # Riverpod & Clean Architecture: an example
 This repo contains an **opinionated** example on how to use [Riverpod] with a [Clean Architecture]-like approach.
 
-This is *not* a _by-the-book_ implementation of Clean Architecture. There's a good pinch of pragmatism in it, while keeping the main principles in mind.
+The main purpose of this repository is to show the *correct* interpretation of the Clean Architecture principles; indeed, the main goal of the above book is to *minimize* development times, while still keeping the codebase "scalable", if this makes sense.
+**Nowhere in the book Uncle Bob states that you should write a lot of boilerplate code, or that you should introduce interfaces, or several (namely useless) layers of indirection.**
+
+The main takeaway of the book is to clearly separate whatever belongs to external libraries (e.g. UI, data sources, etc.) from your business logic, **so that you can easily test it**, aka maintain it.
+SOLID principles, data / domain / presentation layers, etc. just come to happen on their own once you seek for testability.
+Indeed, Riverpod has been created mainly with testability in mind.
+Writing **unit tests** for this repository is an exercise left to the reader (check out - yourself! - how easy it is to maintain this codebase); indeed, PRs are welcome!
+
+This repository is the result of several years of experiments onto real-world applications.
+We - as a team - have shot ourselves in the food so many times before crafting this final result.
+We hope this example will help you to avoid the same mistakes.
+
 
 ## Motivation
-For some weird reason, I've seen lots of threads and discussions online (e.g. Discord, SO, Twitter, Reddit), in which Riverpod is mentioned as being somewhat "hard", "messy" and / or only suitable for very simple projects (or for experts only, at scale).
-Gosh, I've even seen people writing article on how riverpod is a huge software engineering mistake / anti-pattern.
+For some weird reason, I've seen lots of threads and discussions online (e.g. Discord, Stack Overflow, Twitter, Reddit), in which Riverpod is mentioned as being somewhat "hard", "messy", or simply only suitable for simple projects.
+We've even seen people writing article on how riverpod is a huge software engineering mistake / anti-pattern.
 
 **Nothing is further from the truth**.
 
 Riverpod is simple to reason with, simple to start with, and scales incredibly well, with nearly zero overhead. Plus, it offers incredibly simple and flexible caching features.
 At the same time, riverpod adapts to your architecture needs; you can use it as you want: riverpod will *never* get in your way, architecture-wise.
-Indeed, you can easily take this example and adapt it to be a "by-the-book" implementation of Clean Architecture (this is left as an exercise to the reader).
+Indeed, you can easily take this example and adapt it to be a "by-the-book" implementation of Clean Architecture (this is left as an exercise to the reader, although I don't personally recommend it). You can check out older commits to see such implementation if you need some inspiration.
 
 ## Clean Architecture considerations
-I am *not* a "clean-architecture-nazi", and instead I always look at cleanliness with a pinch of pragmatism. This example is meant to show just that.
-For example, creating interfaces is *not* mandatory to let your project have "good code".
-Remember: *there is no free lunch*, aka abstractions / indirections have their costs.
+We look at "cleanliness" with a good pinch of pragmatism. I don't personally like who criticizes uncle bob's books. This example is meant to show just that.
+For example, creating interfaces is *not* mandatory to let your project have "good code". Uncle bob underlines this in the late editions of his books.
+Remember the *no free lunch theorem*, aka: **abstractions and indirections have their costs**.
 
-Nonetheless, this example still follow the main clean architecture guidelines. For example, one thing that Clean Architecture teaches us is that it's a *good idea* to *clearly* separate code into layers; mainly because it (usually!) lets you write better code (better cohesion, better separation of concerns, etc.).
+This example follows the main clean architecture guidelines.
+For example, one thing that Clean Architecture teaches us is that it's a *good idea* to *clearly* separate code into layers; mainly because it (usually!) lets you write better code (better cohesion, better separation of concerns, etc.).
+**But** this doesn't mean that you should be obsessed with weird file system structures, or that you should hide external data sources behind interfaces.
 
-### Dependency Injection
+### Dependency Injection considerations
 Clean Architecture promotes this pattern.
 
 Riverpod can be used to perform easy and intuitive **Dependency Injection** to organize your code: if you're using Riverpod, chances are you won't use GetIt or any other service locators.
 
 In other words, every service is always _provided_ with its ad-hoc `Provider`. At the same time, injecting is trivial: just use `ref.watch`.
 
-### Repository Interfaces
-I've just advocated not to introduce useless layers of indirection when possible, but I still use them in this example when creating repositories.  
-**Why**? It's not just "separating business logic from data access logic". All-in-all, I've found it to be a cheap abstraction that often pays off. To understand this decision, we need to take into consideration how I usually write code. Let me elaborate.
+This eases testing, as you can easily mock your services by providing a different implementation of the same `Provider`.
 
-I often find myself writing applications *after* I've received the **buisiness requirements** from the client.  
-In this case, I usually have a pretty good idea of what the application should do, but I have zero knowledge on how the data-access layer should look like. This information is usually delivered later on.  
-All-in-all, I know *what* data I need to fetch; and since I'm able to define my application models (aka entities), I know what I should expect from an hypotetical data-fetching layer.
-What I *don't* know is *how* I will fetch it.  
-Another thing to take into consideration is that I want to test business logic code ASAP.
+### Data layer considerations
+As you can probably tell by experience, external data sources might heavily differ from your client implementations.
 
-So, a good idea might be to introduce an `abstract interface` to completely decouple these implementation details from the business logic layer, so that I can write the data layer logic later on.  
-This still doesn't *completely* justify the use of interfaces, but it's a good start.  
-**Indeed**, one could simply write concrete repositories, with its methods throw `UnimplementedError` and call it a day; you can implement them later on, and you can easily mock them for testing purposes.  
-This is a perfectly valid approach.
+This is the key to understand this example: external data sources might be organized in a way that is not suitable for your client code. Maybe their APIs are not that good, or maybe they are just following another feature structure.
 
-In my experience things change when you work in a team, most importantly if you're leading it.  
-In this scenario, you want to define you architecture first (!) and then ask you team to implement some parts of it when *we* are ready to do so.  
-Someone can address business logic tests. Someone else can implement the presentation layer. And so on.  
-Later on, when data-layer information is ready, you can assign its implementation and integration tests to someone else. To delegate this, this person's knowledge of the system *is limited to the interface you've defined* (besides the details of the data sources, obviously).
+This is exactly why you want to clearly separate these out. The sole responsibility of these class is to provide a simple model that represents the data you need.
 
-Notice how this person won't modify any previously written code.  
-Whereas, if you just offer a concrete implementation of the repository with `throw`s in it, you're forcing your teams to modify code.  
-This is not always desirable.  
-In my experience I can say that when working in a team, you want to keep the codebase as "stable" as possible, mostly because PRs will be easier to understand / read.
+### Mapper considerations
+At some point, we need to convert external data sources into our models. This is where mappers come into play.
 
-My general "tip" is the following:
+Our mappers are *adapters*; Dart eases the writing of these adapters, via `extension` methods.
+These do belong to *our* models, but they are not part of the model itself.
+That's why extensions are a good fit for this task.
 
-_When reading code becomes boring, when implementing an interface becomes obvious and when writing code becomes trivial, then... it's usually a good sign that you're doing it right._
+### Repositories considerations
+Repositories in this example simply return the models its feature *needs*.
 
-### Wait, where are the use-cases?
-Okay, now I've just advocated how introducing a layer of indirection can be a good idea, especially when working in a team, but then, I've completely skipped the use-case layer.
+In other words, its main role is to offer a simple and ***stateless API*** to interact with external data sources so that providers and controllers don't have to deal with the complexity of such process.
 
-This is because, with riverpod, business logic is meant to stay inside your providers / controllers / side effects.  
-Riverpod providers and controllers are so easy to test that introducing a use-case layer is often not needed and it might feel more like a burden than a benefit.  
-Again, this is just personal experience and preference.
-
-If some logic needs to be reusable, I often find myself writing `mixin`s for my controllers, and `extension`s (or namespaces) for providers.
-
-**Again**, it's not like I **never** use a service / use case layer.  
-I do, but only when I need to perform some complex business logic that might be shared across multiple providers and that do not relate to caching / UI logic or that does not fit in a `mixin` / namespace.
 
 ## How to use.
 This project uses this free (registration needed) Weather API.  
