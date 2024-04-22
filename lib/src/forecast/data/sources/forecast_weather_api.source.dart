@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/http.client.dart';
-import '../../../shared/data/json.dart';
+import '../../../../data/json.dart';
 
 part 'forecast_weather_api.source.g.dart';
 

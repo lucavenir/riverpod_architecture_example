@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../shared/data/json.dart';
+import '../../../../data/json.dart';
 import 'inner_astronomy.model.dart';
 import 'location.model.dart';
 

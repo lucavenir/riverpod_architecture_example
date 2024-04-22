@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../current_weather/data/models/condition.model.dart';
-import '../../../shared/data/json.dart';
+import '../../../../data/api/current_weather/models/condition.api.model.dart';
+import '../../../../data/json.dart';
 
 part 'hour.model.freezed.dart';
 part 'hour.model.g.dart';
@@ -14,7 +14,8 @@ class HourModel with _$HourModel {
     double? tempC,
     double? tempF,
     int? isDay,
-    ConditionModel? condition,
+    // TODO: decouple this one out
+    ConditionApiModel? condition,
     double? windMph,
     double? windKph,
     double? windDegree,

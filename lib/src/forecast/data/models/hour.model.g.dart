@@ -21,7 +21,7 @@ _$HourModelImpl _$$HourModelImplFromJson(Map<String, dynamic> json) =>
               'condition',
               (v) => v == null
                   ? null
-                  : ConditionModel.fromJson(v as Map<String, dynamic>)),
+                  : ConditionApiModel.fromJson(v as Map<String, dynamic>)),
           $checkedConvert('wind_mph', (v) => (v as num?)?.toDouble()),
           $checkedConvert('wind_kph', (v) => (v as num?)?.toDouble()),
           $checkedConvert('wind_degree', (v) => (v as num?)?.toDouble()),

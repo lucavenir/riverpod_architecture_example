@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../shared/data/json.dart';
+import '../../../../data/json.dart';
 
 part 'astro.model.freezed.dart';
 part 'astro.model.g.dart';

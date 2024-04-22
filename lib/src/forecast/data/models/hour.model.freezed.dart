@@ -24,8 +24,9 @@ mixin _$HourModel {
   String? get time => throw _privateConstructorUsedError;
   double? get tempC => throw _privateConstructorUsedError;
   double? get tempF => throw _privateConstructorUsedError;
-  int? get isDay => throw _privateConstructorUsedError;
-  ConditionModel? get condition => throw _privateConstructorUsedError;
+  int? get isDay =>
+      throw _privateConstructorUsedError; // TODO: decouple this one out
+  ConditionApiModel? get condition => throw _privateConstructorUsedError;
   double? get windMph => throw _privateConstructorUsedError;
   double? get windKph => throw _privateConstructorUsedError;
   double? get windDegree => throw _privateConstructorUsedError;
@@ -71,7 +72,7 @@ abstract class $HourModelCopyWith<$Res> {
       double? tempC,
       double? tempF,
       int? isDay,
-      ConditionModel? condition,
+      ConditionApiModel? condition,
       double? windMph,
       double? windKph,
       double? windDegree,
@@ -100,7 +101,7 @@ abstract class $HourModelCopyWith<$Res> {
       double? gustKph,
       double? uv});
 
-  $ConditionModelCopyWith<$Res>? get condition;
+  $ConditionApiModelCopyWith<$Res>? get condition;
 }
 
 /// @nodoc
@@ -174,7 +175,7 @@ class _$HourModelCopyWithImpl<$Res, $Val extends HourModel>
       condition: freezed == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as ConditionModel?,
+              as ConditionApiModel?,
       windMph: freezed == windMph
           ? _value.windMph
           : windMph // ignore: cast_nullable_to_non_nullable
@@ -288,12 +289,12 @@ class _$HourModelCopyWithImpl<$Res, $Val extends HourModel>
 
   @override
   @pragma('vm:prefer-inline')
-  $ConditionModelCopyWith<$Res>? get condition {
+  $ConditionApiModelCopyWith<$Res>? get condition {
     if (_value.condition == null) {
       return null;
     }
 
-    return $ConditionModelCopyWith<$Res>(_value.condition!, (value) {
+    return $ConditionApiModelCopyWith<$Res>(_value.condition!, (value) {
       return _then(_value.copyWith(condition: value) as $Val);
     });
   }
@@ -313,7 +314,7 @@ abstract class _$$HourModelImplCopyWith<$Res>
       double? tempC,
       double? tempF,
       int? isDay,
-      ConditionModel? condition,
+      ConditionApiModel? condition,
       double? windMph,
       double? windKph,
       double? windDegree,
@@ -343,7 +344,7 @@ abstract class _$$HourModelImplCopyWith<$Res>
       double? uv});
 
   @override
-  $ConditionModelCopyWith<$Res>? get condition;
+  $ConditionApiModelCopyWith<$Res>? get condition;
 }
 
 /// @nodoc
@@ -415,7 +416,7 @@ class __$$HourModelImplCopyWithImpl<$Res>
       freezed == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as ConditionModel?,
+              as ConditionApiModel?,
       freezed == windMph
           ? _value.windMph
           : windMph // ignore: cast_nullable_to_non_nullable
@@ -579,8 +580,9 @@ class _$HourModelImpl implements _HourModel {
   final double? tempF;
   @override
   final int? isDay;
+// TODO: decouple this one out
   @override
-  final ConditionModel? condition;
+  final ConditionApiModel? condition;
   @override
   final double? windMph;
   @override
@@ -762,7 +764,7 @@ abstract class _HourModel implements HourModel {
       final double? tempC,
       final double? tempF,
       final int? isDay,
-      final ConditionModel? condition,
+      final ConditionApiModel? condition,
       final double? windMph,
       final double? windKph,
       final double? windDegree,
@@ -804,8 +806,8 @@ abstract class _HourModel implements HourModel {
   double? get tempF;
   @override
   int? get isDay;
-  @override
-  ConditionModel? get condition;
+  @override // TODO: decouple this one out
+  ConditionApiModel? get condition;
   @override
   double? get windMph;
   @override

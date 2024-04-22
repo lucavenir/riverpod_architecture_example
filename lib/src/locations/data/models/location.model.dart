@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../shared/data/json.dart';
+import '../../../../data/json.dart';
 
 part 'location.model.freezed.dart';
 part 'location.model.g.dart';

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../shared/data/json.dart';
+import '../../../../data/json.dart';
 import 'current.model.dart';
 import 'forecast.model.dart';
 import 'forecast_location.model.dart';

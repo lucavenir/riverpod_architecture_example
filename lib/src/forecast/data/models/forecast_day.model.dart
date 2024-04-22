@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../shared/data/json.dart';
+import '../../../../data/json.dart';
 import 'astro.model.dart';
 import 'day.model.dart';
 import 'hour.model.dart';
