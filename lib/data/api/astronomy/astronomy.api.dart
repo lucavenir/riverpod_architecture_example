@@ -3,8 +3,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/http.client.dart';
 import '../../../../data/json.dart';
+import 'models/astronomy.api.model.dart';
 
-part 'astronomy_api.source.g.dart';
+part 'astronomy.api.g.dart';
 
 @riverpod
 AstronomyApi astronomyApi(AstronomyApiRef ref) {
@@ -18,14 +19,13 @@ class AstronomyApi {
   final Dio dio;
 
   /// Accepts a `query` and returns the astronomy for a certain `dt` (date)
-  Future<Json> astronomy(String q, String dt) async {
+  Future<AstronomyApiModel> astronomy(String q, String dt) async {
     final result = await dio.get<Json>(
       '/astronomy.json',
       queryParameters: {'q': q, 'dt': dt},
     );
 
     final data = result.data!;
-
-    return data;
+    return AstronomyApiModel.fromJson(data);
   }
 }

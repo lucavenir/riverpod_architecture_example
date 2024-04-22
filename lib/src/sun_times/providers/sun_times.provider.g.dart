@@ -6,7 +6,7 @@ part of 'sun_times.provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sunTimesHash() => r'fc1e4010b0ae131ef58568e5e570f618e544a955';
+String _$sunTimesHash() => r'd3e9b3e27c0ebc787e932e3d1c21a654bec0f8f8';
 
 /// See also [sunTimes].
 @ProviderFor(sunTimes)

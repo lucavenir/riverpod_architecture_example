@@ -1,8 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../locations/controllers/current_location.controller.dart';
-import '../../data/repositories/astronomy.repository.dart';
-import '../../domain/entities/sun_times.model.dart';
+import '../../locations/controllers/current_location.controller.dart';
+import '../models/sun_times.model.dart';
+import '../repositories/astronomy.repository.dart';
 
 part 'sun_times.provider.g.dart';
 
@@ -11,7 +11,7 @@ FutureOr<SunTimes> sunTimes(SunTimesRef ref) async {
   final repo = ref.watch(sunTimesRepositoryProvider);
 
   final currentLocation = await ref.watch(currentLocationControllerProvider.future);
-  final sunTimes = await repo.getTodaySunTimes(currentLocation);
+  final sunTimes = await repo.getTodaySunTimes(currentLocation.cityName);
 
-  return SunTimes.fromModel(sunTimes);
+  return sunTimes;
 }

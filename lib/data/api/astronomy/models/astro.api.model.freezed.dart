@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'astro.model.dart';
+part of 'astro.api.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-AstroModel _$AstroModelFromJson(Map<String, dynamic> json) {
-  return _AstroModel.fromJson(json);
+AstroApiModel _$AstroApiModelFromJson(Map<String, dynamic> json) {
+  return _AstroApiModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$AstroModel {
+mixin _$AstroApiModel {
   String get sunrise => throw _privateConstructorUsedError;
   String get sunset => throw _privateConstructorUsedError;
   String? get moonrise => throw _privateConstructorUsedError;
@@ -29,15 +29,15 @@ mixin _$AstroModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AstroModelCopyWith<AstroModel> get copyWith =>
+  $AstroApiModelCopyWith<AstroApiModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AstroModelCopyWith<$Res> {
-  factory $AstroModelCopyWith(
-          AstroModel value, $Res Function(AstroModel) then) =
-      _$AstroModelCopyWithImpl<$Res, AstroModel>;
+abstract class $AstroApiModelCopyWith<$Res> {
+  factory $AstroApiModelCopyWith(
+          AstroApiModel value, $Res Function(AstroApiModel) then) =
+      _$AstroApiModelCopyWithImpl<$Res, AstroApiModel>;
   @useResult
   $Res call(
       {String sunrise,
@@ -49,9 +49,9 @@ abstract class $AstroModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AstroModelCopyWithImpl<$Res, $Val extends AstroModel>
-    implements $AstroModelCopyWith<$Res> {
-  _$AstroModelCopyWithImpl(this._value, this._then);
+class _$AstroApiModelCopyWithImpl<$Res, $Val extends AstroApiModel>
+    implements $AstroApiModelCopyWith<$Res> {
+  _$AstroApiModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -98,11 +98,11 @@ class _$AstroModelCopyWithImpl<$Res, $Val extends AstroModel>
 }
 
 /// @nodoc
-abstract class _$$AstroModelImplCopyWith<$Res>
-    implements $AstroModelCopyWith<$Res> {
-  factory _$$AstroModelImplCopyWith(
-          _$AstroModelImpl value, $Res Function(_$AstroModelImpl) then) =
-      __$$AstroModelImplCopyWithImpl<$Res>;
+abstract class _$$AstroApiModelImplCopyWith<$Res>
+    implements $AstroApiModelCopyWith<$Res> {
+  factory _$$AstroApiModelImplCopyWith(
+          _$AstroApiModelImpl value, $Res Function(_$AstroApiModelImpl) then) =
+      __$$AstroApiModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +115,11 @@ abstract class _$$AstroModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AstroModelImplCopyWithImpl<$Res>
-    extends _$AstroModelCopyWithImpl<$Res, _$AstroModelImpl>
-    implements _$$AstroModelImplCopyWith<$Res> {
-  __$$AstroModelImplCopyWithImpl(
-      _$AstroModelImpl _value, $Res Function(_$AstroModelImpl) _then)
+class __$$AstroApiModelImplCopyWithImpl<$Res>
+    extends _$AstroApiModelCopyWithImpl<$Res, _$AstroApiModelImpl>
+    implements _$$AstroApiModelImplCopyWith<$Res> {
+  __$$AstroApiModelImplCopyWithImpl(
+      _$AstroApiModelImpl _value, $Res Function(_$AstroApiModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +132,7 @@ class __$$AstroModelImplCopyWithImpl<$Res>
     Object? moonPhase = freezed,
     Object? moonIllumination = freezed,
   }) {
-    return _then(_$AstroModelImpl(
+    return _then(_$AstroApiModelImpl(
       sunrise: null == sunrise
           ? _value.sunrise
           : sunrise // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$AstroModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AstroModelImpl implements _AstroModel {
-  const _$AstroModelImpl(
+class _$AstroApiModelImpl implements _AstroApiModel {
+  const _$AstroApiModelImpl(
       {required this.sunrise,
       required this.sunset,
       this.moonrise,
@@ -172,8 +172,8 @@ class _$AstroModelImpl implements _AstroModel {
       this.moonPhase,
       this.moonIllumination});
 
-  factory _$AstroModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AstroModelImplFromJson(json);
+  factory _$AstroApiModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AstroApiModelImplFromJson(json);
 
   @override
   final String sunrise;
@@ -190,14 +190,14 @@ class _$AstroModelImpl implements _AstroModel {
 
   @override
   String toString() {
-    return 'AstroModel(sunrise: $sunrise, sunset: $sunset, moonrise: $moonrise, moonset: $moonset, moonPhase: $moonPhase, moonIllumination: $moonIllumination)';
+    return 'AstroApiModel(sunrise: $sunrise, sunset: $sunset, moonrise: $moonrise, moonset: $moonset, moonPhase: $moonPhase, moonIllumination: $moonIllumination)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AstroModelImpl &&
+            other is _$AstroApiModelImpl &&
             (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
             (identical(other.sunset, sunset) || other.sunset == sunset) &&
             (identical(other.moonrise, moonrise) ||
@@ -217,28 +217,28 @@ class _$AstroModelImpl implements _AstroModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AstroModelImplCopyWith<_$AstroModelImpl> get copyWith =>
-      __$$AstroModelImplCopyWithImpl<_$AstroModelImpl>(this, _$identity);
+  _$$AstroApiModelImplCopyWith<_$AstroApiModelImpl> get copyWith =>
+      __$$AstroApiModelImplCopyWithImpl<_$AstroApiModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AstroModelImplToJson(
+    return _$$AstroApiModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _AstroModel implements AstroModel {
-  const factory _AstroModel(
+abstract class _AstroApiModel implements AstroApiModel {
+  const factory _AstroApiModel(
       {required final String sunrise,
       required final String sunset,
       final String? moonrise,
       final String? moonset,
       final String? moonPhase,
-      final String? moonIllumination}) = _$AstroModelImpl;
+      final String? moonIllumination}) = _$AstroApiModelImpl;
 
-  factory _AstroModel.fromJson(Map<String, dynamic> json) =
-      _$AstroModelImpl.fromJson;
+  factory _AstroApiModel.fromJson(Map<String, dynamic> json) =
+      _$AstroApiModelImpl.fromJson;
 
   @override
   String get sunrise;
@@ -254,6 +254,6 @@ abstract class _AstroModel implements AstroModel {
   String? get moonIllumination;
   @override
   @JsonKey(ignore: true)
-  _$$AstroModelImplCopyWith<_$AstroModelImpl> get copyWith =>
+  _$$AstroApiModelImplCopyWith<_$AstroApiModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

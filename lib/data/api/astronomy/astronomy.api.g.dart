@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'astronomy_api.source.dart';
+part of 'astronomy.api.dart';
 
 // **************************************************************************
 // RiverpodGenerator

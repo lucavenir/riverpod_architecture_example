@@ -1,17 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'location.model.dart';
+part of 'location.api.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LocationModelImpl _$$LocationModelImplFromJson(Map<String, dynamic> json) =>
+_$LocationApiModelImpl _$$LocationApiModelImplFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LocationModelImpl',
+      r'_$LocationApiModelImpl',
       json,
       ($checkedConvert) {
-        final val = _$LocationModelImpl(
+        final val = _$LocationApiModelImpl(
           localTime: $checkedConvert('localtime', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String?),
           country: $checkedConvert('country', (v) => v as String?),
@@ -26,7 +27,8 @@ _$LocationModelImpl _$$LocationModelImplFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'localTime': 'localtime'},
     );
 
-Map<String, dynamic> _$$LocationModelImplToJson(_$LocationModelImpl instance) =>
+Map<String, dynamic> _$$LocationApiModelImplToJson(
+        _$LocationApiModelImpl instance) =>
     <String, dynamic>{
       'localtime': instance.localTime,
       'name': instance.name,
