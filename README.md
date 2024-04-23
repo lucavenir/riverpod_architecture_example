@@ -10,7 +10,7 @@ Indeed, Riverpod has been created mainly with testability in mind.
 Writing **unit tests** for this repository is an exercise left to the reader (check out - yourself! - how easy it is to maintain this codebase); indeed, PRs are welcome!
 
 This repository is the result of several years of experiments onto real-world applications.
-We - as a team - have shot ourselves in the food so many times before crafting this final result.
+We - as a team - have shot ourselves in the foot so many times before crafting this final result.
 We hope this example will help you to avoid the same mistakes.
 
 
@@ -41,6 +41,8 @@ Riverpod can be used to perform easy and intuitive **Dependency Injection** to o
 In other words, every service is always _provided_ with its ad-hoc `Provider`. At the same time, injecting is trivial: just use `ref.watch`.
 
 This eases testing, as you can easily mock your services by providing a different implementation of the same `Provider`.
+
+One key consideration about D.I. with Riverpod is that we ought to keep any stateless logic... *actually stateless*. Injecting state (via `ref.watch`) in a stateless provider (e.g. a Repository, or a Client) is most certainly an anti-pattern. Be aware of that.
 
 ### Data layer considerations
 As you can probably tell by experience, external data sources might heavily differ from your client implementations.
