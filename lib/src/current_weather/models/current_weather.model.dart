@@ -49,6 +49,11 @@ extension CurrentWeatherViews on CurrentWeather {
     final formattedTemp = oneDecimalFormat.format(temp);
     return '$formattedTemp °C';
   }
+
+  String get imageUrl {
+    final url = 'https:$image';
+    return url;
+  }
 }
 
 extension CurrentWeatherEntityMapper on CurrentWeather {
