@@ -10,8 +10,8 @@ import 'http.client.dart';
 part 'retrofit_client.g.dart';
 
 @RestApi(baseUrl: baseUrl)
-abstract class RetrofitClient {
-  factory RetrofitClient(Dio dio, {String baseUrl}) = _RetrofitClient;
+abstract class WeatherApiClient {
+  factory WeatherApiClient(Dio dio, {String baseUrl}) = _WeatherApiClient;
 
   @GET('/astronomy.json')
   Future<AstronomyApiModel> getAstronomy(

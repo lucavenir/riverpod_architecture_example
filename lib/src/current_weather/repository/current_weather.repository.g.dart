@@ -7,7 +7,7 @@ part of 'current_weather.repository.dart';
 // **************************************************************************
 
 String _$currentWeatherRepositoryHash() =>
-    r'e187b3b3108c902ac24fd46f05f7186a895f15fb';
+    r'bcf5333b6423d6cd07ac58feadd9300887a031d1';
 
 /// See also [currentWeatherRepository].
 @ProviderFor(currentWeatherRepository)

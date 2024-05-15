@@ -35,7 +35,6 @@ dependencies:
   package_info_plus: ^5.0.1
   path_provider: ^2.1.1
   retrofit: ^4.1.0
-  retrofit_generator: ^8.1.0
   riverpod_annotation: ^2.3.3
   stack_trace: ^1.11.1
   talker_dio_logger: ^4.0.0
@@ -59,6 +58,7 @@ dev_dependencies:
   riverpod_generator: ^2.3.9
   riverpod_lint: ^2.3.7
   very_good_analysis: ^5.1.0
+  retrofit_generator: ^8.1.0
 
 assets:
   - .env.json

@@ -12,10 +12,10 @@ const baseUrl = 'https://api.weatherapi.com/v1';
 const apiKey = String.fromEnvironment('WEATHER_API_KEY');
 
 @riverpod
-RetrofitClient httpClient(HttpClientRef ref, {bool enableLogging = true}) {
+WeatherApiClient httpClient(HttpClientRef ref, {bool enableLogging = true}) {
   final options = BaseOptions(baseUrl: baseUrl, queryParameters: {'key': apiKey});
   final dio = Dio(options);
-  final client = RetrofitClient(dio);
+  final client = WeatherApiClient(dio);
   ref.onDispose(dio.close);
 
   if (enableLogging) dio.interceptors.add(TalkerDioLogger(talker: talker));

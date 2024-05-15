@@ -2,8 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../../clients/http.client.dart';
+import '../../../clients/retrofit_client.dart';
 import '../../../data/api/search/models/location.model.dart';
-import '../../../data/api/search/search.api.dart';
 import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
 import '../models/current_location.model.dart';
@@ -13,13 +14,13 @@ part 'locations.repository.g.dart';
 
 @riverpod
 LocationsRepository locationsRepository(LocationsRepositoryRef ref) {
-  final api = ref.watch(locationsApiProvider);
-  return LocationsRepository(api);
+  final client = ref.watch(httpClientProvider());
+  return LocationsRepository(client);
 }
 
 class LocationsRepository {
-  const LocationsRepository(this.api);
-  final SearchApi api;
+  const LocationsRepository(this.client);
+  final WeatherApiClient client;
 
   Future<CurrentLocation> getCurrentLocation() async {
     final serviceEnabled = await Geolocator.isLocationServiceEnabled();
@@ -48,7 +49,7 @@ class LocationsRepository {
 
   @protected
   Future<Iterable<LocationApiModel>> findLocations(String query) async {
-    final locations = await api.locations(q: query);
+    final locations = await client.search(query);
     return locations;
   }
 }

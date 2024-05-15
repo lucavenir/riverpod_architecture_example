@@ -1,27 +1,28 @@
 import 'package:intl/intl.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../data/api/astronomy/astronomy.api.dart';
+import '../../../clients/http.client.dart';
+import '../../../clients/retrofit_client.dart';
 import '../models/sun_times.model.dart';
 
 part 'astronomy.repository.g.dart';
 
 @riverpod
 SunTimesRepository sunTimesRepository(SunTimesRepositoryRef ref) {
-  final api = ref.watch(astronomyApiProvider);
-  return SunTimesRepository(api);
+  final client = ref.watch(httpClientProvider());
+  return SunTimesRepository(client);
 }
 
 class SunTimesRepository {
-  const SunTimesRepository(this.api);
-  final AstronomyApi api;
+  const SunTimesRepository(this.client);
+  final WeatherApiClient client;
 
   Future<SunTimes> getTodaySunTimes(String cityName) async {
     final now = DateTime.now();
     final formatter = DateFormat.yMd(now);
     final date = formatter.format(now);
 
-    final model = await api.astronomy(cityName, date);
+    final model = await client.getAstronomy(cityName, date);
 
     return model.toEntity();
   }

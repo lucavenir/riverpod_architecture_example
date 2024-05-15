@@ -7,7 +7,7 @@ part of 'astronomy.repository.dart';
 // **************************************************************************
 
 String _$sunTimesRepositoryHash() =>
-    r'a6b94f4e86cd81aae83e349d100868176fa46e3c';
+    r'5a9f02425a0af16f6eaa0cf7278e2f7f51c095fd';
 
 /// See also [sunTimesRepository].
 @ProviderFor(sunTimesRepository)

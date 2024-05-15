@@ -8,8 +8,8 @@ part of 'retrofit_client.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _RetrofitClient implements RetrofitClient {
-  _RetrofitClient(
+class _WeatherApiClient implements WeatherApiClient {
+  _WeatherApiClient(
     this._dio, {
     this.baseUrl,
   }) {
