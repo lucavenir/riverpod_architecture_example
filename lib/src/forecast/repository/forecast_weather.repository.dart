@@ -1,7 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../data/api/forecast/forecast_weather.api.dart';
-import '../../../data/api/forecast/models/forecast_weather.api.model.dart';
 import '../../locations/models/current_location.model.dart';
 import '../models/forecast_weather.model.dart';
 
@@ -23,7 +22,6 @@ class ForecastWeatherRepository {
       days: days,
     );
 
-    final model = ForecastWeatherApiModel.fromJson(result);
-    return model.toEntity();
+    return result.toEntity();
   }
 }

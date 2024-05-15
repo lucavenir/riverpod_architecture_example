@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
+import 'package:talker_dio_logger/talker_dio_logger.dart';
 
+import 'retrofit_client.dart';
 import 'talker.dart';
 
 part 'http.client.g.dart';
@@ -11,12 +12,13 @@ const baseUrl = 'https://api.weatherapi.com/v1';
 const apiKey = String.fromEnvironment('WEATHER_API_KEY');
 
 @riverpod
-Dio httpClient(HttpClientRef ref, {bool enableLogging = true}) {
+RetrofitClient httpClient(HttpClientRef ref, {bool enableLogging = true}) {
   final options = BaseOptions(baseUrl: baseUrl, queryParameters: {'key': apiKey});
-  final client = Dio(options);
-  ref.onDispose(client.close);
+  final dio = Dio(options);
+  final client = RetrofitClient(dio);
+  ref.onDispose(dio.close);
 
-  if (enableLogging) client.interceptors.add(TalkerDioLogger(talker: talker));
+  if (enableLogging) dio.interceptors.add(TalkerDioLogger(talker: talker));
 
   return client;
 }

@@ -1,8 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../../clients/http.client.dart';
-import '../../json.dart';
+import '../../../clients/retrofit_client.dart';
 import 'models/current_weather.api.model.dart';
 
 part 'current_weather.api.g.dart';
@@ -15,15 +14,12 @@ CurrentWeatherApi currentWeatherApi(CurrentWeatherApiRef ref) {
 
 class CurrentWeatherApi {
   const CurrentWeatherApi(this.dio);
-  final Dio dio;
+  final RetrofitClient dio;
 
   /// Accepts a `query` and returns the current weather
   Future<CurrentWeatherApiModel> current(String query) async {
-    final result = await dio.get<Json>(
-      '/current.json',
-      queryParameters: {'q': query},
-    );
-    final model = CurrentWeatherApiModel.fromJson(result.data!);
-    return model;
+    final result = await dio.getCurrentWeather(query);
+
+    return result;
   }
 }

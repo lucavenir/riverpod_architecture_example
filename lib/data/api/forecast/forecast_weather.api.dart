@@ -1,8 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/http.client.dart';
-import '../../../../data/json.dart';
+import '../../../clients/retrofit_client.dart';
+import 'models/forecast_weather.api.model.dart';
 
 part 'forecast_weather.api.g.dart';
 
@@ -14,17 +14,12 @@ ForecastWeatherApi forecastWeatherApi(ForecastWeatherApiRef ref) {
 
 class ForecastWeatherApi {
   const ForecastWeatherApi(this.dio);
-  final Dio dio;
+  final RetrofitClient dio;
 
   /// Accepts a query q, a number of days d from 1 to 14, and returns the forecasted weather for that day
-  Future<Json> forecast({required String q, required int days}) async {
-    final result = await dio.get<Json>(
-      '/forecast.json',
-      queryParameters: {'q': q, 'days': days},
-    );
+  Future<ForecastWeatherApiModel> forecast({required String q, required int days}) async {
+    final result = await dio.getForecastWeather(q, days);
 
-    final data = result.data!;
-
-    return data;
+    return result;
   }
 }

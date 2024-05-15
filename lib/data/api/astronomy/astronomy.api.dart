@@ -1,8 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../clients/http.client.dart';
-import '../../../../data/json.dart';
+import '../../../clients/retrofit_client.dart';
 import 'models/astronomy.api.model.dart';
 
 part 'astronomy.api.g.dart';
@@ -16,16 +15,12 @@ AstronomyApi astronomyApi(AstronomyApiRef ref) {
 
 class AstronomyApi {
   const AstronomyApi(this.dio);
-  final Dio dio;
+  final RetrofitClient dio;
 
   /// Accepts a `query` and returns the astronomy for a certain `dt` (date)
   Future<AstronomyApiModel> astronomy(String q, String dt) async {
-    final result = await dio.get<Json>(
-      '/astronomy.json',
-      queryParameters: {'q': q, 'dt': dt},
-    );
+    final result = await dio.getAstronomy(q, dt);
 
-    final data = result.data!;
-    return AstronomyApiModel.fromJson(data);
+    return result;
   }
 }

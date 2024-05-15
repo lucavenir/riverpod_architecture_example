@@ -1,8 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../../clients/http.client.dart';
-import '../../../../../data/json.dart';
+import '../../../clients/retrofit_client.dart';
 import 'models/location.model.dart';
 
 part 'search.api.g.dart';
@@ -19,17 +18,10 @@ SearchApi locationsApi(LocationsApiRef ref) {
 
 class SearchApi {
   const SearchApi(this.dio);
-  final Dio dio;
+  final RetrofitClient dio;
 
   Future<Iterable<LocationApiModel>> locations({required String q}) async {
-    final result = await dio.get<List<Object?>>(
-      searchUri,
-      queryParameters: {'q': q},
-    );
-    return result.data! //
-        .map((e) => e! as Json)
-        .map(LocationApiModel.fromJson);
+    final result = await dio.search(q);
+    return result;
   }
-
-  static const searchUri = '/search.json';
 }

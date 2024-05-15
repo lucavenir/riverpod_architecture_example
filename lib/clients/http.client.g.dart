@@ -6,7 +6,7 @@ part of 'http.client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$httpClientHash() => r'0a40adc15d1676950e96327811a188f2a852a426';
+String _$httpClientHash() => r'c6141b324c16108f44ec5cd4525384b1571f650d';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -34,7 +34,7 @@ class _SystemHash {
 const httpClientProvider = HttpClientFamily();
 
 /// See also [httpClient].
-class HttpClientFamily extends Family<Dio> {
+class HttpClientFamily extends Family<RetrofitClient> {
   /// See also [httpClient].
   const HttpClientFamily();
 
@@ -72,7 +72,7 @@ class HttpClientFamily extends Family<Dio> {
 }
 
 /// See also [httpClient].
-class HttpClientProvider extends AutoDisposeProvider<Dio> {
+class HttpClientProvider extends AutoDisposeProvider<RetrofitClient> {
   /// See also [httpClient].
   HttpClientProvider({
     bool enableLogging = true,
@@ -107,7 +107,7 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
 
   @override
   Override overrideWith(
-    Dio Function(HttpClientRef provider) create,
+    RetrofitClient Function(HttpClientRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -124,7 +124,7 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
   }
 
   @override
-  AutoDisposeProviderElement<Dio> createElement() {
+  AutoDisposeProviderElement<RetrofitClient> createElement() {
     return _HttpClientProviderElement(this);
   }
 
@@ -142,13 +142,13 @@ class HttpClientProvider extends AutoDisposeProvider<Dio> {
   }
 }
 
-mixin HttpClientRef on AutoDisposeProviderRef<Dio> {
+mixin HttpClientRef on AutoDisposeProviderRef<RetrofitClient> {
   /// The parameter `enableLogging` of this provider.
   bool get enableLogging;
 }
 
-class _HttpClientProviderElement extends AutoDisposeProviderElement<Dio>
-    with HttpClientRef {
+class _HttpClientProviderElement
+    extends AutoDisposeProviderElement<RetrofitClient> with HttpClientRef {
   _HttpClientProviderElement(super.provider);
 
   @override
