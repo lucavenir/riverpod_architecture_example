@@ -85,21 +85,16 @@ extension CurrentWeatherApiMapper on CurrentWeatherApiModel {
   }
 }
 
-extension CurrentWeatherDbMapper on List<CurrentWeatherDbModelData> {
+extension CurrentWeatherDbMapper on CurrentWeatherDbModelData {
   CurrentWeather toEntity() {
-    final list = [
-      ...map(
-        (e) => CurrentWeather(
-          humidity: e.humidity,
-          image: e.image,
-          perceivedTemp: e.perceivedTemp,
-          temp: e.temp,
-          updatedAt: e.updatedAt,
-          weather: e.weather,
-          wind: e.wind,
-        ),
-      ),
-    ];
-    return list.first;
+    return CurrentWeather(
+      humidity: humidity,
+      image: image,
+      perceivedTemp: perceivedTemp,
+      temp: temp,
+      updatedAt: updatedAt,
+      weather: weather,
+      wind: wind,
+    );
   }
 }

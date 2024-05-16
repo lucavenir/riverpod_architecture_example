@@ -23,10 +23,9 @@ class CurrentWeatherDb {
     return model;
   }
 
-  Future<List<CurrentWeatherDbModelData>> getCurrentWeatherFromDb() async {
+  Future<CurrentWeatherDbModelData> getCurrentWeatherFromDb() async {
     final dto = await db.select(db.currentWeatherDbModel).get();
-    //final dto = db.writeTxnSync(() => db.currentWeatherDbModels.getSync(0));
     if (dto.isEmpty) throw const NoDataAvailableException();
-    return dto;
+    return dto.single;
   }
 }
