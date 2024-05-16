@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../data/api/forecast/models/forecast_weather.api.model.dart';
+import '../../../data/models/forecast/forecast_weather.api.model.dart';
 import 'forecast_day.model.dart';
 
 part 'forecast_weather.model.freezed.dart';

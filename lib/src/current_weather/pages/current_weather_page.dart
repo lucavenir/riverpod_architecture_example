@@ -81,7 +81,7 @@ class CurrentWeatherPage extends HookConsumerWidget {
                       ),
                     ),
                     Image.network(
-                      data.image,
+                      data.imageUrl,
                       height: 80,
                       fit: BoxFit.fitHeight,
                     ),

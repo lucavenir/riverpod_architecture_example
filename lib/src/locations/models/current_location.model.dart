@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../data/api/search/models/location.model.dart';
+import '../../../data/models/search/location.model.dart';
 
 part 'current_location.model.freezed.dart';
 

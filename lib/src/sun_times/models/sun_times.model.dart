@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../data/api/astronomy/models/astronomy.api.model.dart';
+import '../../../data/models/astronomy/astronomy.api.model.dart';
 
 part 'sun_times.model.freezed.dart';
 
@@ -18,8 +18,8 @@ extension SunTimesApiMapper on AstronomyApiModel {
   SunTimes toEntity() {
     return SunTimes(
       timestamp: DateTime.parse(location!.localTime),
-      sunrise: parseTimeOfDay(astronomy.astro.sunrise),
-      sunset: parseTimeOfDay(astronomy.astro.sunset),
+      sunrise: parseTimeOfDay(astronomy.astro.sunrise!),
+      sunset: parseTimeOfDay(astronomy.astro.sunset!),
     );
   }
 

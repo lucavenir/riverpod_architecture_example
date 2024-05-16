@@ -41,13 +41,13 @@ class LocationSearchBar extends HookConsumerWidget {
             : IconButton.filledTonal(
                 onPressed: controller.clear,
                 icon: const Icon(Icons.close),
-                color: Theme.of(context).colorScheme.primary,
+                //  color: Theme.of(context).colorScheme.primary,
               ),
         trailing: [
           IconButton.filledTonal(
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
-              color: Theme.of(context).colorScheme.primary,
+              // color: Theme.of(context).colorScheme.primary,
             ),
             onPressed: dialogBuilder,
           ),

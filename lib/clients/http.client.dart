@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
+import 'package:talker_dio_logger/talker_dio_logger.dart';
 
 import 'talker.dart';
 
@@ -13,10 +13,11 @@ const apiKey = String.fromEnvironment('WEATHER_API_KEY');
 @riverpod
 Dio httpClient(HttpClientRef ref, {bool enableLogging = true}) {
   final options = BaseOptions(baseUrl: baseUrl, queryParameters: {'key': apiKey});
-  final client = Dio(options);
-  ref.onDispose(client.close);
+  final dio = Dio(options);
 
-  if (enableLogging) client.interceptors.add(TalkerDioLogger(talker: talker));
+  ref.onDispose(dio.close);
 
-  return client;
+  if (enableLogging) dio.interceptors.add(TalkerDioLogger(talker: talker));
+
+  return dio;
 }

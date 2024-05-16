@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
 
-import '../../../data/api/current_weather/models/current_weather.api.model.dart';
 import '../../../data/db/current_weather/models/local_current_weather.model.dart';
+import '../../../data/models/current_weather/current_weather.api.model.dart';
 
 part 'current_weather.model.freezed.dart';
 
@@ -48,6 +48,11 @@ extension CurrentWeatherViews on CurrentWeather {
     final oneDecimalFormat = NumberFormat('##0.#');
     final formattedTemp = oneDecimalFormat.format(temp);
     return '$formattedTemp °C';
+  }
+
+  String get imageUrl {
+    final url = 'https:$image';
+    return url;
   }
 }
 
