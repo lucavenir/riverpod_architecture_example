@@ -26,16 +26,20 @@ class CurrentWeatherRepository {
 
   Future<CurrentWeather> getCurrentWeather(CurrentLocation location) async {
     final hasInternet = await connectivity.checkFullConnectivity();
-    if (!hasInternet) return getCurrentWeatherFromDb();
+    if (!hasInternet) {
+      final entity = await getCurrentWeatherFromDb();
+      return entity;
+    }
 
     final model = await client.getCurrentWeather(location.cityName);
     final entity = model.toEntity();
-    local.saveCurrentWeather(entity.toDbModel());
+    local.saveCurrentWeather(entity.toDbModel()).ignore();
     return entity;
   }
 
   @protected
-  CurrentWeather getCurrentWeatherFromDb() {
-    return local.getCurrentWeatherFromDb().toEntity();
+  Future<CurrentWeather> getCurrentWeatherFromDb() async {
+    final db = await local.getCurrentWeatherFromDb();
+    return db.toEntity();
   }
 }

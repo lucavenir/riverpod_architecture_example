@@ -1,26 +1,12 @@
-import 'package:isar/isar.dart';
+import 'package:drift/drift.dart';
 
-part 'local_current_weather.model.g.dart';
-
-@collection
-class CurrentWeatherDbModel {
-  CurrentWeatherDbModel({
-    required this.weather,
-    required this.image,
-    required this.updatedAt,
-    required this.temp,
-    required this.wind,
-    required this.humidity,
-    required this.perceivedTemp,
-    this.id = 0,
-  });
-
-  final Id id;
-  final String weather;
-  final String image;
-  final DateTime updatedAt;
-  final int temp;
-  final double wind;
-  final double humidity;
-  final double perceivedTemp;
+class CurrentWeatherDbModel extends Table {
+  IntColumn get id => integer()();
+  TextColumn get weather => text()();
+  TextColumn get image => text()();
+  DateTimeColumn get updatedAt => dateTime()();
+  IntColumn get temp => integer()();
+  RealColumn get wind => real()();
+  RealColumn get humidity => real()();
+  RealColumn get perceivedTemp => real()();
 }

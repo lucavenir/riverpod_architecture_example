@@ -1,9 +1,7 @@
-import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../clients/local_db.client.dart';
 import '../errors/no_data_available_exception.dart';
-import 'models/local_current_weather.model.dart';
 
 part 'current_weather.db.g.dart';
 
@@ -15,16 +13,19 @@ CurrentWeatherDb currentWeatherDb(CurrentWeatherDbRef ref) {
 
 class CurrentWeatherDb {
   const CurrentWeatherDb(this.db);
-  final Isar db;
+  final AppDatabase db;
 
-  CurrentWeatherDbModel saveCurrentWeather(CurrentWeatherDbModel model) {
-    db.writeTxnSync(() => db.currentWeatherDbModels.putSync(model));
+  Future<CurrentWeatherDbModelCompanion> saveCurrentWeather(
+    CurrentWeatherDbModelCompanion model,
+  ) async {
+    // db.writeTxnSync(() => db.currentWeatherDbModels.putSync(model));
+    await db.into(db.currentWeatherDbModel).insert(model);
     return model;
   }
 
-  CurrentWeatherDbModel getCurrentWeatherFromDb() {
-    final dto = db.writeTxnSync(() => db.currentWeatherDbModels.getSync(0));
-    if (dto == null) throw const NoDataAvailableException();
-    return dto;
+  Future<CurrentWeatherDbModelData> getCurrentWeatherFromDb() async {
+    final dto = await db.select(db.currentWeatherDbModel).get();
+    if (dto.isEmpty) throw const NoDataAvailableException();
+    return dto.single;
   }
 }
