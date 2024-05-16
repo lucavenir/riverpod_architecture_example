@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../data/api/astronomy/models/astronomy.api.model.dart';
+import '../../../data/models/astronomy_models/astronomy.api.model.dart';
 
 part 'sun_times.model.freezed.dart';
 

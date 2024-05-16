@@ -7,7 +7,7 @@ part of 'locations.repository.dart';
 // **************************************************************************
 
 String _$locationsRepositoryHash() =>
-    r'483aab0bfa7b5e7dd56b954ec67767aebcdde1e8';
+    r'1c2b5c95313717decbf1b10b734373fab9091463';
 
 /// See also [locationsRepository].
 @ProviderFor(locationsRepository)

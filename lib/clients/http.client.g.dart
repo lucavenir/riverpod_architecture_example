@@ -6,7 +6,7 @@ part of 'http.client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$httpClientHash() => r'22992b97f3d9825040b4697fa12fe692cf917ea9';
+String _$httpClientHash() => r'f3c5af631066b3c90d694c56f7dff1bfdd996a4d';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -34,7 +34,7 @@ class _SystemHash {
 const httpClientProvider = HttpClientFamily();
 
 /// See also [httpClient].
-class HttpClientFamily extends Family<WeatherApiClient> {
+class HttpClientFamily extends Family<Dio> {
   /// See also [httpClient].
   const HttpClientFamily();
 
@@ -72,7 +72,7 @@ class HttpClientFamily extends Family<WeatherApiClient> {
 }
 
 /// See also [httpClient].
-class HttpClientProvider extends AutoDisposeProvider<WeatherApiClient> {
+class HttpClientProvider extends AutoDisposeProvider<Dio> {
   /// See also [httpClient].
   HttpClientProvider({
     bool enableLogging = true,
@@ -107,7 +107,7 @@ class HttpClientProvider extends AutoDisposeProvider<WeatherApiClient> {
 
   @override
   Override overrideWith(
-    WeatherApiClient Function(HttpClientRef provider) create,
+    Dio Function(HttpClientRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -124,7 +124,7 @@ class HttpClientProvider extends AutoDisposeProvider<WeatherApiClient> {
   }
 
   @override
-  AutoDisposeProviderElement<WeatherApiClient> createElement() {
+  AutoDisposeProviderElement<Dio> createElement() {
     return _HttpClientProviderElement(this);
   }
 
@@ -142,13 +142,13 @@ class HttpClientProvider extends AutoDisposeProvider<WeatherApiClient> {
   }
 }
 
-mixin HttpClientRef on AutoDisposeProviderRef<WeatherApiClient> {
+mixin HttpClientRef on AutoDisposeProviderRef<Dio> {
   /// The parameter `enableLogging` of this provider.
   bool get enableLogging;
 }
 
-class _HttpClientProviderElement
-    extends AutoDisposeProviderElement<WeatherApiClient> with HttpClientRef {
+class _HttpClientProviderElement extends AutoDisposeProviderElement<Dio>
+    with HttpClientRef {
   _HttpClientProviderElement(super.provider);
 
   @override
