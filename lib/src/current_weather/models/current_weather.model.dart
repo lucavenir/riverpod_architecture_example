@@ -1,7 +1,8 @@
+import 'package:drift/drift.dart' as drift;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
 
-import '../../../data/db/current_weather/models/local_current_weather.model.dart';
+import '../../../clients/local_db.client.dart';
 import '../../../data/models/current_weather/current_weather.api.model.dart';
 
 part 'current_weather.model.freezed.dart';
@@ -57,15 +58,15 @@ extension CurrentWeatherViews on CurrentWeather {
 }
 
 extension CurrentWeatherEntityMapper on CurrentWeather {
-  CurrentWeatherDbModel toDbModel() {
-    return CurrentWeatherDbModel(
-      weather: weather,
-      image: image,
-      temp: temp,
-      updatedAt: updatedAt,
-      wind: wind,
-      perceivedTemp: perceivedTemp,
-      humidity: humidity,
+  CurrentWeatherDbModelCompanion toDbModel() {
+    return CurrentWeatherDbModelCompanion(
+      weather: drift.Value(weather),
+      image: drift.Value(image),
+      temp: drift.Value(temp),
+      updatedAt: drift.Value(updatedAt),
+      wind: drift.Value(wind),
+      perceivedTemp: drift.Value(perceivedTemp),
+      humidity: drift.Value(humidity),
     );
   }
 }
@@ -84,16 +85,21 @@ extension CurrentWeatherApiMapper on CurrentWeatherApiModel {
   }
 }
 
-extension CurrentWeatherDbMapper on CurrentWeatherDbModel {
+extension CurrentWeatherDbMapper on List<CurrentWeatherDbModelData> {
   CurrentWeather toEntity() {
-    return CurrentWeather(
-      weather: weather,
-      image: image,
-      temp: temp,
-      updatedAt: updatedAt,
-      wind: wind,
-      perceivedTemp: perceivedTemp,
-      humidity: humidity,
-    );
+    final list = [
+      ...map(
+        (e) => CurrentWeather(
+          humidity: e.humidity,
+          image: e.image,
+          perceivedTemp: e.perceivedTemp,
+          temp: e.temp,
+          updatedAt: e.updatedAt,
+          weather: e.weather,
+          wind: e.wind,
+        ),
+      ),
+    ];
+    return list.first;
   }
 }
