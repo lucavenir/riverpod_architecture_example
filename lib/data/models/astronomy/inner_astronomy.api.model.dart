@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../json.dart';
-import 'astro.api.model.dart';
+import '../forecast/astro.api.model.dart';
 
 part 'inner_astronomy.api.model.freezed.dart';
 part 'inner_astronomy.api.model.g.dart';

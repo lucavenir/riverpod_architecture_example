@@ -3,7 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../data/api/weather_api.dart';
-import '../../../data/models/search_models/location.model.dart';
+import '../../../data/models/search/location.model.dart';
 import '../errors/location_permission_denied_exception.dart';
 import '../errors/location_permission_denied_forever_exception.dart.dart';
 import '../models/current_location.model.dart';

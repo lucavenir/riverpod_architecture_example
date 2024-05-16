@@ -4,6 +4,7 @@ import '../../json.dart';
 import 'condition.api.model.dart';
 
 part 'current.api.model.freezed.dart';
+part 'current.api.model.g.dart';
 
 @freezed
 class CurrentApiModel with _$CurrentApiModel {

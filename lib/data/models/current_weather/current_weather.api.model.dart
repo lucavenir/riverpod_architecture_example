@@ -5,6 +5,7 @@ import 'current.api.model.dart';
 import 'current_weather_location.api.model.dart';
 
 part 'current_weather.api.model.freezed.dart';
+part 'current_weather.api.model.g.dart';
 
 @freezed
 class CurrentWeatherApiModel with _$CurrentWeatherApiModel {

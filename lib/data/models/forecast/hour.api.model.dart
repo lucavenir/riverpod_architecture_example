@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../json.dart';
-import '../current_weather_models/condition.api.model.dart';
+import 'condition.api.model.dart';
 
 part 'hour.api.model.freezed.dart';
 part 'hour.api.model.g.dart';

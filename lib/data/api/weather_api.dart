@@ -3,10 +3,10 @@ import 'package:retrofit/retrofit.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../clients/http.client.dart';
-import '../models/astronomy_models/astronomy.api.model.dart';
-import '../models/current_weather_models/current_weather.api.model.dart';
-import '../models/forecast_models/forecast_weather.api.model.dart';
-import '../models/search_models/location.model.dart';
+import '../models/astronomy/astronomy.api.model.dart';
+import '../models/current_weather/current_weather.api.model.dart';
+import '../models/forecast/forecast_weather.api.model.dart';
+import '../models/search/location.model.dart';
 
 part 'weather_api.g.dart';
 
@@ -18,7 +18,7 @@ WeatherApi weatherApi(WeatherApiRef ref) {
 
 @RestApi(baseUrl: baseUrl)
 abstract class WeatherApi {
-  factory WeatherApi(Dio dio, {String baseUrl}) = _WeatherApi;
+  factory WeatherApi(Dio dio, {required String baseUrl}) = _WeatherApi;
 
   @GET('/astronomy.json')
   Future<AstronomyApiModel> getAstronomy(

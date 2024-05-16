@@ -1,36 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'forecast_weather.model.dart';
+part of 'current_weather.api.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ForecastWeatherModelImpl _$$ForecastWeatherModelImplFromJson(
+_$CurrentWeatherApiModelImpl _$$CurrentWeatherApiModelImplFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ForecastWeatherModelImpl',
+      r'_$CurrentWeatherApiModelImpl',
       json,
       ($checkedConvert) {
-        final val = _$ForecastWeatherModelImpl(
+        final val = _$CurrentWeatherApiModelImpl(
           current: $checkedConvert('current',
-              (v) => CurrentForecastModel.fromJson(v as Map<String, dynamic>)),
-          forecast: $checkedConvert('forecast',
-              (v) => ForecastModel.fromJson(v as Map<String, dynamic>)),
+              (v) => CurrentApiModel.fromJson(v as Map<String, dynamic>)),
           location: $checkedConvert(
               'location',
               (v) => v == null
                   ? null
-                  : ForecastLocationModel.fromJson(v as Map<String, dynamic>)),
+                  : CurrentWeatherLocationApiModel.fromJson(
+                      v as Map<String, dynamic>)),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$$ForecastWeatherModelImplToJson(
-        _$ForecastWeatherModelImpl instance) =>
+Map<String, dynamic> _$$CurrentWeatherApiModelImplToJson(
+        _$CurrentWeatherApiModelImpl instance) =>
     <String, dynamic>{
       'current': instance.current.toJson(),
-      'forecast': instance.forecast.toJson(),
       'location': instance.location?.toJson(),
     };
