@@ -25,7 +25,6 @@ dependencies:
   geolocator: ^10.1.0
   go_router: ^12.1.3
   google_fonts: ^6.1.0
-  group_button: ^5.3.4
   hooks_riverpod: ^2.4.9
   internet_connection_checker: ^1.0.0+1
   intl: ^0.18.1
@@ -55,10 +54,10 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
   json_serializable: ^6.7.1
   mocktail: ^1.0.2
+  retrofit_generator: ^8.1.0
   riverpod_generator: ^2.3.9
   riverpod_lint: ^2.3.7
   very_good_analysis: ^5.1.0
-  retrofit_generator: ^8.1.0
 
 assets:
   - .env.json
